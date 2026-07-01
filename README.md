@@ -1,162 +1,86 @@
 # Joan V. Oliver Rosell — Portfolio
 
-A personal portfolio built as a real, maintainable project — not a template.
-It presents my work as an early-career full-stack developer: data-informed
-products with a focus on engineering quality.
+![Joan V. Oliver Rosell — Full-Stack Developer](public/og.png)
 
-**Stack:** Next.js 15 (App Router) · TypeScript · Tailwind CSS · `next-themes`
+Personal portfolio of a full-stack developer based in Valencia, Spain, focused on
+data-informed products — TypeScript, Python and applied AI.
 
-**Features:** static-first (free to host on Vercel) · fully responsive ·
-light/dark themes · bilingual English/Spanish with a toggle · theme and
-language persisted in `localStorage` · accessible (semantic HTML, keyboard
-navigation, visible focus, reduced-motion support) · SEO + Open Graph metadata
-· generated favicon and social image.
+**Open to my first full-time software role.**
+[LinkedIn](https://www.linkedin.com/in/joanvoliver) ·
+[GitHub](https://github.com/JoanOliver04) ·
+[joanoliverrosell@gmail.com](mailto:joanoliverrosell@gmail.com)
+
+**Stack:** Next.js 15 (App Router) · TypeScript · Tailwind CSS
+
+Bilingual (English/Spanish) · light/dark themes · accessible · SEO and Open Graph
+ready · no server, no database, no environment variables.
 
 ---
 
-## Getting started
+## Featured work
 
-Requirements: **Node.js ≥ 20**.
+The site presents five complete projects, each with a screenshot gallery, a problem
+statement and engineering highlights:
+
+| Project | What it is | Stack |
+| --- | --- | --- |
+| [Data Fuel](https://github.com/JoanOliver04/Data_Fuel) | Find the cheapest fill-up by **total cost** (fuel + the drive), with explainable ML price forecasts — 690 tests, 86% coverage | FastAPI · React · scikit-learn · SHAP |
+| [FitPrompt](https://github.com/JoanOliver04/FitPrompt) | Conversational AI coach that turns a real user profile into training and nutrition plans — team project, 2 developers | Next.js · Prisma · Groq / Llama 3.3 · Stripe |
+| [Data Detective](https://github.com/JoanOliver04/Data_Detective) | Quasi-experimental measurement of how mass events move Valencia's air quality — 123 tests, 90% coverage, CI | Python · pandas · Streamlit |
+| [Book Piece](https://github.com/JoanOliver04/book-piece-showcase) | Marketplace and reading companion for books, comics and manga | Angular · PHP · MySQL |
+| [Brain Craft](https://github.com/JoanOliver04/brain-craft-showcase) | Trivia quiz reimagined as a turn-based RPG | Vanilla JS · Firebase |
+
+---
+
+## Engineering notes
+
+The portfolio itself is built with the same care as the projects it presents:
+
+- **Typed bilingual content.** Every string lives in `src/content/` as data, not
+  markup. English is authored first and the Spanish dictionary is type-checked
+  against it (`const es: Dictionary`), so the two languages can never fall out
+  of sync.
+- **Static-first.** No server code, no database, no environment variables — the
+  whole site prerenders at build time and hosts for free on Vercel (and is
+  exportable to any static host).
+- **Accessible by default.** Semantic landmarks, skip link, keyboard-navigable
+  galleries, visible focus states and `prefers-reduced-motion` support.
+- **Design tokens.** The palette is defined once as CSS variables in
+  `src/app/globals.css` (light and dark) and surfaced to Tailwind, so themes
+  stay consistent without per-component color logic.
+- **Honest content.** Metrics shown on the site are only those documented in
+  each project's own repository.
+
+---
+
+## Running locally
+
+Requires **Node.js ≥ 20**.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open <http://localhost:3000>.
-
-> On first run, Next.js downloads the web fonts (Inter, Space Grotesk,
-> JetBrains Mono) via `next/font/google`, so an internet connection is needed
-> for the first build.
-
-### Scripts
-
-| Script          | Description                       |
-| --------------- | --------------------------------- |
-| `npm run dev`   | Start the dev server              |
-| `npm run build` | Production build                  |
-| `npm run start` | Serve the production build        |
-| `npm run lint`  | Run ESLint                        |
+Open <http://localhost:3000>. `npm run build` produces the production build;
+`npm run lint` runs ESLint.
 
 ---
 
-## Deploying to Vercel (free)
-
-1. Push this project to a GitHub repository.
-2. Go to [vercel.com](https://vercel.com) → **Add New… → Project** and import
-   the repository.
-3. Framework preset is detected automatically as **Next.js**. No environment
-   variables are required. Click **Deploy**.
-4. After the first deploy, set your final domain and update the `url` field in
-   [`src/content/site.ts`](src/content/site.ts) so canonical and Open Graph
-   URLs are correct, then redeploy.
-
-The site is fully static, so it also works on any static-friendly host
-(Netlify, Cloudflare Pages, GitHub Pages with an adapter, etc.).
-
----
-
-## Project structure
+## Structure
 
 ```
 src/
-├── app/
-│   ├── layout.tsx        Root layout: fonts, SEO/OG metadata, providers, skip link
-│   ├── page.tsx          Home page — composes all sections
-│   ├── globals.css       Design tokens (light/dark), base styles, motion
-│   ├── icon.svg          Favicon (monogram)
-│   └── apple-icon.png    Apple touch icon
-├── components/
-│   ├── layout/           Navbar, Footer
-│   ├── providers/        ThemeProvider, combined Providers
-│   ├── projects/         FlagshipCard, ProjectCard (+ shared bits)
-│   ├── sections/         Hero, HeroVisual, Portrait, ProofStrip, Projects,
-│   │                     TechnicalFocus, Experience, Education, Contact
-│   └── ui/               Reveal, Toggles, primitives (Section, headings, tags, icons)
-├── content/              ← EDIT COPY HERE (typed, centralized)
-│   ├── site.ts           Identity, links, deployed URL, OG image path
-│   ├── dictionary.ts     All UI strings (English + Spanish)
-│   ├── projects.ts       The five projects (bilingual)
-│   ├── experience.ts     Internships
-│   ├── education.ts      Education
-│   └── skills.ts         Technical-focus groups
-├── hooks/                useReducedMotion
-├── i18n/                 I18nProvider + useI18n (language + persistence)
-├── lib/                  utils
-└── types/                Shared content types
-
-public/
-├── profile.jpg           Portrait placeholder — REPLACE with your photo
-├── og.png                Social preview image
-├── icon-192.png / icon-512.png / site.webmanifest
+├── app/          Root layout, page, global styles, SEO/OG metadata
+├── components/   Sections, project cards and galleries, UI primitives
+├── content/      All copy — typed, bilingual (EN/ES)
+├── i18n/         Language provider + persistence
+└── hooks/ lib/ types/
 ```
-
-All text content lives in `src/content/`. English is authored first and the
-Spanish object is type-checked against it, so the two languages can never fall
-out of sync.
-
----
-
-## Replacing the portrait photo
-
-The photo is referenced in exactly one place —
-[`src/components/sections/Portrait.tsx`](src/components/sections/Portrait.tsx) —
-and loads `public/profile.jpg`.
-
-**To use your own photo:** replace `public/profile.jpg` with your image, keeping
-the same filename. A square image (e.g. 800×800 or 1000×1000) works best. No
-code changes are needed. A branded placeholder ships there so the layout never
-looks broken before you swap it.
-
----
-
-## Adding a CV download button later (not included yet)
-
-When your CV PDF is ready:
-
-1. Put the file at `public/cv/joan-oliver-cv.pdf`.
-2. Add a label to both languages in
-   [`src/content/dictionary.ts`](src/content/dictionary.ts), e.g. inside the
-   `hero` and/or `contact` objects:
-
-   ```ts
-   // en
-   downloadCv: "Download CV",
-   // es
-   downloadCv: "Descargar CV",
-   ```
-
-3. Add the button where you want it (the Hero CTA row and/or the Contact
-   section are the natural spots). Example, next to the existing Hero buttons in
-   [`src/components/sections/Hero.tsx`](src/components/sections/Hero.tsx):
-
-   ```tsx
-   <a
-     href="/cv/joan-oliver-cv.pdf"
-     download
-     className="inline-flex items-center gap-2 rounded-md border border-border bg-surface/50 px-5 py-3 text-sm font-medium text-text transition-colors hover:border-accent/60 hover:text-accent"
-   >
-     {t.hero.downloadCv}
-   </a>
-   ```
-
-That's the whole change — no other wiring required.
-
----
-
-## Customization notes
-
-- **Colors / theme:** the palette is defined once as CSS variables in
-  [`src/app/globals.css`](src/app/globals.css) (`:root` for light, `.dark` for
-  dark) and surfaced to Tailwind in `tailwind.config.ts`.
-- **Fonts:** configured in `src/app/layout.tsx` via `next/font/google`.
-- **Sections order:** controlled in `src/app/page.tsx`.
-- **Signature visual:** the hero motif is based on Data Fuel's real total-cost
-  equation, `C = V·P + D·K`, in
-  [`src/components/sections/HeroVisual.tsx`](src/components/sections/HeroVisual.tsx).
 
 ---
 
 ## License
 
-© Joan V. Oliver Rosell. All rights reserved.
+© Joan V. Oliver Rosell. All rights reserved. This is a personal site, not a
+template — but the code is public and readable if it's useful as a reference.

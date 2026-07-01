@@ -26,6 +26,6 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "engineering",
     title: { en: "Engineering", es: "Ingeniería" },
-    items: ["Testing", "Clean Architecture", "Git", "Docker", "CI-ready workflows", "Async"],
+    items: ["Testing", "Clean Architecture", "Git", "Docker", "GitHub Actions (CI)", "Async Python"],
   },
 ];

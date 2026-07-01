@@ -48,7 +48,7 @@ const en = {
       { value: "5", label: "Featured projects" },
       { value: "2", label: "Higher vocational degrees" },
       { value: "AI · Big Data", label: "Specialization completed" },
-      { value: "690+", label: "Automated tests written" },
+      { value: "800+", label: "Automated tests written" },
     ],
   },
   projects: {
@@ -166,7 +166,7 @@ const es: Dictionary = {
       { value: "5", label: "Proyectos destacados" },
       { value: "2", label: "Ciclos de grado superior" },
       { value: "IA · Big Data", label: "Especialización completada" },
-      { value: "690+", label: "Tests automatizados escritos" },
+      { value: "800+", label: "Tests automatizados escritos" },
     ],
   },
   projects: {
