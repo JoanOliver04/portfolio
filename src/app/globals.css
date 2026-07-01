@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens. Colours are stored as space-separated RGB channels so Tailwind
+  can apply opacity via `rgb(var(--x) / <alpha-value>)`.
+
+  Light mode leads with a warm-paper palette; dark mode is a refined near-black.
+  A single warm signal accent is used sparingly across both.
+*/
+:root {
+  --bg: 250 249 246; /* #FAF9F6 warm paper */
+  --surface: 255 255 255; /* #FFFFFF */
+  --surface-2: 244 242 236; /* #F4F2EC */
+  --text: 26 24 20; /* #1A1814 ink */
+  --muted: 92 88 80; /* #5C5850 */
+  --border: 228 224 214; /* #E4E0D6 */
+  --accent: 200 78 20; /* #C84E14 warm signal (AA on paper for large text/graphics) */
+  --accent-contrast: 255 255 255;
+  --ring: 200 78 20;
+}
+
+.dark {
+  --bg: 12 12 13; /* #0C0C0D */
+  --surface: 22 22 24; /* #161618 */
+  --surface-2: 28 28 31; /* #1C1C1F */
+  --text: 237 236 232; /* #EDECE8 */
+  --muted: 154 152 145; /* #9A9891 */
+  --border: 40 40 44; /* #28282C */
+  --accent: 255 122 61; /* #FF7A3D brighter for dark surfaces */
+  --accent-contrast: 20 18 15;
+  --ring: 255 122 61;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-text antialiased;
+    font-feature-settings: "ss01", "cv01";
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Visible, consistent keyboard focus. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--ring));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.85);
+    color: rgb(var(--accent-contrast));
+  }
+
+  /* Thin, theme-aware scrollbar (progressive enhancement). */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--border)) transparent;
+  }
+}
+
+@layer components {
+  /* Scroll-reveal: hidden state, revealed via the `is-visible` class from JS. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* One-shot line draw for the hero signature plot. */
+  .draw-line {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Honour reduced-motion: no transitions, no draw, content always visible. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .draw-line {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
