@@ -18,7 +18,7 @@ export const site = {
   github: "https://github.com/JoanOliver04",
 
   // Update this to your Vercel/production URL.
-  url: "https://joan-oliver.vercel.app",
+  url: "https://joan-portfolio-alpha.vercel.app",
 
   // Open Graph / social preview image (1200×630). Generated placeholder in /public.
   ogImage: "/og.png",
