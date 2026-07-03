@@ -245,6 +245,86 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "minigame-hub",
+    name: "Mini-Game Hub",
+    category: "ai",
+    repoType: "source",
+    github: "https://github.com/JoanOliver04/minigame-hub",
+    liveUrl: "https://minigame-hub-orcin.vercel.app/",
+    badge: { en: "Source available", es: "Código disponible" },
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Firebase",
+      "Cloud Firestore",
+      "Web Audio API",
+      "CSS",
+    ],
+    images: [
+      {
+        src: "/projects/minigame-hub/01-home.png",
+        caption: { en: "The hub — 22 mini-games, one scoreboard", es: "El hub — 22 minijuegos, un marcador" },
+      },
+      {
+        src: "/projects/minigame-hub/02-connect-four.png",
+        caption: { en: "Connect Four vs a 6-ply minimax opponent", es: "Cuatro en raya contra una IA minimax de 6 niveles" },
+      },
+      {
+        src: "/projects/minigame-hub/03-higher-or-lower.png",
+        caption: { en: "Higher or Lower — Hard counts the real deck", es: "Mayor o menor — en difícil cuenta la baraja real" },
+      },
+      {
+        src: "/projects/minigame-hub/04-penalty.png",
+        caption: { en: "Penalty Shootout with a pre-commit keeper", es: "Tanda de penaltis con un portero que decide antes" },
+      },
+      {
+        src: "/projects/minigame-hub/05-create-room.png",
+        caption: { en: "Create a room and share the code", es: "Crea una sala y comparte el código" },
+      },
+      {
+        src: "/projects/minigame-hub/06-join-room.png",
+        caption: { en: "A friend joins live with a 6-char code", es: "Un amigo se une en directo con un código de 6 letras" },
+      },
+    ],
+    tagline: {
+      en: "Twenty-two browser mini-games, each with an AI opponent built on a real algorithm — and every one playable live against a friend.",
+      es: "Veintidós minijuegos de navegador, cada uno con una IA basada en un algoritmo real — y todos jugables en directo contra un amigo.",
+    },
+    problem: {
+      en: "Game AI is usually a difficulty slider faking a challenge with inflated stats. Mini-Game Hub asks the opposite: can every 'Hard' opponent be an actual algorithm computing its best move in real time, entirely client-side?",
+      es: "La IA de los juegos suele ser un control de dificultad que finge un reto inflando estadísticas. Mini-Game Hub plantea lo contrario: ¿puede cada rival en 'difícil' ser un algoritmo real que calcula su mejor jugada en tiempo real, íntegramente en el cliente?",
+    },
+    product: {
+      en: "One bilingual hub over 22 solo games — from minimax and Monte Carlo tree search to XOR nim-sum game theory, A* pathfinding and exact card counting. Every game also runs as a live multiplayer room: a friend joins with a short code and you play head-to-head, backed by a thin Firebase layer with no server of the project's own.",
+      es: "Un hub bilingüe sobre 22 juegos en solitario — desde minimax y Monte Carlo tree search hasta teoría de juegos con nim-sum (XOR), pathfinding A* y conteo exacto de cartas. Cada juego funciona además como sala multijugador en directo: un amigo entra con un código corto y jugáis cara a cara, apoyado en una fina capa de Firebase sin servidor propio.",
+    },
+    highlights: {
+      en: [
+        "Difficulty is an algorithm, not a multiplier — minimax + alpha-beta, MCTS (UCT), XOR nim-sum optimal play, A* pathfinding, expectimax, information-gain and exact card counting, each running live in a React render loop.",
+        "Logic isolated from React: every game's pure rules and AI live in framework-free TypeScript modules, unit-testable and reused verbatim by the multiplayer layer.",
+        "Live multiplayer for all 22 games via a game-agnostic Cloud Firestore room layer covering five sync patterns (turn-based, simultaneous-move, lockstep, shared-seed score-attack and live-synced duel) — with zero server compute, on Firebase's free Spark plan.",
+        "Access control lives in Firestore Security Rules — seat membership, per-turn ownership and soft room expiry — not in the client.",
+        "Type-checked bilingual dictionary (`satisfies`): an EN/ES key drift is a compile error, not a runtime blank.",
+        "Registry-driven architecture — the hub grid, routes and scoreboard all derive from one game list, so a new game is an additive, three-file change.",
+      ],
+      es: [
+        "La dificultad es un algoritmo, no un multiplicador — minimax + alfa-beta, MCTS (UCT), juego óptimo con nim-sum (XOR), pathfinding A*, expectimax, ganancia de información y conteo exacto de cartas, todo en tiempo real dentro del render de React.",
+        "Lógica aislada de React: las reglas puras y la IA de cada juego viven en módulos de TypeScript sin framework, testables por unidad y reutilizados tal cual por el multijugador.",
+        "Multijugador en directo para los 22 juegos mediante una capa de salas en Cloud Firestore agnóstica al juego, con cinco patrones de sincronización (por turnos, movimiento simultáneo, lockstep, score-attack con semilla compartida y duelo sincronizado en vivo) — sin cómputo en servidor, en el plan gratuito Spark de Firebase.",
+        "El control de acceso vive en las Security Rules de Firestore — pertenencia al asiento, propiedad del turno y expiración blanda de la sala — no en el cliente.",
+        "Diccionario bilingüe con comprobación de tipos (`satisfies`): un desajuste de claves EN/ES es un error de compilación, no un hueco en tiempo de ejecución.",
+        "Arquitectura dirigida por registro — la parrilla del hub, las rutas y el marcador derivan de una única lista de juegos, así que añadir un juego es un cambio aditivo de tres ficheros.",
+      ],
+    },
+    metrics: [
+      { en: "22 mini-games", es: "22 minijuegos" },
+      { en: "22 live multiplayer", es: "22 con multijugador" },
+      { en: "6+ real AI algorithms", es: "6+ algoritmos de IA reales" },
+      { en: "EN · ES bilingual", es: "Bilingüe EN · ES" },
+    ],
+  },
+  {
     id: "book-piece",
     name: "Book Piece",
     category: "web",

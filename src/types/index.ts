@@ -25,6 +25,8 @@ export interface Project {
   /** Public source repo vs. public showcase of a private codebase. */
   repoType: RepoType;
   github: string;
+  /** Optional live/deployed demo URL — only set for projects that host one. */
+  liveUrl?: string;
   /** Optional short badge, e.g. "Open source · MIT" or "Showcase". */
   badge?: Localized;
   /** Marks a project built together with another developer. */

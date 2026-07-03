@@ -46,6 +46,24 @@ export function ProjectBadges({ project }: { project: Project }) {
   );
 }
 
+/** Link to a hosted live demo — only rendered for projects that set `liveUrl`. */
+export function DemoLink({ project }: { project: Project }) {
+  const { t } = useI18n();
+  if (!project.liveUrl) return null;
+  return (
+    <a
+      href={project.liveUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="group/link inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent/80"
+    >
+      <ExternalIcon className="h-4 w-4" />
+      {t.projects.viewDemo}
+      <ArrowIcon className="h-4 w-4 transition-transform group-hover/link:translate-x-0.5" />
+    </a>
+  );
+}
+
 /** Link to the repository, labelled by repo type. */
 export function RepoLink({ project }: { project: Project }) {
   const { t } = useI18n();
@@ -135,9 +153,31 @@ export function ProjectCard({ project }: { project: Project }) {
             <TechTag key={tech}>{tech}</TechTag>
           ))}
         </div>
-        <RepoLink project={project} />
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <DemoLink project={project} />
+          <RepoLink project={project} />
+        </div>
       </div>
     </article>
+  );
+}
+
+function ExternalIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M15 3h6v6" />
+      <path d="M10 14 21 3" />
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    </svg>
   );
 }
 

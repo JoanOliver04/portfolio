@@ -3,7 +3,7 @@
 import type { Project } from "@/types";
 import { useI18n } from "@/i18n/I18nProvider";
 import { TechTag, MetricPill } from "@/components/ui/primitives";
-import { ProjectBadges, RepoLink, categoryLabel } from "@/components/projects/ProjectCard";
+import { DemoLink, ProjectBadges, RepoLink, categoryLabel } from "@/components/projects/ProjectCard";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
 
 /**
@@ -79,6 +79,7 @@ export function FlagshipCard({ project }: { project: Project }) {
           ) : null}
 
           <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <DemoLink project={project} />
             <RepoLink project={project} />
             <div className="flex flex-wrap gap-1.5">
               {project.tech.map((tech) => (

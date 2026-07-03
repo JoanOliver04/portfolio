@@ -62,6 +62,7 @@ const en = {
     engineering: "Engineering",
     viewSource: "View source",
     viewShowcase: "View showcase",
+    viewDemo: "Live demo",
     moreTitle: "Foundations",
     moreSubtitle:
       "Earlier, broader product work from my vocational training — full applications, front to back.",
@@ -180,6 +181,7 @@ const es: Dictionary = {
     engineering: "Ingeniería",
     viewSource: "Ver código",
     viewShowcase: "Ver muestra",
+    viewDemo: "Ver demo",
     moreTitle: "Fundamentos",
     moreSubtitle:
       "Trabajo de producto más amplio de mi formación — aplicaciones completas, de principio a fin.",
