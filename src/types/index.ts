@@ -72,3 +72,23 @@ export interface SkillGroup {
   title: Localized;
   items: string[];
 }
+
+export interface DeveloperTool {
+  id: string;
+  name: string;
+  description: Localized;
+  details: Localized;
+  highlights: LocalizedList;
+  image?: {
+    src: string;
+    alt: Localized;
+    width: number;
+    height: number;
+  };
+  technologies: string[];
+  badge: Localized;
+  metadata: Localized;
+  repositoryUrl: string;
+  releaseUrl?: string;
+  license: string;
+}

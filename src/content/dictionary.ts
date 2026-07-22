@@ -26,6 +26,7 @@ const en = {
     galleryNext: "Next screenshot",
     galleryGoTo: "Go to screenshot",
     gallery: "Product screenshots",
+    opensNewTab: "opens in a new tab",
   },
   hero: {
     eyebrow: "Full-Stack Developer",
@@ -77,6 +78,14 @@ const en = {
       best: "best",
       footer: "Fuel + travel + time + traffic",
     },
+  },
+  developerTools: {
+    eyebrow: "Public developer utilities",
+    title: "Developer Tools",
+    subtitle:
+      "Smaller open-source tools built to solve practical engineering workflows.",
+    viewSource: "View source",
+    downloadWindows: "Download for Windows",
   },
   tech: {
     eyebrow: "Technical focus",
@@ -145,6 +154,7 @@ const es: Dictionary = {
     galleryNext: "Captura siguiente",
     galleryGoTo: "Ir a la captura",
     gallery: "Capturas del producto",
+    opensNewTab: "se abre en una pestaña nueva",
   },
   hero: {
     eyebrow: "Desarrollador Full-Stack",
@@ -196,6 +206,14 @@ const es: Dictionary = {
       best: "mejor",
       footer: "Combustible + trayecto + tiempo + tráfico",
     },
+  },
+  developerTools: {
+    eyebrow: "Utilidades públicas para desarrollo",
+    title: "Herramientas para desarrolladores",
+    subtitle:
+      "Herramientas de código abierto creadas para resolver flujos de trabajo técnicos reales.",
+    viewSource: "Ver código",
+    downloadWindows: "Descargar para Windows",
   },
   tech: {
     eyebrow: "Áreas técnicas",

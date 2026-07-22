@@ -21,7 +21,7 @@ ready · no server, no database, no environment variables.
 
 ## Featured work
 
-The site presents five complete projects, each with a screenshot gallery, a problem
+The site presents five featured projects, each with a screenshot gallery, a problem
 statement and engineering highlights:
 
 | Project | What it is | Stack |
@@ -31,6 +31,21 @@ statement and engineering highlights:
 | [Data Detective](https://github.com/JoanOliver04/Data_Detective) | Quasi-experimental measurement of how mass events move Valencia's air quality — 123 tests, 90% coverage, CI | Python · pandas · Streamlit |
 | [Book Piece](https://github.com/JoanOliver04/book-piece-showcase) | Marketplace and reading companion for books, comics and manga | Angular · PHP · MySQL |
 | [Brain Craft](https://github.com/JoanOliver04/brain-craft-showcase) | Trivia quiz reimagined as a turn-based RPG | Vanilla JS · Firebase |
+
+---
+
+## Developer Tools
+
+Below the five featured projects, the site includes a smaller **Developer Tools**
+section for practical public utilities that should not compete with the main
+project hierarchy:
+
+- [Media Batch Converter](https://github.com/JoanOliver04/media-batch-converter) —
+  an open-source MIT-licensed Python desktop application for local batch
+  conversion and optimization of images, audio and video with Pillow and FFmpeg.
+
+This project is presented as a secondary open-source tool, not as a featured
+flagship project.
 
 ---
 

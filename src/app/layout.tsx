@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     "Data",
     "Valencia",
     "Software Developer Portfolio",
+    "Open Source Developer Tools",
+    "Desktop Applications",
+    "FFmpeg",
   ],
   alternates: {
     canonical: "/",
