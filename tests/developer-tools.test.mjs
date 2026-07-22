@@ -14,6 +14,9 @@ test("developer tool content is bilingual, public and open source", async () => 
   assert.match(content, /Open Source/);
   assert.match(content, /Código abierto/);
   assert.match(content, /MIT License/);
+  assert.equal([...content.matchAll(/media-batch-converter\/[a-z]+-tab\.png/g)].length, 3);
+  assert.match(content, /Image conversion with WebP modes/);
+  assert.match(content, /Conversión de vídeo con controles/);
   assert.doesNotMatch(content, /releaseUrl\s*:/);
 
   for (const confidentialTerm of ["private application", "asset pipeline", "game project", "character name"]) {
@@ -28,4 +31,5 @@ test("external actions are safe and the release action is optional", async () =>
   assert.match(component, /rel="noopener noreferrer"/);
   assert.match(component, /tool\.releaseUrl \?/);
   assert.match(component, /t\.a11y\.opensNewTab/);
+  assert.match(component, /ProjectGallery images=\{tool\.images\}/);
 });

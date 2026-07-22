@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { developerTools } from "@/content/developerTools";
 import { useI18n } from "@/i18n/I18nProvider";
 import { ArrowIcon, Container, GitHubIcon, Section, TechTag } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
+import { ProjectGallery } from "@/components/projects/ProjectGallery";
 
 export function DeveloperTools() {
   const { locale, t } = useI18n();
@@ -27,16 +27,9 @@ export function DeveloperTools() {
           {developerTools.map((tool, index) => (
             <Reveal key={tool.id} as="div" delay={index * 80}>
               <article className="grid overflow-hidden rounded-lg border border-border bg-surface/70 transition-colors hover:border-accent/35 md:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
-                {tool.image ? (
+                {tool.images ? (
                   <div className="flex items-center border-b border-border bg-surface-2/60 p-3 md:border-b-0 md:border-r sm:p-4">
-                    <Image
-                      src={tool.image.src}
-                      alt={tool.image.alt[locale]}
-                      width={tool.image.width}
-                      height={tool.image.height}
-                      sizes="(max-width: 767px) 100vw, 440px"
-                      className="h-auto w-full rounded-md border border-border object-contain"
-                    />
+                    <ProjectGallery images={tool.images} className="w-full" />
                   </div>
                 ) : null}
 

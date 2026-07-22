@@ -79,12 +79,8 @@ export interface DeveloperTool {
   description: Localized;
   details: Localized;
   highlights: LocalizedList;
-  image?: {
-    src: string;
-    alt: Localized;
-    width: number;
-    height: number;
-  };
+  images?: ProjectImage[];
+
   technologies: string[];
   badge: Localized;
   metadata: Localized;

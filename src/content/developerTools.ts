@@ -30,15 +30,29 @@ export const developerTools: DeveloperTool[] = [
         "Políticas de salida seguras, informes JSON y sumas SHA-256.",
       ],
     },
-    image: {
-      src: "/projects/media-batch-converter/images-tab.png",
-      alt: {
-        en: "Media Batch Converter desktop interface showing batch media conversion settings",
-        es: "Interfaz de escritorio de Media Batch Converter con opciones de conversión multimedia por lotes",
+    images: [
+      {
+        src: "/projects/media-batch-converter/images-tab.png",
+        caption: {
+          en: "Image conversion with WebP modes, resizing and batch settings",
+          es: "Conversión de imágenes con modos WebP, redimensionado y ajustes por lotes",
+        },
       },
-      width: 1121,
-      height: 957,
-    },
+      {
+        src: "/projects/media-batch-converter/audio-tab.png",
+        caption: {
+          en: "Audio conversion with reusable presets and FFmpeg settings",
+          es: "Conversión de audio con presets reutilizables y ajustes de FFmpeg",
+        },
+      },
+      {
+        src: "/projects/media-batch-converter/video-tab.png",
+        caption: {
+          en: "Video conversion with resolution, codec and aspect-ratio controls",
+          es: "Conversión de vídeo con controles de resolución, códec y relación de aspecto",
+        },
+      },
+    ],
     technologies: ["Python", "Tkinter", "Pillow", "FFmpeg", "PyInstaller"],
     badge: { en: "Open Source", es: "Código abierto" },
     metadata: {
