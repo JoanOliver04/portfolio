@@ -13,20 +13,24 @@ export const developerTools: DeveloperTool[] = [
       es: "Herramienta de escritorio de código abierto para convertir y optimizar imágenes, audio y vídeo de forma individual o por lotes. Incluye procesamiento recursivo de carpetas, presets reutilizables, optimización específica por formato e informes detallados.",
     },
     details: {
-      en: "A local-first Python desktop utility that preserves source files and provides explicit control over quality, resizing, naming, collision policies and output validation.",
-      es: "Una utilidad local desarrollada en Python que conserva los archivos originales y permite controlar la calidad, el redimensionado, los nombres, las colisiones y la validación de resultados.",
+      en: "A local-first Python desktop utility that never modifies the source files and gives explicit control over quality, resizing, naming, collision policies and output validation. The interface ships in Spanish and English and switches without restarting.",
+      es: "Una utilidad local desarrollada en Python que nunca modifica los archivos originales y permite controlar la calidad, el redimensionado, los nombres, las colisiones y la validación de resultados. La interfaz está disponible en español e inglés y se cambia sin reiniciar.",
     },
     highlights: {
       en: [
         "Recursive batch processing with preserved folder structure.",
         "WebP modes, image resizing and reusable conversion presets.",
         "FFmpeg-powered audio and video conversion.",
+        "Multi-resolution ICO favicons from any source image.",
+        "Bilingual interface switched at runtime, Spanish and English.",
         "Safe output policies, JSON reports and SHA-256 checksums.",
       ],
       es: [
         "Procesamiento recursivo por lotes conservando la estructura de carpetas.",
         "Modos WebP, redimensionado y presets de conversión reutilizables.",
         "Conversión de audio y vídeo mediante FFmpeg.",
+        "Favicons ICO multirresolución a partir de cualquier imagen.",
+        "Interfaz bilingüe conmutable en caliente, español e inglés.",
         "Políticas de salida seguras, informes JSON y sumas SHA-256.",
       ],
     },

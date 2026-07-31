@@ -19,6 +19,12 @@ test("developer tool content is bilingual, public and open source", async () => 
   assert.match(content, /Conversión de vídeo con controles/);
   assert.doesNotMatch(content, /releaseUrl\s*:/);
 
+  // Capabilities the entry claims; each one is visible in the public repository.
+  assert.match(content, /Bilingual interface switched at runtime/);
+  assert.match(content, /Interfaz bilingüe conmutable/);
+  assert.match(content, /Multi-resolution ICO favicons/);
+  assert.match(content, /Favicons ICO multirresolución/);
+
   for (const confidentialTerm of ["private application", "asset pipeline", "game project", "character name"]) {
     assert.doesNotMatch(content.toLowerCase(), new RegExp(confidentialTerm));
   }
