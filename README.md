@@ -21,12 +21,13 @@ ready · no server, no database, no environment variables.
 
 ## Featured work
 
-The site presents five featured projects, each with a screenshot gallery, a problem
+The site presents seven featured projects, each with a screenshot gallery, a problem
 statement and engineering highlights:
 
 | Project | What it is | Stack |
 | --- | --- | --- |
 | [Data Fuel](https://github.com/JoanOliver04/Data_Fuel) | Find the cheapest fill-up by **total cost** (fuel + the drive), with explainable ML price forecasts — 690 tests, 86% coverage | FastAPI · React · scikit-learn · SHAP |
+| [Planora](https://github.com/JoanOliver04/planora) | Deeply personalizable, offline-first planning for tasks, habits, schedules and events — with a public interactive demo | Next.js 16 · Supabase · PostgreSQL · PWA |
 | [FitPrompt](https://github.com/JoanOliver04/FitPrompt) | Conversational AI coach that turns a real user profile into training and nutrition plans — team project, 2 developers | Next.js · Prisma · Groq / Llama 3.3 · Stripe |
 | [Data Detective](https://github.com/JoanOliver04/Data_Detective) | Quasi-experimental measurement of how mass events move Valencia's air quality — 123 tests, 90% coverage, CI | Python · pandas · Streamlit |
 | [Book Piece](https://github.com/JoanOliver04/book-piece-showcase) | Marketplace and reading companion for books, comics and manga | Angular · PHP · MySQL |
@@ -36,7 +37,7 @@ statement and engineering highlights:
 
 ## Developer Tools
 
-Below the five featured projects, the site includes a smaller **Developer Tools**
+Below the seven featured projects, the site includes a smaller **Developer Tools**
 section for practical public utilities that should not compete with the main
 project hierarchy:
 
