@@ -1,7 +1,7 @@
 import type { DeveloperTool } from "@/types";
 
 /**
- * Independent public products and utilities shown separately from academic
+ * Public productivity products and developer utilities shown separately from academic
  * portfolio work. Entries must link only to verifiable public resources.
  */
 const portfolioProducts: DeveloperTool[] = [
@@ -112,7 +112,7 @@ const portfolioProducts: DeveloperTool[] = [
   },
 ];
 
-export const independentProducts = portfolioProducts.filter(
+export const productivityApps = portfolioProducts.filter(
   (item) => item.id === "planora",
 );
 export const developerTools = portfolioProducts.filter(

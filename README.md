@@ -34,13 +34,16 @@ statement and engineering highlights:
 
 ---
 
-## Independent Products
+## Productivity Apps
 
-[Planora](https://github.com/JoanOliver04/planora) has its own **Independent
-Products** section: an independently conceived, designed, built and shipped
-planning product, separate from academic DAW/DAM work. It combines deep
-personalization, offline-first behavior, Supabase synchronization, configurable
-alarms, a live public demo and a complete automated test suite.
+The **Productivity Apps** section brings together digital products designed to
+simplify processes, improve efficiency and support everyday personal and
+professional life. It can grow naturally as new productivity products are added.
+
+[Planora](https://github.com/JoanOliver04/planora) is the first product in this
+section, with deep personalization, offline-first behavior, Supabase
+synchronization, configurable alarms, a live public demo and a complete
+automated test suite.
 
 ## Developer Tools
 

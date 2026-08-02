@@ -79,11 +79,11 @@ const en = {
       footer: "Fuel + travel + time + traffic",
     },
   },
-  independentProducts: {
-    eyebrow: "Built independently",
-    title: "Independent Products",
+  productivityApps: {
+    eyebrow: "Tools for everyday life",
+    title: "Productivity Apps",
     subtitle:
-      "End-to-end products conceived, designed, built and shipped outside academic coursework.",
+      "Digital products designed to simplify processes, improve efficiency and make everyday life easier, both personally and professionally.",
     viewSource: "View source",
     liveDemo: "Open live product",
     downloadWindows: "Download for Windows",
@@ -216,11 +216,11 @@ const es: Dictionary = {
       footer: "Combustible + trayecto + tiempo + tráfico",
     },
   },
-  independentProducts: {
-    eyebrow: "Creado por iniciativa propia",
-    title: "Productos propios",
+  productivityApps: {
+    eyebrow: "Herramientas para el día a día",
+    title: "Aplicaciones de productividad",
     subtitle:
-      "Productos completos concebidos, diseñados, desarrollados y publicados fuera de proyectos académicos.",
+      "Productos digitales diseñados para simplificar procesos, mejorar la eficiencia y facilitar el día a día, tanto personal como profesional.",
     viewSource: "Ver código",
     liveDemo: "Abrir producto online",
     downloadWindows: "Descargar para Windows",

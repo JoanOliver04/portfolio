@@ -3,15 +3,15 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const contentPath = new URL("../src/content/developerTools.ts", import.meta.url);
-const componentPath = new URL("../src/components/sections/IndependentProducts.tsx", import.meta.url);
+const componentPath = new URL("../src/components/sections/ProductivityApps.tsx", import.meta.url);
 const pagePath = new URL("../src/app/page.tsx", import.meta.url);
 const projectsPath = new URL("../src/content/projects.ts", import.meta.url);
 
-test("Planora is presented as a bilingual independent product", async () => {
+test("Planora is presented as a bilingual productivity app", async () => {
   const content = await readFile(contentPath, "utf8");
 
   assert.match(content, /id: "planora"/);
-  assert.match(content, /export const independentProducts/);
+  assert.match(content, /export const productivityApps/);
   assert.match(content, /item\.id === "planora"/);
   assert.match(content, /https:\/\/planora-lake-one\.vercel\.app\/en/);
   assert.match(content, /https:\/\/github\.com\/JoanOliver04\/planora/);
@@ -27,12 +27,12 @@ test("Planora is presented as a bilingual independent product", async () => {
   assert.doesNotMatch(academicProjects, /id: "planora"/);
 });
 
-test("Planora has a dedicated section before developer tools", async () => {
+test("Planora has a productivity section before developer tools", async () => {
   const component = await readFile(componentPath, "utf8");
   const page = await readFile(pagePath, "utf8");
 
-  assert.match(component, /independentProducts\.map/);
-  assert.match(component, /t\.independentProducts/);
-  assert.match(component, /id="independent-products"/);
-  assert.ok(page.indexOf("<IndependentProducts />") < page.indexOf("<DeveloperTools />"));
+  assert.match(component, /productivityApps\.map/);
+  assert.match(component, /t\.productivityApps/);
+  assert.match(component, /id="productivity-apps"/);
+  assert.ok(page.indexOf("<ProductivityApps />") < page.indexOf("<DeveloperTools />"));
 });

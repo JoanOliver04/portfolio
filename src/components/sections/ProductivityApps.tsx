@@ -1,31 +1,31 @@
 "use client";
 
-import { independentProducts } from "@/content/developerTools";
+import { productivityApps } from "@/content/developerTools";
 import { useI18n } from "@/i18n/I18nProvider";
 import { ArrowIcon, Container, GitHubIcon, Section, TechTag } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
 
-export function IndependentProducts() {
+export function ProductivityApps() {
   const { locale, t } = useI18n();
 
   return (
-    <Section id="independent-products" className="relative overflow-hidden py-16 sm:py-24">
+    <Section id="productivity-apps" className="relative overflow-hidden py-16 sm:py-24">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,color-mix(in_srgb,var(--color-accent)_10%,transparent),transparent_38%)]" />
       <Container className="relative">
         <div className="max-w-2xl">
           <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-label text-accent">
             <span aria-hidden="true" className="h-px w-6 bg-accent/60" />
-            {t.independentProducts.eyebrow}
+            {t.productivityApps.eyebrow}
           </p>
           <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-text sm:text-3xl">
-            {t.independentProducts.title}
+            {t.productivityApps.title}
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted">{t.independentProducts.subtitle}</p>
+          <p className="mt-3 text-sm leading-relaxed text-muted">{t.productivityApps.subtitle}</p>
         </div>
 
         <div className="mt-8 grid gap-5">
-          {independentProducts.map((tool, index) => (
+          {productivityApps.map((tool, index) => (
             <Reveal key={tool.id} as="div" delay={index * 80}>
               <article className="grid overflow-hidden rounded-lg border border-border bg-surface/70 transition-colors hover:border-accent/35 md:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
                 {tool.images ? (
@@ -72,7 +72,7 @@ export function IndependentProducts() {
                       className="group/link inline-flex items-center gap-2 text-sm font-medium text-text transition-colors hover:text-accent"
                     >
                       <GitHubIcon className="h-4 w-4" />
-                      {t.independentProducts.viewSource}
+                      {t.productivityApps.viewSource}
                       <span className="sr-only">({t.a11y.opensNewTab})</span>
                       <ArrowIcon className="h-4 w-4 transition-transform group-hover/link:translate-x-0.5" />
                     </a>
@@ -84,7 +84,7 @@ export function IndependentProducts() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-accent"
                       >
-                        {t.independentProducts.downloadWindows}
+                        {t.productivityApps.downloadWindows}
                         <span className="sr-only">({t.a11y.opensNewTab})</span>
                         <ArrowIcon className="h-4 w-4" />
                       </a>
@@ -97,7 +97,7 @@ export function IndependentProducts() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-accent"
                       >
-                        {t.independentProducts.liveDemo}
+                        {t.productivityApps.liveDemo}
                         <span className="sr-only">({t.a11y.opensNewTab})</span>
                         <ArrowIcon className="h-4 w-4" />
                       </a>
