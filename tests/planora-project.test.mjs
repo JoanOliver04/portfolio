@@ -20,8 +20,10 @@ test("Planora is presented as a bilingual productivity app", async () => {
   assert.equal([...content.matchAll(/\/projects\/planora\/\d{2}-[a-z-]+\.png/g)].length, 6);
   assert.match(content, /Personal project · In production/);
   assert.match(content, /Proyecto personal · En producción/);
-  assert.match(content, /71 unit\/component tests/);
-  assert.match(content, /71 tests unitarios\/de componentes/);
+  assert.match(content, /117 unit\/component tests/);
+  assert.match(content, /117 tests unitarios\/de componentes/);
+  assert.match(content, /22 browser scenarios/);
+  assert.match(content, /22 escenarios de navegador/);
 
   const academicProjects = await readFile(projectsPath, "utf8");
   assert.doesNotMatch(academicProjects, /id: "planora"/);

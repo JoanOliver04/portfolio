@@ -41,9 +41,9 @@ simplify processes, improve efficiency and support everyday personal and
 professional life. It can grow naturally as new productivity products are added.
 
 [Planora](https://github.com/JoanOliver04/planora) is the first product in this
-section, with deep personalization, offline-first behavior, Supabase
-synchronization, configurable alarms, a live public demo and a complete
-automated test suite.
+section, with deep personalization, privacy-conscious offline behavior, hardened
+Supabase synchronization, configurable alarms, a live public demo and 139
+automated unit, component and browser checks.
 
 ## Developer Tools
 
