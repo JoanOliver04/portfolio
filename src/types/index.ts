@@ -85,6 +85,7 @@ export interface DeveloperTool {
   badge: Localized;
   metadata: Localized;
   repositoryUrl: string;
+  liveUrl?: string;
   releaseUrl?: string;
   license: string;
 }

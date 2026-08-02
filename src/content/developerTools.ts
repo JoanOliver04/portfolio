@@ -1,10 +1,54 @@
 import type { DeveloperTool } from "@/types";
 
 /**
- * Compact public utilities shown separately from the portfolio's flagship
- * product work. Entries must link only to verifiable public resources.
+ * Independent public products and utilities shown separately from academic
+ * portfolio work. Entries must link only to verifiable public resources.
  */
 export const developerTools: DeveloperTool[] = [
+  {
+    id: "planora",
+    name: "Planora",
+    description: {
+      en: "Independent, deeply personalizable planner for tasks, habits, schedules and events, designed for routines that keep changing.",
+      es: "Planificador independiente y muy personalizable para tareas, hábitos, horarios y eventos, diseñado para rutinas que no dejan de cambiar.",
+    },
+    details: {
+      en: "A personal full-stack product built outside the classroom. It combines a timezone-safe recurrence engine, offline-first PWA behavior, secure Supabase sync, reminders, statistics, portable backups and a complete public demo with isolated sample data.",
+      es: "Un producto full-stack personal creado fuera del aula. Combina recurrencias seguras por zona horaria, funcionamiento PWA offline-first, sincronización segura con Supabase, recordatorios, estadísticas, copias portables y una demo pública completa con datos aislados.",
+    },
+    highlights: {
+      en: [
+        "Multiple schedules, recurring habits, events, reminders and progress statistics.",
+        "Offline mutation queue with conflict handling and visible synchronization state.",
+        "Deep personalization of color, density, typography, motion and day structure.",
+        "Google OAuth, Supabase RLS, versioned backups and optional cookie-free analytics.",
+        "65 unit/component tests, 16 browser scenarios and automated CI audits.",
+        "Public no-registration demo with isolated browser data.",
+      ],
+      es: [
+        "Múltiples horarios, hábitos recurrentes, eventos, recordatorios y estadísticas de progreso.",
+        "Cola de cambios offline con gestión de conflictos y estado de sincronización visible.",
+        "Personalización profunda de color, densidad, tipografía, movimiento y estructura diaria.",
+        "Google OAuth, RLS de Supabase, copias versionadas y analítica opcional sin cookies.",
+        "65 tests unitarios/de componentes, 16 escenarios de navegador y auditorías automáticas en CI.",
+        "Demo pública sin registro con datos aislados en el navegador.",
+      ],
+    },
+    images: [
+      { src: "/projects/planora/01-landing.png", caption: { en: "A focused public product experience", es: "Una experiencia de producto pública y cuidada" } },
+      { src: "/projects/planora/02-today.png", caption: { en: "Daily progress and flexible routines", es: "Progreso diario y rutinas flexibles" } },
+      { src: "/projects/planora/03-week.png", caption: { en: "The complete week at a glance", es: "La semana completa de un vistazo" } },
+      { src: "/projects/planora/04-tasks.png", caption: { en: "Recurring tasks without a rigid system", es: "Tareas recurrentes sin un sistema rígido" } },
+      { src: "/projects/planora/05-settings.png", caption: { en: "Appearance and behavior adapt to the user", es: "Apariencia y comportamiento adaptados al usuario" } },
+      { src: "/projects/planora/06-mobile.png", caption: { en: "A touch-first mobile workspace", es: "Un espacio móvil pensado para el tacto" } },
+    ],
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Supabase", "PostgreSQL", "PWA", "Playwright", "Zod"],
+    badge: { en: "Independent product", es: "Producto independiente" },
+    metadata: { en: "Personal project · Live product", es: "Proyecto personal · Producto online" },
+    repositoryUrl: "https://github.com/JoanOliver04/planora",
+    liveUrl: "https://planora-lake-one.vercel.app/en",
+    license: "Source available",
+  },
   {
     id: "media-batch-converter",
     name: "Media Batch Converter",

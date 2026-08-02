@@ -88,6 +88,19 @@ export function DeveloperTools() {
                         <ArrowIcon className="h-4 w-4" />
                       </a>
                     ) : null}
+
+                    {tool.liveUrl ? (
+                      <a
+                        href={tool.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-accent"
+                      >
+                        {t.developerTools.liveDemo}
+                        <span className="sr-only">({t.a11y.opensNewTab})</span>
+                        <ArrowIcon className="h-4 w-4" />
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               </article>

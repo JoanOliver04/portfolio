@@ -46,7 +46,7 @@ const en = {
   },
   proof: {
     items: [
-      { value: "7", label: "Featured projects" },
+      { value: "6", label: "Featured projects" },
       { value: "2", label: "Higher vocational degrees" },
       { value: "AI · Big Data", label: "Specialization completed" },
       { value: "800+", label: "Automated tests written" },
@@ -83,8 +83,9 @@ const en = {
     eyebrow: "Public developer utilities",
     title: "Developer Tools",
     subtitle:
-      "Smaller open-source tools built to solve practical engineering workflows.",
+      "Independent products and open-source tools built outside academic coursework.",
     viewSource: "View source",
+    liveDemo: "Open live product",
     downloadWindows: "Download for Windows",
   },
   tech: {
@@ -174,7 +175,7 @@ const es: Dictionary = {
   },
   proof: {
     items: [
-      { value: "7", label: "Proyectos destacados" },
+      { value: "6", label: "Proyectos destacados" },
       { value: "2", label: "Ciclos de grado superior" },
       { value: "IA · Big Data", label: "Especialización completada" },
       { value: "800+", label: "Tests automatizados escritos" },
@@ -211,8 +212,9 @@ const es: Dictionary = {
     eyebrow: "Utilidades públicas para desarrollo",
     title: "Herramientas para desarrolladores",
     subtitle:
-      "Herramientas de código abierto creadas para resolver flujos de trabajo técnicos reales.",
+      "Productos independientes y herramientas de código abierto creados fuera de proyectos académicos.",
     viewSource: "Ver código",
+    liveDemo: "Abrir producto online",
     downloadWindows: "Descargar para Windows",
   },
   tech: {
