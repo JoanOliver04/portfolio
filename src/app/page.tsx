@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { ProofStrip } from "@/components/sections/ProofStrip";
 import { Projects } from "@/components/sections/Projects";
 import { TechnicalFocus } from "@/components/sections/TechnicalFocus";
+import { IndependentProducts } from "@/components/sections/IndependentProducts";
 import { DeveloperTools } from "@/components/sections/DeveloperTools";
 import { Experience } from "@/components/sections/Experience";
 import { Education } from "@/components/sections/Education";
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <ProofStrip />
         <Projects />
+        <IndependentProducts />
         <DeveloperTools />
         <TechnicalFocus />
         <Experience />

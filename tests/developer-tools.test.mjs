@@ -8,6 +8,8 @@ const componentPath = new URL("../src/components/sections/DeveloperTools.tsx", i
 test("developer tool content is bilingual, public and open source", async () => {
   const content = await readFile(contentPath, "utf8");
 
+  assert.match(content, /export const developerTools = portfolioProducts\.filter/);
+  assert.match(content, /item\.id !== "planora"/);
   assert.match(content, /Open-source desktop tool/);
   assert.match(content, /Herramienta de escritorio de código abierto/);
   assert.match(content, /https:\/\/github\.com\/JoanOliver04\/media-batch-converter/);

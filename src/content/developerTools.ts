@@ -4,7 +4,7 @@ import type { DeveloperTool } from "@/types";
  * Independent public products and utilities shown separately from academic
  * portfolio work. Entries must link only to verifiable public resources.
  */
-export const developerTools: DeveloperTool[] = [
+const portfolioProducts: DeveloperTool[] = [
   {
     id: "planora",
     name: "Planora",
@@ -18,19 +18,19 @@ export const developerTools: DeveloperTool[] = [
     },
     highlights: {
       en: [
-        "Multiple schedules, recurring habits, events, reminders and progress statistics.",
+        "Multiple schedules, recurring habits, events, customizable alarms and progress statistics.",
         "Offline mutation queue with conflict handling and visible synchronization state.",
         "Deep personalization of color, density, typography, motion and day structure.",
         "Google OAuth, Supabase RLS, versioned backups and optional cookie-free analytics.",
-        "65 unit/component tests, 16 browser scenarios and automated CI audits.",
+        "71 unit/component tests, 16 browser scenarios and automated CI audits.",
         "Public no-registration demo with isolated browser data.",
       ],
       es: [
-        "Múltiples horarios, hábitos recurrentes, eventos, recordatorios y estadísticas de progreso.",
+        "Múltiples horarios, hábitos recurrentes, eventos, alarmas personalizables y estadísticas de progreso.",
         "Cola de cambios offline con gestión de conflictos y estado de sincronización visible.",
         "Personalización profunda de color, densidad, tipografía, movimiento y estructura diaria.",
         "Google OAuth, RLS de Supabase, copias versionadas y analítica opcional sin cookies.",
-        "65 tests unitarios/de componentes, 16 escenarios de navegador y auditorías automáticas en CI.",
+        "71 tests unitarios/de componentes, 16 escenarios de navegador y auditorías automáticas en CI.",
         "Demo pública sin registro con datos aislados en el navegador.",
       ],
     },
@@ -43,8 +43,8 @@ export const developerTools: DeveloperTool[] = [
       { src: "/projects/planora/06-mobile.png", caption: { en: "A touch-first mobile workspace", es: "Un espacio móvil pensado para el tacto" } },
     ],
     technologies: ["Next.js 16", "React 19", "TypeScript", "Supabase", "PostgreSQL", "PWA", "Playwright", "Zod"],
-    badge: { en: "Independent product", es: "Producto independiente" },
-    metadata: { en: "Personal project · Live product", es: "Proyecto personal · Producto online" },
+    badge: { en: "Live product", es: "Producto online" },
+    metadata: { en: "Personal project · In production", es: "Proyecto personal · En producción" },
     repositoryUrl: "https://github.com/JoanOliver04/planora",
     liveUrl: "https://planora-lake-one.vercel.app/en",
     license: "Source available",
@@ -111,3 +111,10 @@ export const developerTools: DeveloperTool[] = [
     license: "MIT",
   },
 ];
+
+export const independentProducts = portfolioProducts.filter(
+  (item) => item.id === "planora",
+);
+export const developerTools = portfolioProducts.filter(
+  (item) => item.id !== "planora",
+);

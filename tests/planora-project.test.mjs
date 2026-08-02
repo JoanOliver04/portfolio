@@ -3,18 +3,36 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const contentPath = new URL("../src/content/developerTools.ts", import.meta.url);
+const componentPath = new URL("../src/components/sections/IndependentProducts.tsx", import.meta.url);
+const pagePath = new URL("../src/app/page.tsx", import.meta.url);
 const projectsPath = new URL("../src/content/projects.ts", import.meta.url);
 
-test("Planora is presented as a bilingual live product", async () => {
+test("Planora is presented as a bilingual independent product", async () => {
   const content = await readFile(contentPath, "utf8");
+
   assert.match(content, /id: "planora"/);
+  assert.match(content, /export const independentProducts/);
+  assert.match(content, /item\.id === "planora"/);
   assert.match(content, /https:\/\/planora-lake-one\.vercel\.app\/en/);
   assert.match(content, /https:\/\/github\.com\/JoanOliver04\/planora/);
   assert.match(content, /Independent, deeply personalizable planner/);
   assert.match(content, /Planificador independiente y muy personalizable/);
   assert.equal([...content.matchAll(/\/projects\/planora\/\d{2}-[a-z-]+\.png/g)].length, 6);
-  assert.match(content, /Personal project · Live product/);
-  assert.match(content, /Proyecto personal · Producto online/);
+  assert.match(content, /Personal project · In production/);
+  assert.match(content, /Proyecto personal · En producción/);
+  assert.match(content, /71 unit\/component tests/);
+  assert.match(content, /71 tests unitarios\/de componentes/);
+
   const academicProjects = await readFile(projectsPath, "utf8");
   assert.doesNotMatch(academicProjects, /id: "planora"/);
+});
+
+test("Planora has a dedicated section before developer tools", async () => {
+  const component = await readFile(componentPath, "utf8");
+  const page = await readFile(pagePath, "utf8");
+
+  assert.match(component, /independentProducts\.map/);
+  assert.match(component, /t\.independentProducts/);
+  assert.match(component, /id="independent-products"/);
+  assert.ok(page.indexOf("<IndependentProducts />") < page.indexOf("<DeveloperTools />"));
 });

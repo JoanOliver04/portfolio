@@ -34,20 +34,20 @@ statement and engineering highlights:
 
 ---
 
+## Independent Products
+
+[Planora](https://github.com/JoanOliver04/planora) has its own **Independent
+Products** section: an independently conceived, designed, built and shipped
+planning product, separate from academic DAW/DAM work. It combines deep
+personalization, offline-first behavior, Supabase synchronization, configurable
+alarms, a live public demo and a complete automated test suite.
+
 ## Developer Tools
 
-Below the six featured projects, the site includes a separate **Developer Tools**
-section for independent personal products and practical public utilities:
-
-- [Planora](https://github.com/JoanOliver04/planora) — an independently built,
-  deeply personalizable and offline-first planning product with a live public
-  demo, Supabase synchronization and a complete automated test suite.
-
-- [Media Batch Converter](https://github.com/JoanOliver04/media-batch-converter) —
-  an open-source MIT-licensed Python desktop application for local batch
-  conversion and optimization of images, audio and video with Pillow and FFmpeg.
-
-These projects are presented separately from the academic DAW/DAM work.
+[Media Batch Converter](https://github.com/JoanOliver04/media-batch-converter)
+remains in **Developer Tools**: an open-source MIT-licensed Python desktop
+utility for local batch conversion and optimization of images, audio and video
+with Pillow and FFmpeg.
 
 ---
 

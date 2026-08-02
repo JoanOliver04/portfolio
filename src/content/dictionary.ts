@@ -79,11 +79,19 @@ const en = {
       footer: "Fuel + travel + time + traffic",
     },
   },
+  independentProducts: {
+    eyebrow: "Built independently",
+    title: "Independent Products",
+    subtitle:
+      "End-to-end products conceived, designed, built and shipped outside academic coursework.",
+    viewSource: "View source",
+    liveDemo: "Open live product",
+    downloadWindows: "Download for Windows",
+  },
   developerTools: {
     eyebrow: "Public developer utilities",
     title: "Developer Tools",
-    subtitle:
-      "Independent products and open-source tools built outside academic coursework.",
+    subtitle: "Open-source utilities built to solve practical technical workflows.",
     viewSource: "View source",
     liveDemo: "Open live product",
     downloadWindows: "Download for Windows",
@@ -208,11 +216,20 @@ const es: Dictionary = {
       footer: "Combustible + trayecto + tiempo + tráfico",
     },
   },
+  independentProducts: {
+    eyebrow: "Creado por iniciativa propia",
+    title: "Productos propios",
+    subtitle:
+      "Productos completos concebidos, diseñados, desarrollados y publicados fuera de proyectos académicos.",
+    viewSource: "Ver código",
+    liveDemo: "Abrir producto online",
+    downloadWindows: "Descargar para Windows",
+  },
   developerTools: {
     eyebrow: "Utilidades públicas para desarrollo",
     title: "Herramientas para desarrolladores",
     subtitle:
-      "Productos independientes y herramientas de código abierto creados fuera de proyectos académicos.",
+      "Utilidades de código abierto creadas para resolver flujos de trabajo técnicos reales.",
     viewSource: "Ver código",
     liveDemo: "Abrir producto online",
     downloadWindows: "Descargar para Windows",
