@@ -17,13 +17,20 @@ test("Planora is presented as a bilingual productivity app", async () => {
   assert.match(content, /https:\/\/github\.com\/JoanOliver04\/planora/);
   assert.match(content, /Independent, deeply personalizable planner/);
   assert.match(content, /Planificador independiente y muy personalizable/);
-  assert.equal([...content.matchAll(/\/projects\/planora\/\d{2}-[a-z-]+\.png/g)].length, 6);
+  assert.match(content, /Focus \/ Enfoque/);
+  assert.match(content, /Enfoque: temporizador/);
+  assert.equal(
+    [...content.matchAll(/\/projects\/planora\/\d{2}-[a-z-]+\.png/g)].length,
+    17,
+  );
   assert.match(content, /Personal project · In production/);
   assert.match(content, /Proyecto personal · En producción/);
-  assert.match(content, /117 unit\/component tests/);
-  assert.match(content, /117 tests unitarios\/de componentes/);
-  assert.match(content, /22 browser scenarios/);
-  assert.match(content, /22 escenarios de navegador/);
+  assert.match(content, /323 unit\/component tests/);
+  assert.match(content, /323 tests unitarios\/de componentes/);
+  assert.match(content, /Playwright e2e/);
+  assert.match(content, /e2e con Playwright/);
+  assert.match(content, /14-focus-home\.png/);
+  assert.match(content, /17-mobile-focus\.png/);
 
   const academicProjects = await readFile(projectsPath, "utf8");
   assert.doesNotMatch(academicProjects, /id: "planora"/);

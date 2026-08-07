@@ -9,42 +9,169 @@ const portfolioProducts: DeveloperTool[] = [
     id: "planora",
     name: "Planora",
     description: {
-      en: "Independent, deeply personalizable planner for tasks, habits, schedules and events, designed for routines that keep changing.",
-      es: "Planificador independiente y muy personalizable para tareas, hábitos, horarios y eventos, diseñado para rutinas que no dejan de cambiar.",
+      en: "Independent, deeply personalizable planner for tasks, habits, schedules, events and Focus sessions — built for routines that keep changing.",
+      es: "Planificador independiente y muy personalizable para tareas, hábitos, horarios, eventos y sesiones de Enfoque — pensado para rutinas que no dejan de cambiar.",
     },
     details: {
-      en: "A production-ready full-stack planning product. It combines a timezone-safe recurrence engine, privacy-conscious offline PWA behavior, secure Supabase synchronization, reminders, statistics, portable backups and a complete public demo with isolated sample data.",
-      es: "Un producto de planificación full-stack preparado para producción. Combina recurrencias seguras por zona horaria, funcionamiento PWA offline respetuoso con la privacidad, sincronización segura con Supabase, recordatorios, estadísticas, copias portables y una demo pública completa con datos aislados.",
+      en: "A production-ready full-stack planning product. It combines a timezone-safe recurrence engine, Focus (countdown, stopwatch and flexible cycles), privacy-conscious offline PWA behavior, multi-tab sync, secure Supabase RLS, reminders, statistics, portable JSON backups (schema v4) and a complete public demo with isolated sample data.",
+      es: "Un producto de planificación full-stack preparado para producción. Combina recurrencias seguras por zona horaria, Enfoque (cuenta atrás, cronómetro y ciclos flexibles), PWA offline respetuosa con la privacidad, sincronización multi-pestaña, RLS de Supabase, recordatorios, estadísticas, copias JSON portables (schema v4) y una demo pública completa con datos aislados.",
     },
     highlights: {
       en: [
         "Multiple schedules, recurring habits, events, customizable alarms and progress statistics.",
+        "Focus / Enfoque: timestamp-based timer, presets, structured plans, weekly goals, offline continuation and multi-tab takeover.",
         "Offline mutation queue with conflict handling and visible synchronization state.",
         "Deep personalization of color, density, typography, motion and day structure.",
-        "Google OAuth, authenticated Supabase RLS, private-cache controls, versioned backups and cookie-free analytics.",
-        "117 unit/component tests, 22 browser scenarios and automated security audits in CI.",
+        "Google OAuth, authenticated Supabase RLS, private notes, versioned backups and cookie-free analytics.",
+        "323 unit/component tests, Playwright e2e, Prettier/lint/typecheck and security audits in CI.",
         "Public no-registration demo with isolated browser data.",
       ],
       es: [
         "Múltiples horarios, hábitos recurrentes, eventos, alarmas personalizables y estadísticas de progreso.",
+        "Enfoque: temporizador por timestamps, presets, planes, objetivos semanales, offline y takeover multi-pestaña.",
         "Cola de cambios offline con gestión de conflictos y estado de sincronización visible.",
         "Personalización profunda de color, densidad, tipografía, movimiento y estructura diaria.",
-        "Google OAuth, RLS autenticado de Supabase, control de caché privada, copias versionadas y analítica sin cookies.",
-        "117 tests unitarios/de componentes, 22 escenarios de navegador y auditorías de seguridad automáticas en CI.",
+        "Google OAuth, RLS de Supabase, notas privadas, copias versionadas y analítica sin cookies.",
+        "323 tests unitarios/de componentes, e2e con Playwright, Prettier/lint/typecheck y auditorías en CI.",
         "Demo pública sin registro con datos aislados en el navegador.",
       ],
     },
     images: [
-      { src: "/projects/planora/01-landing.png", caption: { en: "A focused public product experience", es: "Una experiencia de producto pública y cuidada" } },
-      { src: "/projects/planora/02-today.png", caption: { en: "Daily progress and flexible routines", es: "Progreso diario y rutinas flexibles" } },
-      { src: "/projects/planora/03-week.png", caption: { en: "The complete week at a glance", es: "La semana completa de un vistazo" } },
-      { src: "/projects/planora/04-tasks.png", caption: { en: "Recurring tasks without a rigid system", es: "Tareas recurrentes sin un sistema rígido" } },
-      { src: "/projects/planora/05-settings.png", caption: { en: "Appearance and behavior adapt to the user", es: "Apariencia y comportamiento adaptados al usuario" } },
-      { src: "/projects/planora/06-mobile.png", caption: { en: "A touch-first mobile workspace", es: "Un espacio móvil pensado para el tacto" } },
+      {
+        src: "/projects/planora/01-landing.png",
+        caption: {
+          en: "A focused public product experience",
+          es: "Una experiencia de producto pública y cuidada",
+        },
+      },
+      {
+        src: "/projects/planora/02-today.png",
+        caption: {
+          en: "Daily progress and flexible routines",
+          es: "Progreso diario y rutinas flexibles",
+        },
+      },
+      {
+        src: "/projects/planora/03-week.png",
+        caption: {
+          en: "The complete week at a glance",
+          es: "La semana completa de un vistazo",
+        },
+      },
+      {
+        src: "/projects/planora/04-tasks.png",
+        caption: {
+          en: "Recurring tasks without a rigid system",
+          es: "Tareas recurrentes sin un sistema rígido",
+        },
+      },
+      {
+        src: "/projects/planora/05-events.png",
+        caption: {
+          en: "Dated events across schedules",
+          es: "Eventos con fecha en cada horario",
+        },
+      },
+      {
+        src: "/projects/planora/06-history.png",
+        caption: {
+          en: "Immutable completion history",
+          es: "Historial de completados inmutable",
+        },
+      },
+      {
+        src: "/projects/planora/07-schedules.png",
+        caption: {
+          en: "Independent schedules for every context",
+          es: "Horarios independientes para cada contexto",
+        },
+      },
+      {
+        src: "/projects/planora/08-categories.png",
+        caption: {
+          en: "Color-coded categories",
+          es: "Categorías con color e identidad",
+        },
+      },
+      {
+        src: "/projects/planora/09-settings.png",
+        caption: {
+          en: "Appearance and behavior adapt to the user",
+          es: "Apariencia y comportamiento adaptados al usuario",
+        },
+      },
+      {
+        src: "/projects/planora/10-mobile-landing.png",
+        caption: {
+          en: "Mobile landing and product entry",
+          es: "Landing móvil y entrada al producto",
+        },
+      },
+      {
+        src: "/projects/planora/11-mobile-today.png",
+        caption: {
+          en: "Today view on a phone-sized layout",
+          es: "Vista Hoy en diseño de móvil",
+        },
+      },
+      {
+        src: "/projects/planora/12-mobile-week.png",
+        caption: {
+          en: "Week planning on mobile",
+          es: "Planificación semanal en móvil",
+        },
+      },
+      {
+        src: "/projects/planora/13-focus-intro.png",
+        caption: {
+          en: "Focus first-visit intro (light theme)",
+          es: "Introducción a Enfoque en la primera visita (tema claro)",
+        },
+      },
+      {
+        src: "/projects/planora/14-focus-home.png",
+        caption: {
+          en: "Focus home with presets and weekly goals",
+          es: "Inicio de Enfoque con presets y objetivos semanales",
+        },
+      },
+      {
+        src: "/projects/planora/15-focus-start.png",
+        caption: {
+          en: "Session start configurator",
+          es: "Configurador de inicio de sesión",
+        },
+      },
+      {
+        src: "/projects/planora/16-focus-active.png",
+        caption: {
+          en: "Active Focus countdown session",
+          es: "Sesión de Enfoque activa con cuenta atrás",
+        },
+      },
+      {
+        src: "/projects/planora/17-mobile-focus.png",
+        caption: {
+          en: "Focus on mobile with bottom navigation",
+          es: "Enfoque en móvil con navegación inferior",
+        },
+      },
     ],
-    technologies: ["Next.js 16", "React 19", "TypeScript", "Supabase", "PostgreSQL", "PWA", "Playwright", "Zod"],
+    technologies: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "PWA",
+      "Playwright",
+      "Zod",
+    ],
     badge: { en: "Live product", es: "Producto online" },
-    metadata: { en: "Personal project · In production", es: "Proyecto personal · En producción" },
+    metadata: {
+      en: "Personal project · In production",
+      es: "Proyecto personal · En producción",
+    },
     repositoryUrl: "https://github.com/JoanOliver04/planora",
     liveUrl: "https://planora-lake-one.vercel.app/en",
     license: "Source available",
