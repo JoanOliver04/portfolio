@@ -52,7 +52,8 @@ test("Planora leads the Projects section and stays out of the AI list", async ()
   assert.match(component, /t\.productivityApps/);
   assert.match(projectsSection, /id="productivity-apps"/);
   assert.match(projectsSection, /<ProductivityApps \/>/);
-  assert.ok(projectsSection.indexOf("<ProductivityApps />") < projectsSection.indexOf("<FlagshipCard"));
+  assert.ok(projectsSection.indexOf("<ProductivityApps />") < projectsSection.indexOf("aiTitle"));
+  assert.ok(projectsSection.indexOf("aiTitle") < projectsSection.indexOf("<FlagshipCard"));
   assert.ok(page.indexOf("<Projects />") < page.indexOf("<DeveloperTools />"));
   assert.doesNotMatch(page, /<ProductivityApps \/>/);
 });

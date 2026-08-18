@@ -56,10 +56,13 @@ const en = {
     eyebrow: "Selected work",
     title: "Projects",
     subtitle:
-      "A live product I ship and use, then full-stack work in data and applied AI — plus earlier applications I built along the way.",
+      "A live product, then data and applied AI, plus earlier applications.",
     liveEyebrow: "In production",
     liveLead:
       "A product I use every day — built from scratch and still being updated.",
+    aiTitle: "Data and applied AI",
+    aiLead:
+      "A focus on full-stack engineering, data and applied AI — plus the foundation I built along the way.",
     flagship: "Flagship project",
     problem: "The problem",
     product: "What it does",
@@ -196,10 +199,13 @@ const es: Dictionary = {
     eyebrow: "Trabajo seleccionado",
     title: "Proyectos",
     subtitle:
-      "Un producto en vivo que publico y uso, y después trabajo full-stack en datos e IA aplicada — más aplicaciones que construí por el camino.",
+      "Un producto en vivo, después datos e IA aplicada, y aplicaciones anteriores.",
     liveEyebrow: "En producción",
     liveLead:
       "Un producto que uso cada día: nació de cero y se sigue actualizando.",
+    aiTitle: "Datos e IA aplicada",
+    aiLead:
+      "Con foco en ingeniería full-stack, datos e IA aplicada — y la base que construí por el camino.",
     flagship: "Proyecto principal",
     problem: "El problema",
     product: "Qué hace",

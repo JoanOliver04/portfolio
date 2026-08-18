@@ -36,8 +36,20 @@ export function Projects() {
           </div>
         ) : null}
 
+        <div className="mt-16">
+          <div className="flex items-center gap-4">
+            <h3 className="font-display text-xl font-semibold tracking-tight text-text">
+              {t.projects.aiTitle}
+            </h3>
+            <span className="h-px flex-1 bg-border" aria-hidden="true" />
+          </div>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+            {t.projects.aiLead}
+          </p>
+        </div>
+
         {flagship ? (
-          <Reveal className="mt-16">
+          <Reveal className="mt-8">
             <FlagshipCard project={flagship} />
           </Reveal>
         ) : null}
