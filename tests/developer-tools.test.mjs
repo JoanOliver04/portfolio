@@ -16,9 +16,11 @@ test("developer tool content is bilingual, public and open source", async () => 
   assert.match(content, /Open Source/);
   assert.match(content, /Código abierto/);
   assert.match(content, /MIT License/);
-  assert.equal([...content.matchAll(/media-batch-converter\/[a-z]+-tab\.png/g)].length, 3);
+  assert.equal([...content.matchAll(/media-batch-converter\/[a-z]+-tab\.png/g)].length, 4);
   assert.match(content, /Image conversion with WebP modes/);
   assert.match(content, /Conversión de vídeo con controles/);
+  assert.match(content, /Document conversion with built-in engine/);
+  assert.match(content, /Conversión de documentos con motor integrado/);
   assert.doesNotMatch(content, /releaseUrl\s*:/);
 
   // Capabilities the entry claims; each one is visible in the public repository.

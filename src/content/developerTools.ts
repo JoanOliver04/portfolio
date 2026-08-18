@@ -180,18 +180,19 @@ const portfolioProducts: DeveloperTool[] = [
     id: "media-batch-converter",
     name: "Media Batch Converter",
     description: {
-      en: "Open-source desktop tool for converting and optimizing images, audio and video individually or in batches. It supports recursive folder processing, reusable presets, format-specific optimization and detailed conversion reports.",
-      es: "Herramienta de escritorio de código abierto para convertir y optimizar imágenes, audio y vídeo de forma individual o por lotes. Incluye procesamiento recursivo de carpetas, presets reutilizables, optimización específica por formato e informes detallados.",
+      en: "Open-source desktop tool for converting and optimizing images, audio, video and documents individually or in batches. It supports recursive folder processing, reusable presets, format-specific optimization and detailed conversion reports.",
+      es: "Herramienta de escritorio de código abierto para convertir y optimizar imágenes, audio, vídeo y documentos de forma individual o por lotes. Incluye procesamiento recursivo de carpetas, presets reutilizables, optimización específica por formato e informes detallados.",
     },
     details: {
-      en: "A local-first Python desktop utility that never modifies the source files and gives explicit control over quality, resizing, naming, collision policies and output validation. The interface ships in Spanish and English and switches without restarting.",
-      es: "Una utilidad local desarrollada en Python que nunca modifica los archivos originales y permite controlar la calidad, el redimensionado, los nombres, las colisiones y la validación de resultados. La interfaz está disponible en español e inglés y se cambia sin reiniciar.",
+      en: "A local-first Python desktop utility that never modifies the source files and never uploads media. It gives explicit control over quality, resizing, naming, collision policies and output validation. Documents go through a built-in engine plus optional LibreOffice. The interface ships in Spanish and English and switches without restarting.",
+      es: "Una utilidad local desarrollada en Python que nunca modifica los originales ni sube archivos. Permite controlar la calidad, el redimensionado, los nombres, las colisiones y la validación de resultados. Los documentos usan un motor integrado y LibreOffice opcional. La interfaz está en español e inglés y se cambia sin reiniciar.",
     },
     highlights: {
       en: [
         "Recursive batch processing with preserved folder structure.",
         "WebP modes, image resizing and reusable conversion presets.",
         "FFmpeg-powered audio and video conversion.",
+        "Files tab for PDF, Word, spreadsheets and slides, with optional LibreOffice.",
         "Multi-resolution ICO favicons from any source image.",
         "Bilingual interface switched at runtime, Spanish and English.",
         "Safe output policies, JSON reports and SHA-256 checksums.",
@@ -200,6 +201,7 @@ const portfolioProducts: DeveloperTool[] = [
         "Procesamiento recursivo por lotes conservando la estructura de carpetas.",
         "Modos WebP, redimensionado y presets de conversión reutilizables.",
         "Conversión de audio y vídeo mediante FFmpeg.",
+        "Pestaña Archivos para PDF, Word, hojas y presentaciones, con LibreOffice opcional.",
         "Favicons ICO multirresolución a partir de cualquier imagen.",
         "Interfaz bilingüe conmutable en caliente, español e inglés.",
         "Políticas de salida seguras, informes JSON y sumas SHA-256.",
@@ -227,8 +229,15 @@ const portfolioProducts: DeveloperTool[] = [
           es: "Conversión de vídeo con controles de resolución, códec y relación de aspecto",
         },
       },
+      {
+        src: "/projects/media-batch-converter/files-tab.png",
+        caption: {
+          en: "Document conversion with built-in engine and optional LibreOffice",
+          es: "Conversión de documentos con motor integrado y LibreOffice opcional",
+        },
+      },
     ],
-    technologies: ["Python", "Tkinter", "Pillow", "FFmpeg", "PyInstaller"],
+    technologies: ["Python", "Tkinter", "Pillow", "FFmpeg", "LibreOffice", "PyInstaller"],
     badge: { en: "Open Source", es: "Código abierto" },
     metadata: {
       en: "MIT License · Public GitHub Repository",

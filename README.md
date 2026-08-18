@@ -52,8 +52,9 @@ settings, mobile and Focus light-theme screens).
 
 [Media Batch Converter](https://github.com/JoanOliver04/media-batch-converter)
 remains in **Developer Tools**: an open-source MIT-licensed Python desktop
-utility for local batch conversion and optimization of images, audio and video
-with Pillow and FFmpeg.
+utility for local batch conversion of images, audio, video and documents
+(Pillow, FFmpeg and optional LibreOffice). The gallery covers the Images,
+Audio, Video and Files tabs.
 
 ---
 
