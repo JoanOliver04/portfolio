@@ -46,7 +46,7 @@ const en = {
   },
   proof: {
     items: [
-      { value: "6", label: "Featured projects" },
+      { value: "7", label: "Featured projects" },
       { value: "2", label: "Higher vocational degrees" },
       { value: "AI · Big Data", label: "Specialization completed" },
       { value: "800+", label: "Automated tests written" },
@@ -56,7 +56,10 @@ const en = {
     eyebrow: "Selected work",
     title: "Projects",
     subtitle:
-      "A focus on full-stack engineering, data and applied AI — plus the foundation I built along the way.",
+      "A live product I ship and use, then full-stack work in data and applied AI — plus earlier applications I built along the way.",
+    liveEyebrow: "In production",
+    liveLead:
+      "A product I use every day — built from scratch and still being updated.",
     flagship: "Flagship project",
     problem: "The problem",
     product: "What it does",
@@ -183,7 +186,7 @@ const es: Dictionary = {
   },
   proof: {
     items: [
-      { value: "6", label: "Proyectos destacados" },
+      { value: "7", label: "Proyectos destacados" },
       { value: "2", label: "Ciclos de grado superior" },
       { value: "IA · Big Data", label: "Especialización completada" },
       { value: "800+", label: "Tests automatizados escritos" },
@@ -193,7 +196,10 @@ const es: Dictionary = {
     eyebrow: "Trabajo seleccionado",
     title: "Proyectos",
     subtitle:
-      "Con foco en ingeniería full-stack, datos e IA aplicada — y la base que construí por el camino.",
+      "Un producto en vivo que publico y uso, y después trabajo full-stack en datos e IA aplicada — más aplicaciones que construí por el camino.",
+    liveEyebrow: "En producción",
+    liveLead:
+      "Un producto que uso cada día: nació de cero y se sigue actualizando.",
     flagship: "Proyecto principal",
     problem: "El problema",
     product: "Qué hace",

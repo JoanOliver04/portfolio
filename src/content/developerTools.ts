@@ -9,12 +9,12 @@ const portfolioProducts: DeveloperTool[] = [
     id: "planora",
     name: "Planora",
     description: {
-      en: "Independent, deeply personalizable planner for tasks, habits, schedules, events and Focus sessions — built for routines that keep changing.",
-      es: "Planificador independiente y muy personalizable para tareas, hábitos, horarios, eventos y sesiones de Enfoque — pensado para rutinas que no dejan de cambiar.",
+      en: "A planner I built from scratch and still update. I use it every day for tasks, habits, schedules, events and Focus sessions.",
+      es: "Un planificador que construí desde cero y sigo actualizando. Lo uso cada día para tareas, hábitos, horarios, eventos y sesiones de Enfoque.",
     },
     details: {
-      en: "A production-ready full-stack planning product. It combines a timezone-safe recurrence engine that follows the user's week start, Focus (countdown, stopwatch and flexible cycles), privacy-conscious offline PWA behavior, multi-tab sync, secure Supabase RLS, reminders, statistics, portable JSON backups (schema v4) and a public demo with isolated sample data in Spanish and English.",
-      es: "Un producto de planificación full-stack preparado para producción. Combina recurrencias seguras por zona horaria que respetan el inicio de semana del usuario, Enfoque (cuenta atrás, cronómetro y ciclos flexibles), PWA offline respetuosa con la privacidad, sincronización multi-pestaña, RLS de Supabase, recordatorios, estadísticas, copias JSON portables (schema v4) y una demo pública con datos aislados en español e inglés.",
+      en: "It is in production: Google sign-in, a private workspace and a public bilingual demo. Under the hood it combines a timezone-safe recurrence engine that follows the user's week start, Focus (countdown, stopwatch and flexible cycles), privacy-conscious offline PWA behavior, multi-tab sync, secure Supabase RLS, reminders, statistics and portable JSON backups (schema v4).",
+      es: "Está en producción: acceso con Google, un espacio privado y una demo pública en español e inglés. Por debajo combina recurrencias seguras por zona horaria que respetan el inicio de semana del usuario, Enfoque (cuenta atrás, cronómetro y ciclos flexibles), PWA offline respetuosa con la privacidad, sincronización multi-pestaña, RLS de Supabase, recordatorios, estadísticas y copias JSON portables (schema v4).",
     },
     highlights: {
       en: [
@@ -169,8 +169,8 @@ const portfolioProducts: DeveloperTool[] = [
     ],
     badge: { en: "Live product", es: "Producto online" },
     metadata: {
-      en: "Personal project · In production",
-      es: "Proyecto personal · En producción",
+      en: "Personal project · In production · Used daily",
+      es: "Proyecto personal · En producción · Uso diario",
     },
     repositoryUrl: "https://github.com/JoanOliver04/planora",
     liveUrl: "https://planora-lake-one.vercel.app/en",

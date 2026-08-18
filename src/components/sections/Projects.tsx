@@ -2,10 +2,12 @@
 
 import { useI18n } from "@/i18n/I18nProvider";
 import { projects } from "@/content/projects";
+import { productivityApps } from "@/content/developerTools";
 import { Container, Section, SectionHeading } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { FlagshipCard } from "@/components/projects/FlagshipCard";
 import { ProjectCard } from "@/components/projects/ProjectCard";
+import { ProductivityApps } from "@/components/sections/ProductivityApps";
 
 export function Projects() {
   const { t } = useI18n();
@@ -19,8 +21,23 @@ export function Projects() {
       <Container>
         <SectionHeading eyebrow={t.projects.eyebrow} title={t.projects.title} lead={t.projects.subtitle} />
 
+        {productivityApps.length > 0 ? (
+          <div id="productivity-apps" className="mt-12">
+            <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-label text-accent">
+              <span aria-hidden="true" className="h-px w-6 bg-accent/60" />
+              {t.projects.liveEyebrow}
+            </p>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+              {t.projects.liveLead}
+            </p>
+            <div className="mt-6">
+              <ProductivityApps />
+            </div>
+          </div>
+        ) : null}
+
         {flagship ? (
-          <Reveal className="mt-12">
+          <Reveal className="mt-16">
             <FlagshipCard project={flagship} />
           </Reveal>
         ) : null}

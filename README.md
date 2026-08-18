@@ -21,11 +21,13 @@ ready · no server, no database, no environment variables.
 
 ## Featured work
 
-The site presents six featured projects, each with a screenshot gallery, a problem
-statement and engineering highlights:
+The **Projects** section opens with [Planora](https://github.com/JoanOliver04/planora),
+a live product used every day, then the data and applied-AI case studies.
+Each entry has a screenshot gallery, a problem statement and engineering highlights:
 
 | Project | What it is | Stack |
 | --- | --- | --- |
+| [Planora](https://github.com/JoanOliver04/planora) | Planner in production for tasks, habits, schedules, events and Focus — built from scratch and still updated | Next.js · Supabase · PWA |
 | [Data Fuel](https://github.com/JoanOliver04/Data_Fuel) | Find the cheapest fill-up by **total cost** (fuel + the drive), with explainable ML price forecasts — 690 tests, 86% coverage | FastAPI · React · scikit-learn · SHAP |
 | [FitPrompt](https://github.com/JoanOliver04/FitPrompt) | Conversational AI coach that turns a real user profile into training and nutrition plans — team project, 2 developers | Next.js · Prisma · Groq / Llama 3.3 · Stripe |
 | [Data Detective](https://github.com/JoanOliver04/Data_Detective) | Quasi-experimental measurement of how mass events move Valencia's air quality — 123 tests, 90% coverage, CI | Python · pandas · Streamlit |
@@ -34,19 +36,10 @@ statement and engineering highlights:
 
 ---
 
-## Productivity Apps
-
-The **Productivity Apps** section brings together digital products designed to
-simplify processes, improve efficiency and support everyday personal and
-professional life. It can grow naturally as new productivity products are added.
-
-[Planora](https://github.com/JoanOliver04/planora) is the first product in this
-section: deep personalization, **Focus / Enfoque** concentration sessions,
-privacy-conscious offline PWA behavior, multi-tab sync, hardened Supabase RLS,
-configurable alarms, portable backups (schema v4), a live public demo in Spanish
-and English, and **364** unit/component tests plus Playwright e2e in CI. The
-gallery includes the full product set (today, week, tasks, events, history,
-schedules, categories, settings, mobile and Focus light-theme screens).
+Planora stays out of the AI block: Google sign-in, a private workspace, Focus /
+Enfoque, offline PWA behaviour, **364** unit/component tests and Playwright e2e
+in CI. The gallery covers today, week, tasks, events, history, schedules,
+categories, settings, mobile and Focus.
 
 ## Developer Tools
 
