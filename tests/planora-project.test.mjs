@@ -25,8 +25,8 @@ test("Planora is presented as a bilingual productivity app", async () => {
   );
   assert.match(content, /Personal project · In production/);
   assert.match(content, /Proyecto personal · En producción/);
-  assert.match(content, /363 unit\/component tests/);
-  assert.match(content, /363 tests unitarios\/de componentes/);
+  assert.match(content, /364 unit\/component tests/);
+  assert.match(content, /364 tests unitarios\/de componentes/);
   assert.match(content, /Playwright e2e/);
   assert.match(content, /e2e con Playwright/);
   assert.match(content, /14-focus-home\.png/);

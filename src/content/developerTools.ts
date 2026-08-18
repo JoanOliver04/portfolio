@@ -23,7 +23,7 @@ const portfolioProducts: DeveloperTool[] = [
         "Offline mutation queue with conflict handling and visible synchronization state.",
         "Deep personalization of color, density, typography, motion and day structure.",
         "Google OAuth, authenticated Supabase RLS, private notes, versioned backups and cookie-free analytics.",
-        "363 unit/component tests, Playwright e2e, Prettier/lint/typecheck and security audits in CI.",
+        "364 unit/component tests, Playwright e2e, Prettier/lint/typecheck and security audits in CI.",
         "Public no-registration demo with isolated browser data in Spanish and English.",
       ],
       es: [
@@ -32,7 +32,7 @@ const portfolioProducts: DeveloperTool[] = [
         "Cola de cambios offline con gestión de conflictos y estado de sincronización visible.",
         "Personalización profunda de color, densidad, tipografía, movimiento y estructura diaria.",
         "Google OAuth, RLS de Supabase, notas privadas, copias versionadas y analítica sin cookies.",
-        "363 tests unitarios/de componentes, e2e con Playwright, Prettier/lint/typecheck y auditorías en CI.",
+        "364 tests unitarios/de componentes, e2e con Playwright, Prettier/lint/typecheck y auditorías en CI.",
         "Demo pública sin registro con datos aislados en el navegador, en español e inglés.",
       ],
     },

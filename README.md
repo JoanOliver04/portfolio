@@ -44,7 +44,7 @@ professional life. It can grow naturally as new productivity products are added.
 section: deep personalization, **Focus / Enfoque** concentration sessions,
 privacy-conscious offline PWA behavior, multi-tab sync, hardened Supabase RLS,
 configurable alarms, portable backups (schema v4), a live public demo in Spanish
-and English, and **363** unit/component tests plus Playwright e2e in CI. The
+and English, and **364** unit/component tests plus Playwright e2e in CI. The
 gallery includes the full product set (today, week, tasks, events, history,
 schedules, categories, settings, mobile and Focus light-theme screens).
 
