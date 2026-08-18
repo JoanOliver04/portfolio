@@ -13,8 +13,8 @@ const portfolioProducts: DeveloperTool[] = [
       es: "Planificador independiente y muy personalizable para tareas, hábitos, horarios, eventos y sesiones de Enfoque — pensado para rutinas que no dejan de cambiar.",
     },
     details: {
-      en: "A production-ready full-stack planning product. It combines a timezone-safe recurrence engine, Focus (countdown, stopwatch and flexible cycles), privacy-conscious offline PWA behavior, multi-tab sync, secure Supabase RLS, reminders, statistics, portable JSON backups (schema v4) and a complete public demo with isolated sample data.",
-      es: "Un producto de planificación full-stack preparado para producción. Combina recurrencias seguras por zona horaria, Enfoque (cuenta atrás, cronómetro y ciclos flexibles), PWA offline respetuosa con la privacidad, sincronización multi-pestaña, RLS de Supabase, recordatorios, estadísticas, copias JSON portables (schema v4) y una demo pública completa con datos aislados.",
+      en: "A production-ready full-stack planning product. It combines a timezone-safe recurrence engine that follows the user's week start, Focus (countdown, stopwatch and flexible cycles), privacy-conscious offline PWA behavior, multi-tab sync, secure Supabase RLS, reminders, statistics, portable JSON backups (schema v4) and a public demo with isolated sample data in Spanish and English.",
+      es: "Un producto de planificación full-stack preparado para producción. Combina recurrencias seguras por zona horaria que respetan el inicio de semana del usuario, Enfoque (cuenta atrás, cronómetro y ciclos flexibles), PWA offline respetuosa con la privacidad, sincronización multi-pestaña, RLS de Supabase, recordatorios, estadísticas, copias JSON portables (schema v4) y una demo pública con datos aislados en español e inglés.",
     },
     highlights: {
       en: [
@@ -23,8 +23,8 @@ const portfolioProducts: DeveloperTool[] = [
         "Offline mutation queue with conflict handling and visible synchronization state.",
         "Deep personalization of color, density, typography, motion and day structure.",
         "Google OAuth, authenticated Supabase RLS, private notes, versioned backups and cookie-free analytics.",
-        "323 unit/component tests, Playwright e2e, Prettier/lint/typecheck and security audits in CI.",
-        "Public no-registration demo with isolated browser data.",
+        "363 unit/component tests, Playwright e2e, Prettier/lint/typecheck and security audits in CI.",
+        "Public no-registration demo with isolated browser data in Spanish and English.",
       ],
       es: [
         "Múltiples horarios, hábitos recurrentes, eventos, alarmas personalizables y estadísticas de progreso.",
@@ -32,8 +32,8 @@ const portfolioProducts: DeveloperTool[] = [
         "Cola de cambios offline con gestión de conflictos y estado de sincronización visible.",
         "Personalización profunda de color, densidad, tipografía, movimiento y estructura diaria.",
         "Google OAuth, RLS de Supabase, notas privadas, copias versionadas y analítica sin cookies.",
-        "323 tests unitarios/de componentes, e2e con Playwright, Prettier/lint/typecheck y auditorías en CI.",
-        "Demo pública sin registro con datos aislados en el navegador.",
+        "363 tests unitarios/de componentes, e2e con Playwright, Prettier/lint/typecheck y auditorías en CI.",
+        "Demo pública sin registro con datos aislados en el navegador, en español e inglés.",
       ],
     },
     images: [

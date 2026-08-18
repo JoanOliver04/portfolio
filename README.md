@@ -43,10 +43,10 @@ professional life. It can grow naturally as new productivity products are added.
 [Planora](https://github.com/JoanOliver04/planora) is the first product in this
 section: deep personalization, **Focus / Enfoque** concentration sessions,
 privacy-conscious offline PWA behavior, multi-tab sync, hardened Supabase RLS,
-configurable alarms, portable backups (schema v4), a live public demo and **323**
-unit/component tests plus Playwright e2e in CI. The gallery includes the full
-product set (today, week, tasks, events, history, schedules, categories,
-settings, mobile and Focus light-theme screens).
+configurable alarms, portable backups (schema v4), a live public demo in Spanish
+and English, and **363** unit/component tests plus Playwright e2e in CI. The
+gallery includes the full product set (today, week, tasks, events, history,
+schedules, categories, settings, mobile and Focus light-theme screens).
 
 ## Developer Tools
 
