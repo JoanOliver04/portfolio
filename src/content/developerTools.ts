@@ -13,8 +13,8 @@ const portfolioProducts: DeveloperTool[] = [
       es: "Un planificador que construí desde cero y sigo actualizando. Lo uso cada día para tareas, hábitos, horarios, eventos y sesiones de Enfoque.",
     },
     details: {
-      en: "It is in production: Google sign-in, a private workspace and a public bilingual demo. Under the hood it combines a timezone-safe recurrence engine that follows the user's week start, Focus (countdown, stopwatch and flexible cycles), privacy-conscious offline PWA behavior, multi-tab sync, secure Supabase RLS, reminders, statistics and portable JSON backups (schema v4).",
-      es: "Está en producción: acceso con Google, un espacio privado y una demo pública en español e inglés. Por debajo combina recurrencias seguras por zona horaria que respetan el inicio de semana del usuario, Enfoque (cuenta atrás, cronómetro y ciclos flexibles), PWA offline respetuosa con la privacidad, sincronización multi-pestaña, RLS de Supabase, recordatorios, estadísticas y copias JSON portables (schema v4).",
+      en: "It is in production: Google sign-in, a private workspace and a no-registration bilingual demo. Under the hood it combines timezone-safe recurrence, Focus (countdown, stopwatch, cycles and structured plans), privacy-conscious offline PWA behavior, multi-tab sync, ownership-scoped Supabase RLS, reminders, statistics and atomic versioned backups (schema v5; v4 remains importable).",
+      es: "Está en producción: acceso con Google, un espacio privado y una demo bilingüe sin registro. Por debajo combina recurrencias seguras por zona horaria, Enfoque (cuenta atrás, cronómetro, ciclos y planes estructurados), PWA offline respetuosa con la privacidad, sincronización multi-pestaña, RLS de Supabase por propietario, recordatorios, estadísticas y copias versionadas atómicas (schema v5; v4 sigue siendo importable).",
     },
     highlights: {
       en: [
@@ -22,8 +22,8 @@ const portfolioProducts: DeveloperTool[] = [
         "Focus / Enfoque: timestamp-based timer, presets, structured plans, weekly goals, offline continuation and multi-tab takeover.",
         "Offline mutation queue with conflict handling and visible synchronization state.",
         "Deep personalization of color, density, typography, motion and day structure.",
-        "Google OAuth, authenticated Supabase RLS, private notes, versioned backups and cookie-free analytics.",
-        "364 unit/component tests, Playwright e2e, Prettier/lint/typecheck and security audits in CI.",
+        "Google OAuth, authenticated Supabase RLS, private notes, atomic backups, distributed rate limits and cookie-free analytics.",
+        "377 unit/component tests and 52 Playwright scenarios, including authenticated flows against isolated Supabase; audit, coverage, build, Lighthouse and CodeQL in CI.",
         "Public no-registration demo with isolated browser data in Spanish and English.",
       ],
       es: [
@@ -31,8 +31,8 @@ const portfolioProducts: DeveloperTool[] = [
         "Enfoque: temporizador por timestamps, presets, planes, objetivos semanales, offline y takeover multi-pestaña.",
         "Cola de cambios offline con gestión de conflictos y estado de sincronización visible.",
         "Personalización profunda de color, densidad, tipografía, movimiento y estructura diaria.",
-        "Google OAuth, RLS de Supabase, notas privadas, copias versionadas y analítica sin cookies.",
-        "364 tests unitarios/de componentes, e2e con Playwright, Prettier/lint/typecheck y auditorías en CI.",
+        "Google OAuth, RLS de Supabase, notas privadas, copias atómicas, rate limits distribuidos y analítica sin cookies.",
+        "377 tests unitarios/de componentes y 52 escenarios Playwright, incluidos flujos autenticados contra Supabase aislado; audit, cobertura, build, Lighthouse y CodeQL en CI.",
         "Demo pública sin registro con datos aislados en el navegador, en español e inglés.",
       ],
     },

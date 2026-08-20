@@ -29,10 +29,14 @@ test("Planora is presented as a bilingual productivity app", async () => {
   assert.match(content, /Lo uso cada día/);
   assert.match(content, /built from scratch/);
   assert.match(content, /construí desde cero/);
-  assert.match(content, /364 unit\/component tests/);
-  assert.match(content, /364 tests unitarios\/de componentes/);
-  assert.match(content, /Playwright e2e/);
-  assert.match(content, /e2e con Playwright/);
+  assert.match(content, /377 unit\/component tests/);
+  assert.match(content, /377 tests unitarios\/de componentes/);
+  assert.match(content, /52 Playwright scenarios/);
+  assert.match(content, /52 escenarios Playwright/);
+  assert.match(content, /authenticated flows against isolated Supabase/);
+  assert.match(content, /flujos autenticados contra Supabase aislado/);
+  assert.match(content, /schema v5/);
+  assert.match(content, /CodeQL/);
   assert.match(content, /14-focus-home\.png/);
   assert.match(content, /17-mobile-focus\.png/);
 

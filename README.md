@@ -36,10 +36,13 @@ Each entry has a screenshot gallery, a problem statement and engineering highlig
 
 ---
 
-Planora stays out of the AI block: Google sign-in, a private workspace, Focus /
-Enfoque, offline PWA behaviour, **364** unit/component tests and Playwright e2e
-in CI. The gallery covers today, week, tasks, events, history, schedules,
-categories, settings, mobile and Focus.
+Planora stays out of the AI block: Google sign-in, a private workspace, a
+no-registration demo, Focus / Enfoque with structured plans, offline PWA
+behaviour, atomic backups, **377** unit/component tests and **52** Playwright
+scenarios, including authenticated flows against isolated Supabase. CI also runs
+npm audit, coverage, production build, Lighthouse and CodeQL. The gallery covers
+today, week, tasks, events, history, schedules, categories, settings, mobile and
+Focus.
 
 ## Developer Tools
 
