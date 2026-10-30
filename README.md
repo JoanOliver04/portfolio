@@ -27,7 +27,7 @@ Each entry has a screenshot gallery, a problem statement and engineering highlig
 
 | Project | What it is | Stack |
 | --- | --- | --- |
-| [Planora](https://github.com/JoanOliver04/planora) | Planner in production for tasks, habits, schedules, events and Focus — built from scratch and still updated | Next.js · Supabase · PWA |
+| [Planora](https://github.com/JoanOliver04/planora) | Planner in production for tasks, habits, schedules, events and Focus, with mobile Web Push — built from scratch and still updated | Next.js · Supabase · PWA |
 | [Data Fuel](https://github.com/JoanOliver04/Data_Fuel) | Find the cheapest fill-up by **total cost** (fuel + the drive), with explainable ML price forecasts — 690 tests, 86% coverage | FastAPI · React · scikit-learn · SHAP |
 | [FitPrompt](https://github.com/JoanOliver04/FitPrompt) | Conversational AI coach that turns a real user profile into training and nutrition plans — team project, 2 developers | Next.js · Prisma · Groq / Llama 3.3 · Stripe |
 | [Data Detective](https://github.com/JoanOliver04/Data_Detective) | Quasi-experimental measurement of how mass events move Valencia's air quality — 123 tests, 90% coverage, CI | Python · pandas · Streamlit |
@@ -38,9 +38,15 @@ Each entry has a screenshot gallery, a problem statement and engineering highlig
 
 Planora stays out of the AI block: Google sign-in, a private workspace, a
 no-registration demo, Focus / Enfoque with structured plans, offline PWA
-behaviour, atomic backups, **377** unit/component tests and **52** Playwright
-scenarios, including authenticated flows against isolated Supabase. CI also runs
-npm audit, coverage, production build, Lighthouse and CodeQL. The gallery covers
+behaviour, atomic backups and opt-in mobile Web Push while the app is closed.
+Its server outbox supports retries, cancellation and expired-device cleanup;
+reception depends on connectivity and operating-system settings. Owner-scoped
+RLS, nonce-based CSP, private no-store pages and database quotas protect the
+authenticated workspace. As verified on **2026-10-30**, **602** unit/component
+tests and **90** Playwright scenarios pass, with **6** deliberate browser
+exclusions, including authenticated flows against isolated Supabase.
+[CI evidence](https://github.com/JoanOliver04/planora/actions/runs/41136884138)
+also covers npm audit, coverage, production build, Lighthouse and CodeQL. The gallery covers
 today, week, tasks, events, history, schedules, categories, settings, mobile and
 Focus.
 
