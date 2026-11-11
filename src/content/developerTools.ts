@@ -40,124 +40,103 @@ const portfolioProducts: DeveloperTool[] = [
     },
     images: [
       {
-        src: "/projects/planora/01-landing.png",
-        caption: {
-          en: "A focused public product experience",
-          es: "Una experiencia de producto pública y cuidada",
-        },
+        "src": "/projects/planora/01-landing-desktop-light-en.webp",
+        "caption": {
+          "en": "A calmer way to plan",
+          "es": "Presentación pública, propuesta de valor y CTA"
+        }
       },
       {
-        src: "/projects/planora/02-today.png",
-        caption: {
-          en: "Daily progress and flexible routines",
-          es: "Progreso diario y rutinas flexibles",
-        },
+        "src": "/projects/planora/04-today-desktop-light-es.webp",
+        "caption": {
+          "en": "Daily planning and weekly progress",
+          "es": "Hoy: progreso, horario activo y grupos del día"
+        }
       },
       {
-        src: "/projects/planora/03-week.png",
-        caption: {
-          en: "The complete week at a glance",
-          es: "La semana completa de un vistazo",
-        },
+        "src": "/projects/planora/08-week-desktop-light-es.webp",
+        "caption": {
+          "en": "The complete week at a glance",
+          "es": "Semana completa con tareas, hábitos y eventos"
+        }
       },
       {
-        src: "/projects/planora/04-tasks.png",
-        caption: {
-          en: "Recurring tasks without a rigid system",
-          es: "Tareas recurrentes sin un sistema rígido",
-        },
+        "src": "/projects/planora/15-tasks-desktop-light-es.webp",
+        "caption": {
+          "en": "Tasks, filters and recurrence",
+          "es": "Gestión de tareas, búsqueda, filtros y recurrencias"
+        }
       },
       {
-        src: "/projects/planora/05-events.png",
-        caption: {
-          en: "Dated events across schedules",
-          es: "Eventos con fecha en cada horario",
-        },
+        "src": "/projects/planora/43-focus-home-desktop-light-en.webp",
+        "caption": {
+          "en": "Focus presets and four weeks of goals",
+          "es": "Enfoque: presets, inicio rápido y resumen semanal"
+        }
       },
       {
-        src: "/projects/planora/06-history.png",
-        caption: {
-          en: "Immutable completion history",
-          es: "Historial de completados inmutable",
-        },
+        "src": "/projects/planora/47-focus-countdown-desktop-light-es.webp",
+        "caption": {
+          "en": "Deep work in progress",
+          "es": "Sesión activa de trabajo profundo"
+        }
       },
       {
-        src: "/projects/planora/07-schedules.png",
-        caption: {
-          en: "Independent schedules for every context",
-          es: "Horarios independientes para cada contexto",
-        },
+        "src": "/projects/planora/50-focus-plan-desktop-dark-en.webp",
+        "caption": {
+          "en": "Structured plans: current and next block",
+          "es": "Plan estructurado: bloque actual y siguiente"
+        }
       },
       {
-        src: "/projects/planora/08-categories.png",
-        caption: {
-          en: "Color-coded categories",
-          es: "Categorías con color e identidad",
-        },
+        "src": "/projects/planora/52-focus-summary-desktop-light-es.webp",
+        "caption": {
+          "en": "Planned versus actual session summary",
+          "es": "Resumen final y comparación de lo previsto con lo realizado"
+        }
       },
       {
-        src: "/projects/planora/09-settings.png",
-        caption: {
-          en: "Appearance and behavior adapt to the user",
-          es: "Apariencia y comportamiento adaptados al usuario",
-        },
+        "src": "/projects/planora/27-statistics-desktop-light-en.webp",
+        "caption": {
+          "en": "Progress and patterns",
+          "es": "Estadísticas de hábitos y progreso real"
+        }
       },
       {
-        src: "/projects/planora/10-mobile-landing.png",
-        caption: {
-          en: "Mobile landing and product entry",
-          es: "Landing móvil y entrada al producto",
-        },
+        "src": "/projects/planora/12-month-desktop-light-es.webp",
+        "caption": {
+          "en": "The month ahead",
+          "es": "Calendario mensual con actividad y eventos"
+        }
       },
       {
-        src: "/projects/planora/11-mobile-today.png",
-        caption: {
-          en: "Today view on a phone-sized layout",
-          es: "Vista Hoy en diseño de móvil",
-        },
+        "src": "/projects/planora/33-reminders-desktop-light-es.webp",
+        "caption": {
+          "en": "Reminders and alarms",
+          "es": "Centro de notificaciones, recordatorios y alarmas"
+        }
       },
       {
-        src: "/projects/planora/12-mobile-week.png",
-        caption: {
-          en: "Week planning on mobile",
-          es: "Planificación semanal en móvil",
-        },
+        "src": "/projects/planora/07-today-mobile-light-es.webp",
+        "caption": {
+          "en": "Daily planning on mobile",
+          "es": "Hoy móvil: progreso y tareas de la mañana"
+        }
       },
       {
-        src: "/projects/planora/13-focus-intro.png",
-        caption: {
-          en: "Focus first-visit intro (light theme)",
-          es: "Introducción a Enfoque en la primera visita (tema claro)",
-        },
+        "src": "/projects/planora/56-focus-active-mobile-dark-es.webp",
+        "caption": {
+          "en": "Mobile concentration mode",
+          "es": "Sesión activa de Enfoque en móvil oscuro"
+        }
       },
       {
-        src: "/projects/planora/14-focus-home.png",
-        caption: {
-          en: "Focus home with presets and weekly goals",
-          es: "Inicio de Enfoque con presets y objetivos semanales",
-        },
-      },
-      {
-        src: "/projects/planora/15-focus-start.png",
-        caption: {
-          en: "Session start configurator",
-          es: "Configurador de inicio de sesión",
-        },
-      },
-      {
-        src: "/projects/planora/16-focus-active.png",
-        caption: {
-          en: "Active Focus countdown session",
-          es: "Sesión de Enfoque activa con cuenta atrás",
-        },
-      },
-      {
-        src: "/projects/planora/17-mobile-focus.png",
-        caption: {
-          en: "Focus on mobile with bottom navigation",
-          es: "Enfoque en móvil con navegación inferior",
-        },
-      },
+        "src": "/projects/planora/38-settings-desktop-light-es.webp",
+        "caption": {
+          "en": "Appearance and personalization",
+          "es": "Ajustes de apariencia, idioma y personalización"
+        }
+      }
     ],
     technologies: [
       "Next.js 16",

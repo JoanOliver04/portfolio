@@ -20,8 +20,8 @@ test("Planora is presented as a bilingual productivity app", async () => {
   assert.match(content, /Focus \/ Enfoque/);
   assert.match(content, /Enfoque: temporizador/);
   assert.equal(
-    [...content.matchAll(/\/projects\/planora\/\d{2}-[a-z-]+\.png/g)].length,
-    17,
+    [...content.matchAll(/\/projects\/planora\/\d{2}-[a-z-]+\.webp/g)].length,
+    14,
   );
   assert.match(content, /Personal project · In production · Used daily/);
   assert.match(content, /Proyecto personal · En producción · Uso diario/);
@@ -37,8 +37,8 @@ test("Planora is presented as a bilingual productivity app", async () => {
   assert.match(content, /flujos autenticados contra Supabase aislado/);
   assert.match(content, /schema v5/);
   assert.match(content, /CodeQL/);
-  assert.match(content, /14-focus-home\.png/);
-  assert.match(content, /17-mobile-focus\.png/);
+  assert.match(content, /43-focus-home-desktop-light-en\.webp/);
+  assert.match(content, /56-focus-active-mobile-dark-es\.webp/);
 
   const academicProjects = await readFile(projectsPath, "utf8");
   assert.doesNotMatch(academicProjects, /id: "planora"/);
