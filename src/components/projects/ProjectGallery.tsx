@@ -22,7 +22,7 @@ export function ProjectGallery({
   className?: string;
   showFullSizeLink?: boolean;
 }) {
-  const { t, locale } = useI18n();
+  const { t, locale, ready } = useI18n();
   const reduced = useReducedMotion();
   const [index, setIndex] = useState(0);
   const count = images.length;
@@ -33,6 +33,7 @@ export function ProjectGallery({
   );
 
   const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (!ready) return;
     if (e.key === "ArrowLeft") {
       e.preventDefault();
       go(index - 1);
@@ -79,16 +80,18 @@ export function ProjectGallery({
             <button
               type="button"
               onClick={() => go(index - 1)}
+              disabled={!ready}
               aria-label={t.a11y.galleryPrev}
-              className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent"
+              className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60"
             >
               <Chevron dir="left" />
             </button>
             <button
               type="button"
               onClick={() => go(index + 1)}
+              disabled={!ready}
               aria-label={t.a11y.galleryNext}
-              className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent"
+              className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60"
             >
               <Chevron dir="right" />
             </button>
@@ -111,10 +114,11 @@ export function ProjectGallery({
                 key={img.src}
                 type="button"
                 onClick={() => go(i)}
+                disabled={!ready}
                 aria-label={`${t.a11y.galleryGoTo} ${i + 1}`}
                 aria-current={i === index}
                 className={cn(
-                  "h-1.5 rounded-full transition-all",
+                  "h-1.5 rounded-full transition-all disabled:cursor-wait disabled:opacity-60",
                   i === index ? "w-4 bg-accent" : "w-1.5 bg-border hover:bg-muted",
                 )}
               />
