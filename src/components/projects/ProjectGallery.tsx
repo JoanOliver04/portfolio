@@ -48,7 +48,7 @@ export function ProjectGallery({
 
   return (
     <div
-      className={cn("group/gallery", className)}
+      className={cn("group/gallery min-w-0", className)}
       role="group"
       aria-roledescription="carousel"
       aria-label={t.a11y.gallery}
@@ -103,12 +103,12 @@ export function ProjectGallery({
       </div>
 
       {/* Caption + dots */}
-      <div className="mt-3 flex items-center justify-between gap-4">
-        <p className="min-w-0 font-mono text-[0.72rem] leading-snug text-muted" aria-live="polite">
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <p className="min-w-0 flex-[1_1_12rem] font-mono text-[0.72rem] leading-snug text-muted" aria-live="polite">
           {current.caption[locale]}
         </p>
         {count > 1 ? (
-          <div className="flex shrink-0 items-center gap-1.5">
+          <div className="flex max-w-full flex-wrap items-center gap-1.5">
             {images.map((img, i) => (
               <button
                 key={img.src}

@@ -15,18 +15,18 @@ export function CvDownload({
   englishLabel,
 }: CvDownloadProps) {
   return (
-    <details className="group relative">
+    <details className="group relative max-w-full">
       <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-md border border-border bg-surface/50 px-5 py-3 text-sm font-medium text-text transition-colors hover:border-accent/60 hover:text-accent [&::-webkit-details-marker]:hidden">
         <DownloadIcon />
         {label}
         <ChevronIcon className="transition-transform group-open:rotate-180" />
       </summary>
 
-      <div className="absolute left-0 top-full z-20 mt-2 min-w-52 overflow-hidden rounded-md border border-border bg-surface p-1.5 shadow-lg">
+      <div className="absolute left-0 top-full z-20 mt-2 w-full rounded-md border border-border bg-surface p-1.5 shadow-lg">
         <a
           href={cvFiles.es}
           download="Joan_Vicent_Oliver_Rosell_CV_ES.pdf"
-          className="flex items-center justify-between gap-4 rounded px-3 py-2.5 text-sm text-text transition-colors hover:bg-surface-2 hover:text-accent"
+          className="flex items-center justify-between gap-2 rounded px-2 py-2.5 text-sm text-text transition-colors hover:bg-surface-2 hover:text-accent"
         >
           <span>{spanishLabel}</span>
           <span aria-hidden="true" className="font-mono text-[0.65rem] text-muted">
@@ -36,7 +36,7 @@ export function CvDownload({
         <a
           href={cvFiles.en}
           download="Joan_Vicent_Oliver_Rosell_CV_EN.pdf"
-          className="flex items-center justify-between gap-4 rounded px-3 py-2.5 text-sm text-text transition-colors hover:bg-surface-2 hover:text-accent"
+          className="flex items-center justify-between gap-2 rounded px-2 py-2.5 text-sm text-text transition-colors hover:bg-surface-2 hover:text-accent"
         >
           <span>{englishLabel}</span>
           <span aria-hidden="true" className="font-mono text-[0.65rem] text-muted">

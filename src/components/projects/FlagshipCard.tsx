@@ -5,6 +5,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 import { TechTag, MetricPill } from "@/components/ui/primitives";
 import { DemoLink, ProjectBadges, RepoLink, categoryLabel } from "@/components/projects/ProjectCard";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
+import { ProjectHighlights } from "@/components/projects/ProjectHighlights";
 
 /**
  * The flagship gets a wide, two-column feature block and the strongest
@@ -18,7 +19,7 @@ export function FlagshipCard({ project }: { project: Project }) {
     <article className="relative overflow-hidden rounded-xl border border-border bg-surface ring-1 ring-accent/15">
       <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
-      <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
         {/* Content */}
         <div className="p-7 sm:p-9">
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -41,7 +42,7 @@ export function FlagshipCard({ project }: { project: Project }) {
             </p>
           </div>
 
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+          <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] gap-5">
             <div>
               <span className="font-mono text-[0.68rem] uppercase tracking-label text-muted/80">
                 {t.projects.problem}
@@ -60,14 +61,7 @@ export function FlagshipCard({ project }: { project: Project }) {
             <span className="font-mono text-[0.68rem] uppercase tracking-label text-muted/80">
               {t.projects.engineering}
             </span>
-            <ul className="mt-2.5 grid gap-2 sm:grid-cols-2">
-              {project.highlights[locale].map((item, i) => (
-                <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-muted">
-                  <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <ProjectHighlights items={project.highlights[locale]} className="mt-2.5 text-sm" />
           </div>
 
           {project.metrics ? (

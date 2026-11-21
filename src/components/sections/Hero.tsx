@@ -11,7 +11,7 @@ export function Hero() {
 
   return (
     <Container className="relative">
-      <div className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
+      <div className="grid grid-cols-1 items-center gap-12 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:py-24">
         {/* Left — positioning */}
         <div className="relative z-10 animate-fade-up">
           <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-label text-accent">
