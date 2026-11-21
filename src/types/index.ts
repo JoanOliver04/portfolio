@@ -76,6 +76,7 @@ export interface SkillGroup {
 export interface DeveloperTool {
   id: string;
   name: string;
+  icon?: string;
   description: Localized;
   details: Localized;
   highlights: LocalizedList;

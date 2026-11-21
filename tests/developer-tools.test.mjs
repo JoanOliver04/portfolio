@@ -16,9 +16,10 @@ test("developer tool content is bilingual, public and open source", async () => 
   assert.match(content, /Open Source/);
   assert.match(content, /Código abierto/);
   assert.match(content, /MIT License/);
-  assert.equal([...content.matchAll(/media-batch-converter\/[a-z]+-tab\.png/g)].length, 4);
-  assert.match(content, /Image conversion with WebP modes/);
-  assert.match(content, /Conversión de vídeo con controles/);
+  assert.match(content, /Save only if smaller/);
+  assert.match(content, /Guardar solo si ocupa menos/);
+  assert.match(content, /game backgrounds/);
+  assert.match(content, /Vídeo HEVC en MP4/);
   assert.match(content, /Document conversion with built-in engine/);
   assert.match(content, /Conversión de documentos con motor integrado/);
   assert.doesNotMatch(content, /releaseUrl\s*:/);
@@ -34,6 +35,21 @@ test("developer tool content is bilingual, public and open source", async () => 
   }
 });
 
+test("the refreshed desktop logo and all gallery screenshots exist", async () => {
+  const content = await readFile(contentPath, "utf8");
+  const asset = (name) => new URL(`../public/projects/media-batch-converter/${name}`, import.meta.url);
+  const logo = await readFile(asset("app-icon.png"));
+  assert.match(content, /icon: "\/projects\/media-batch-converter\/app-icon\.png"/);
+  assert.equal(logo.toString("ascii", 1, 4), "PNG");
+
+  const images = [...content.matchAll(/media-batch-converter\/([a-z-]+\.webp)/g)].map((match) => match[1]);
+  assert.deepEqual(images, ["images-tab.webp", "batch-results.webp", "audio-tab.webp", "video-tab.webp", "files-tab.webp"]);
+  for (const image of images) {
+    const bytes = await readFile(asset(image));
+    assert.equal(bytes.toString("ascii", 8, 12), "WEBP");
+  }
+});
+
 test("external actions are safe and the release action is optional", async () => {
   const component = await readFile(componentPath, "utf8");
 
@@ -42,4 +58,5 @@ test("external actions are safe and the release action is optional", async () =>
   assert.match(component, /tool\.releaseUrl \?/);
   assert.match(component, /t\.a11y\.opensNewTab/);
   assert.match(component, /ProjectGallery images=\{tool\.images\}/);
+  assert.match(component, /<article id=\{tool\.id\}/);
 });

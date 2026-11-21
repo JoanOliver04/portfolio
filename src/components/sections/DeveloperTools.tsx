@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { developerTools } from "@/content/developerTools";
 import { useI18n } from "@/i18n/I18nProvider";
 import { ArrowIcon, Container, GitHubIcon, Section, TechTag } from "@/components/ui/primitives";
@@ -26,10 +27,10 @@ export function DeveloperTools() {
         <div className="mt-8 grid gap-5">
           {developerTools.map((tool, index) => (
             <Reveal key={tool.id} as="div" delay={index * 80}>
-              <article className="grid overflow-hidden rounded-lg border border-border bg-surface/70 transition-colors hover:border-accent/35 md:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
+              <article id={tool.id} className="grid scroll-mt-24 overflow-hidden rounded-lg border border-border bg-surface/70 transition-colors hover:border-accent/35 md:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
                 {tool.images ? (
                   <div className="flex items-center border-b border-border bg-surface-2/60 p-3 md:border-b-0 md:border-r sm:p-4">
-                    <ProjectGallery images={tool.images} className="w-full" />
+                    <ProjectGallery images={tool.images} className="w-full" showFullSizeLink />
                   </div>
                 ) : null}
 
@@ -42,7 +43,10 @@ export function DeveloperTools() {
                     <span className="font-mono text-[0.66rem] text-muted">{tool.metadata[locale]}</span>
                   </div>
 
-                  <h3 className="mt-3 font-display text-xl font-semibold tracking-tight text-text sm:text-2xl">
+                  <h3 className="mt-3 flex items-center gap-2 font-display text-xl font-semibold tracking-tight text-text sm:text-2xl">
+                    {tool.icon ? (
+                      <Image src={tool.icon} alt="" width={36} height={36} className="shrink-0" />
+                    ) : null}
                     {tool.name}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{tool.description[locale]}</p>

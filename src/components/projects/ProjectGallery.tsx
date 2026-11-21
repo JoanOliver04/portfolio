@@ -16,9 +16,11 @@ import { cn } from "@/lib/utils";
 export function ProjectGallery({
   images,
   className,
+  showFullSizeLink = false,
 }: {
   images: ProjectImage[];
   className?: string;
+  showFullSizeLink?: boolean;
 }) {
   const { t, locale } = useI18n();
   const reduced = useReducedMotion();
@@ -120,6 +122,17 @@ export function ProjectGallery({
           </div>
         ) : null}
       </div>
+      {showFullSizeLink ? (
+        <a
+          href={current.src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-flex min-h-8 items-center text-xs font-medium text-muted underline underline-offset-4 hover:text-accent"
+        >
+          {t.a11y.galleryFullSize}
+          <span className="sr-only"> ({t.a11y.opensNewTab})</span>
+        </a>
+      ) : null}
     </div>
   );
 }

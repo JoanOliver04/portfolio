@@ -161,19 +161,20 @@ const portfolioProducts: DeveloperTool[] = [
   {
     id: "media-batch-converter",
     name: "Media Batch Converter",
+    icon: "/projects/media-batch-converter/app-icon.png",
     description: {
-      en: "Open-source desktop tool for converting and optimizing images, audio, video and documents individually or in batches. It supports recursive folder processing, reusable presets, format-specific optimization and detailed conversion reports.",
-      es: "Herramienta de escritorio de código abierto para convertir y optimizar imágenes, audio, vídeo y documentos de forma individual o por lotes. Incluye procesamiento recursivo de carpetas, presets reutilizables, optimización específica por formato e informes detallados.",
+      en: "Open-source desktop tool for converting images, audio, video and documents in batches. It helps shrink game assets such as sprites, soundtracks and cutscenes with presets tailored to each type of file.",
+      es: "Herramienta de escritorio de código abierto para convertir imágenes, audio, vídeo y documentos por lotes. Permite reducir el peso de recursos de videojuegos, como sprites, bandas sonoras y cinemáticas, con ajustes predefinidos para cada tipo de archivo.",
     },
     details: {
-      en: "A local-first Python desktop utility that never modifies the source files and never uploads media. It gives explicit control over quality, resizing, naming, collision policies and output validation. Documents go through a built-in engine plus optional LibreOffice. The interface ships in Spanish and English and switches without restarting.",
-      es: "Una utilidad local desarrollada en Python que nunca modifica los originales ni sube archivos. Permite controlar la calidad, el redimensionado, los nombres, las colisiones y la validación de resultados. Los documentos usan un motor integrado y LibreOffice opcional. La interfaz está en español e inglés y se cambia sin reiniciar.",
+      en: "The app processes files locally and keeps the originals intact. The “Save only if smaller” option compares the actual file sizes before writing the output. The batch summary shows how much space was saved and lets you inspect each result.",
+      es: "La app procesa los archivos en local y conserva los originales. La opción «Guardar solo si ocupa menos» compara el tamaño real antes de guardar la salida. El resumen del lote muestra el espacio ahorrado y permite revisar cada resultado.",
     },
     highlights: {
       en: [
         "Recursive batch processing with preserved folder structure.",
-        "WebP modes, image resizing and reusable conversion presets.",
-        "FFmpeg-powered audio and video conversion.",
+        "AVIF and WebP for compact images, plus lossless PNG optimization.",
+        "Audio and video presets for Opus, AAC, H.264 and HEVC with FFmpeg.",
         "Files tab for PDF, Word, spreadsheets and slides, with optional LibreOffice.",
         "Multi-resolution ICO favicons from any source image.",
         "Bilingual interface switched at runtime, Spanish and English.",
@@ -181,8 +182,8 @@ const portfolioProducts: DeveloperTool[] = [
       ],
       es: [
         "Procesamiento recursivo por lotes conservando la estructura de carpetas.",
-        "Modos WebP, redimensionado y presets de conversión reutilizables.",
-        "Conversión de audio y vídeo mediante FFmpeg.",
+        "AVIF y WebP para imágenes ligeras, con optimización de PNG sin pérdida.",
+        "Ajustes de audio y vídeo para Opus, AAC, H.264 y HEVC mediante FFmpeg.",
         "Pestaña Archivos para PDF, Word, hojas y presentaciones, con LibreOffice opcional.",
         "Favicons ICO multirresolución a partir de cualquier imagen.",
         "Interfaz bilingüe conmutable en caliente, español e inglés.",
@@ -191,28 +192,35 @@ const portfolioProducts: DeveloperTool[] = [
     },
     images: [
       {
-        src: "/projects/media-batch-converter/images-tab.png",
+        src: "/projects/media-batch-converter/images-tab.webp",
         caption: {
-          en: "Image conversion with WebP modes, resizing and batch settings",
-          es: "Conversión de imágenes con modos WebP, redimensionado y ajustes por lotes",
+          en: "AVIF preset for game backgrounds with Save only if smaller enabled",
+          es: "Ajuste AVIF para fondos de videojuegos con la opción Guardar solo si ocupa menos activada",
         },
       },
       {
-        src: "/projects/media-batch-converter/audio-tab.png",
+        src: "/projects/media-batch-converter/batch-results.webp",
         caption: {
-          en: "Audio conversion with reusable presets and FFmpeg settings",
-          es: "Conversión de audio con presets reutilizables y ajustes de FFmpeg",
+          en: "Sample PNG batch showing measured savings and a skipped file",
+          es: "Lote de ejemplo en PNG con el ahorro medido y un archivo omitido",
         },
       },
       {
-        src: "/projects/media-batch-converter/video-tab.png",
+        src: "/projects/media-batch-converter/audio-tab.webp",
         caption: {
-          en: "Video conversion with resolution, codec and aspect-ratio controls",
-          es: "Conversión de vídeo con controles de resolución, códec y relación de aspecto",
+          en: "Opus preset for soundtracks with controls for bitrate and channels",
+          es: "Ajuste Opus para bandas sonoras con controles de tasa de bits y canales",
         },
       },
       {
-        src: "/projects/media-batch-converter/files-tab.png",
+        src: "/projects/media-batch-converter/video-tab.webp",
+        caption: {
+          en: "HEVC video in MP4 with controls for quality, resolution and frame rate",
+          es: "Vídeo HEVC en MP4 con controles de calidad, resolución y fotogramas por segundo",
+        },
+      },
+      {
+        src: "/projects/media-batch-converter/files-tab.webp",
         caption: {
           en: "Document conversion with built-in engine and optional LibreOffice",
           es: "Conversión de documentos con motor integrado y LibreOffice opcional",
@@ -222,8 +230,8 @@ const portfolioProducts: DeveloperTool[] = [
     technologies: ["Python", "Tkinter", "Pillow", "FFmpeg", "LibreOffice", "PyInstaller"],
     badge: { en: "Open Source", es: "Código abierto" },
     metadata: {
-      en: "MIT License · Public GitHub Repository",
-      es: "Licencia MIT · Repositorio público en GitHub",
+      en: "Portable Windows app · MIT License",
+      es: "App portátil de Windows · Licencia MIT",
     },
     repositoryUrl: "https://github.com/JoanOliver04/media-batch-converter",
     license: "MIT",
