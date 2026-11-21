@@ -10,15 +10,16 @@ const controlClass =
 
 /** Switches between the two languages, showing the target language code. */
 export function LanguageToggle({ className }: { className?: string }) {
-  const { locale, toggleLocale, t } = useI18n();
+  const { locale, toggleLocale, t, ready } = useI18n();
   const next = locale === "en" ? "ES" : "EN";
 
   return (
     <button
       type="button"
       onClick={toggleLocale}
+      disabled={!ready}
       aria-label={t.a11y.language}
-      className={cn(controlClass, "w-12 font-mono text-xs tracking-label", className)}
+      className={cn(controlClass, "w-12 font-mono text-xs tracking-label disabled:cursor-wait disabled:opacity-60", className)}
     >
       <span aria-hidden="true">{next}</span>
     </button>
