@@ -201,8 +201,15 @@ const portfolioProducts: DeveloperTool[] = [
       {
         src: "/projects/media-batch-converter/batch-results.webp",
         caption: {
-          en: "Sample PNG batch showing measured savings and a skipped file",
-          es: "Lote de ejemplo en PNG con el ahorro medido y un archivo omitido",
+          en: "Sample PNG batch showing the space saved and one skipped file",
+          es: "Lote de ejemplo en PNG con el espacio ahorrado y un archivo omitido",
+        },
+      },
+      {
+        src: "/projects/media-batch-converter/batch-file-details.webp",
+        caption: {
+          en: "Per-file results comparing the original and encoded sizes of a skipped PNG",
+          es: "Detalle de un PNG omitido con su tamaño original y el que habría ocupado la salida",
         },
       },
       {
@@ -230,10 +237,11 @@ const portfolioProducts: DeveloperTool[] = [
     technologies: ["Python", "Tkinter", "Pillow", "FFmpeg", "LibreOffice", "PyInstaller"],
     badge: { en: "Open Source", es: "Código abierto" },
     metadata: {
-      en: "Portable Windows app · MIT License",
-      es: "App portátil de Windows · Licencia MIT",
+      en: "Windows x64 · v0.3.0 · MIT License",
+      es: "Windows x64 · v0.3.0 · Licencia MIT",
     },
     repositoryUrl: "https://github.com/JoanOliver04/media-batch-converter",
+    releaseUrl: "https://github.com/JoanOliver04/media-batch-converter/releases/tag/v0.3.0",
     license: "MIT",
   },
 ];

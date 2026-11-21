@@ -53,10 +53,10 @@ Focus.
 ## Developer Tools
 
 [Media Batch Converter](https://github.com/JoanOliver04/media-batch-converter)
-remains in **Developer Tools**: an open-source MIT-licensed Python desktop
-utility for local batch conversion of images, audio, video and documents
-(Pillow, FFmpeg and optional LibreOffice). The gallery covers the Images,
-Audio, Video and Files tabs.
+is a local batch converter for images, audio, video, and documents. The
+**Developer Tools** entry links to the [Windows x64 release](https://github.com/JoanOliver04/media-batch-converter/releases/tag/v0.3.0)
+and includes six screenshots. Two show how the app measures space saved and
+reports why it skipped a file.
 
 ---
 
