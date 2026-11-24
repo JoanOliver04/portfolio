@@ -22,7 +22,7 @@ test("developer tool content is bilingual, public and open source", async () => 
   assert.match(content, /Vídeo HEVC en MP4/);
   assert.match(content, /Document conversion with built-in engine/);
   assert.match(content, /Conversión de documentos con motor integrado/);
-  assert.match(content, /releaseUrl: "https:\/\/github\.com\/JoanOliver04\/media-batch-converter\/releases\/tag\/v0\.3\.0"/);
+  assert.match(content, /releaseUrl: "https:\/\/github\.com\/JoanOliver04\/media-batch-converter\/releases\/download\/v0\.4\.1\/MediaBatchConverter-0\.4\.1-windows-x64\.zip"/);
 
   // Capabilities the entry claims; each one is visible in the public repository.
   assert.match(content, /Bilingual interface switched at runtime/);
@@ -43,7 +43,7 @@ test("the refreshed desktop logo and all gallery screenshots exist", async () =>
   assert.equal(logo.toString("ascii", 1, 4), "PNG");
 
   const images = [...content.matchAll(/media-batch-converter\/([a-z-]+\.webp)/g)].map((match) => match[1]);
-  assert.deepEqual(images, ["images-tab.webp", "batch-results.webp", "batch-file-details.webp", "audio-tab.webp", "video-tab.webp", "files-tab.webp"]);
+  assert.deepEqual(images, ["batch-review.webp", "images-tab.webp", "batch-results.webp", "batch-file-details.webp", "audio-tab.webp", "video-tab.webp", "files-tab.webp"]);
   for (const image of images) {
     const bytes = await readFile(asset(image));
     assert.equal(bytes.toString("ascii", 8, 12), "WEBP");

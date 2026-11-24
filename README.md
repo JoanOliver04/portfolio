@@ -55,9 +55,9 @@ Focus.
 
 [Media Batch Converter](https://github.com/JoanOliver04/media-batch-converter)
 is a local batch converter for images, audio, video, and documents. The
-**Developer Tools** entry links to the [Windows x64 release](https://github.com/JoanOliver04/media-batch-converter/releases/tag/v0.3.0)
-and includes six screenshots. Two show how the app measures space saved and
-reports why it skipped a file.
+**Developer Tools** entry links to the [Windows x64 release](https://github.com/JoanOliver04/media-batch-converter/releases/tag/v0.4.1)
+and offers a direct ZIP download. Seven screenshots show how to choose files,
+configure the encoders and inspect the savings for each output.
 
 ---
 

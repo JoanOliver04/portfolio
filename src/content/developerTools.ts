@@ -167,14 +167,14 @@ const portfolioProducts: DeveloperTool[] = [
       es: "Herramienta de escritorio de código abierto para convertir imágenes, audio, vídeo y documentos por lotes. Permite reducir el peso de recursos de videojuegos, como sprites, bandas sonoras y cinemáticas, con ajustes predefinidos para cada tipo de archivo.",
     },
     details: {
-      en: "The app processes files locally and keeps the originals intact. The “Save only if smaller” option compares the actual file sizes before writing the output. The batch summary shows how much space was saved and lets you inspect each result.",
-      es: "La app procesa los archivos en local y conserva los originales. La opción «Guardar solo si ocupa menos» compara el tamaño real antes de guardar la salida. El resumen del lote muestra el espacio ahorrado y permite revisar cada resultado.",
+      en: "The app processes files locally. Review a folder, exclude drafts and see the size of your selection before converting. “Save only if smaller” keeps outputs that take up less space. Search the results by filename or folder to see what each file saved.",
+      es: "La app procesa los archivos en local. Antes de convertir una carpeta puedes excluir borradores y ver cuánto ocupa la selección. «Guardar solo si ocupa menos» conserva las salidas que reducen el tamaño. El buscador del resumen permite consultar el ahorro por archivo.",
     },
     highlights: {
       en: [
         "Recursive batch processing with preserved folder structure.",
         "AVIF and WebP for compact images, plus lossless PNG optimization.",
-        "Audio and video presets for Opus, AAC, H.264 and HEVC with FFmpeg.",
+        "Choose a local FFmpeg executable to enable audio and video. Size limits apply to the complete video.",
         "Files tab for PDF, Word, spreadsheets and slides, with optional LibreOffice.",
         "Multi-resolution ICO favicons from any source image.",
         "Bilingual interface switched at runtime, Spanish and English.",
@@ -183,7 +183,7 @@ const portfolioProducts: DeveloperTool[] = [
       es: [
         "Procesamiento recursivo por lotes conservando la estructura de carpetas.",
         "AVIF y WebP para imágenes ligeras, con optimización de PNG sin pérdida.",
-        "Ajustes de audio y vídeo para Opus, AAC, H.264 y HEVC mediante FFmpeg.",
+        "Elige FFmpeg en Diagnóstico para activar audio y vídeo. El límite de tamaño se aplica al vídeo completo.",
         "Pestaña Archivos para PDF, Word, hojas y presentaciones, con LibreOffice opcional.",
         "Favicons ICO multirresolución a partir de cualquier imagen.",
         "Interfaz bilingüe conmutable en caliente, español e inglés.",
@@ -191,6 +191,13 @@ const portfolioProducts: DeveloperTool[] = [
       ],
     },
     images: [
+      {
+        src: "/projects/media-batch-converter/batch-review.webp",
+        caption: {
+          en: "Three files included in a batch, with a draft excluded and the total input size shown",
+          es: "Lote con tres archivos incluidos, un borrador excluido y el tamaño total de la selección",
+        },
+      },
       {
         src: "/projects/media-batch-converter/images-tab.webp",
         caption: {
@@ -237,11 +244,11 @@ const portfolioProducts: DeveloperTool[] = [
     technologies: ["Python", "Tkinter", "Pillow", "FFmpeg", "LibreOffice", "PyInstaller"],
     badge: { en: "Open Source", es: "Código abierto" },
     metadata: {
-      en: "Windows x64 · v0.3.0 · MIT License",
-      es: "Windows x64 · v0.3.0 · Licencia MIT",
+      en: "Windows x64 · v0.4.1 · MIT License",
+      es: "Windows x64 · v0.4.1 · Licencia MIT",
     },
     repositoryUrl: "https://github.com/JoanOliver04/media-batch-converter",
-    releaseUrl: "https://github.com/JoanOliver04/media-batch-converter/releases/tag/v0.3.0",
+    releaseUrl: "https://github.com/JoanOliver04/media-batch-converter/releases/download/v0.4.1/MediaBatchConverter-0.4.1-windows-x64.zip",
     license: "MIT",
   },
 ];
