@@ -99,7 +99,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </h3>
       <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">{project.tagline[locale]}</p>
 
-      {project.images ? <ProjectGallery images={project.images} indexed={project.images.length > 10} className="mt-5" /> : null}
+      {project.images ? <ProjectGallery images={project.images} singleFrame={project.images.length > 10} className="mt-5" /> : null}
 
       <div className="mt-5 space-y-4 text-sm leading-relaxed">
         <div>

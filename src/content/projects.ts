@@ -28,26 +28,32 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/data-fuel/01-dashboard.png",
+        label: { en: "Station rankings", es: "Ranking de gasolineras" },
         caption: { en: "Stations ranked by real total cost", es: "Gasolineras ordenadas por coste total real" },
       },
       {
         src: "/projects/data-fuel/02-shap.png",
+        label: { en: "SHAP explanation", es: "Explicación SHAP" },
         caption: { en: "Explainable AI verdict with exact SHAP attributions", es: "Veredicto de IA explicable con atribuciones SHAP exactas" },
       },
       {
         src: "/projects/data-fuel/03-simulator.png",
+        label: { en: "Trip cost simulator", es: "Simulador de coste" },
         caption: { en: "Total-cost simulator: fuel plus the drive", es: "Simulador de coste total: combustible más el trayecto" },
       },
       {
         src: "/projects/data-fuel/04-traffic.png",
+        label: { en: "Traffic and prices", es: "Tráfico y precios" },
         caption: { en: "Live traffic and price heatmap", es: "Mapa de calor de precios y tráfico en tiempo real" },
       },
       {
         src: "/projects/data-fuel/05-model.png",
+        label: { en: "Forecast model", es: "Modelo de previsión" },
         caption: { en: "Global feature importance of the forecast model", es: "Importancia global de las variables del modelo" },
       },
       {
         src: "/projects/data-fuel/06-dark.png",
+        label: { en: "Dark mode", es: "Modo oscuro" },
         caption: { en: "Full dark mode", es: "Modo oscuro completo" },
       },
     ],
@@ -110,26 +116,32 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/fitprompt/01-home.png",
+        label: { en: "Home", es: "Inicio" },
         caption: { en: "Home dashboard", es: "Panel principal" },
       },
       {
         src: "/projects/fitprompt/02-chat-routine.png",
+        label: { en: "Training routine", es: "Rutina de entrenamiento" },
         caption: { en: "Conversational AI building a training routine", es: "IA conversacional creando una rutina de entrenamiento" },
       },
       {
         src: "/projects/fitprompt/03-chat-diet.png",
+        label: { en: "Nutrition plan", es: "Plan de nutrición" },
         caption: { en: "AI nutrition plan grounded in the user profile", es: "Plan de nutrición con IA basado en el perfil del usuario" },
       },
       {
         src: "/projects/fitprompt/04-dashboard.png",
+        label: { en: "Workout progress", es: "Progreso del entrenamiento" },
         caption: { en: "Workout tracking and progress", es: "Registro de entrenamientos y progreso" },
       },
       {
         src: "/projects/fitprompt/05-achievements.png",
+        label: { en: "Achievements", es: "Logros" },
         caption: { en: "Gamification and achievements", es: "Gamificación y logros" },
       },
       {
         src: "/projects/fitprompt/06-social.png",
+        label: { en: "Community", es: "Comunidad" },
         caption: { en: "Social layer", es: "Capa social" },
       },
     ],
@@ -187,26 +199,32 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/data-detective/01-home.png",
+        label: { en: "Overview", es: "Vista general" },
         caption: { en: "Platform overview", es: "Visión general de la plataforma" },
       },
       {
         src: "/projects/data-detective/02-events.png",
+        label: { en: "Event impact", es: "Impacto de eventos" },
         caption: { en: "Quasi-experimental mass-event impact", es: "Impacto cuasi-experimental de eventos masivos" },
       },
       {
         src: "/projects/data-detective/03-air-map.png",
+        label: { en: "Air quality map", es: "Mapa de calidad del aire" },
         caption: { en: "Air-quality map", es: "Mapa de calidad del aire" },
       },
       {
         src: "/projects/data-detective/04-forecast.png",
+        label: { en: "72-hour forecast", es: "Previsión a 72 horas" },
         caption: { en: "Interpretable 72-hour forecast", es: "Pronóstico interpretable a 72 horas" },
       },
       {
         src: "/projects/data-detective/05-anomalies.png",
+        label: { en: "Anomalies", es: "Anomalías" },
         caption: { en: "Anomaly detection", es: "Detección de anomalías" },
       },
       {
         src: "/projects/data-detective/06-comparator.png",
+        label: { en: "Baseline comparison", es: "Comparación de referencia" },
         caption: { en: "Baseline day comparator", es: "Comparador con días de línea base" },
       },
     ],
@@ -421,26 +439,32 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/book-piece/01-home.png",
+        label: { en: "Home", es: "Inicio" },
         caption: { en: "Home, signed in", es: "Pantalla principal con sesión iniciada" },
       },
       {
         src: "/projects/book-piece/02-store.png",
+        label: { en: "Bookshop", es: "Librería" },
         caption: { en: "Store running on an in-app currency", es: "Tienda con moneda propia de la app" },
       },
       {
         src: "/projects/book-piece/03-library.png",
+        label: { en: "My library", es: "Mi biblioteca" },
         caption: { en: "Personal reading library", es: "Biblioteca de lectura personal" },
       },
       {
         src: "/projects/book-piece/04-journal.png",
+        label: { en: "Reading journal", es: "Diario de lectura" },
         caption: { en: "Monthly reading journal", es: "Diario de lecturas mensual" },
       },
       {
         src: "/projects/book-piece/05-social.png",
+        label: { en: "Find readers", es: "Buscar lectores" },
         caption: { en: "Social layer — find other readers", es: "Capa social — buscar otros lectores" },
       },
       {
         src: "/projects/book-piece/06-admin.png",
+        label: { en: "Administration", es: "Administración" },
         caption: { en: "Role-based admin panel", es: "Panel de administración por roles" },
       },
     ],
@@ -488,26 +512,32 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/brain-craft/01-home.png",
+        label: { en: "Start screen", es: "Inicio" },
         caption: { en: "Start screen", es: "Pantalla de inicio" },
       },
       {
         src: "/projects/brain-craft/02-battle.png",
+        label: { en: "Quiz battle", es: "Duelo de preguntas" },
         caption: { en: "Each answer is a move in a turn-based duel", es: "Cada respuesta es un movimiento en un duelo por turnos" },
       },
       {
         src: "/projects/brain-craft/03-upgrade.png",
+        label: { en: "Attribute upgrades", es: "Mejora de atributos" },
         caption: { en: "Level up and upgrade attributes", es: "Sube de nivel y mejora atributos" },
       },
       {
         src: "/projects/brain-craft/04-roulette.png",
+        label: { en: "Category roulette", es: "Ruleta de categorías" },
         caption: { en: "Category roulette", es: "Ruleta de categorías" },
       },
       {
         src: "/projects/brain-craft/05-phase1.png",
+        label: { en: "Phase one", es: "Primera fase" },
         caption: { en: "Phase 1 screen", es: "Pantalla de la fase 1" },
       },
       {
         src: "/projects/brain-craft/06-victory.png",
+        label: { en: "Victory", es: "Victoria" },
         caption: { en: "Victory screen", es: "Pantalla de victoria" },
       },
     ],

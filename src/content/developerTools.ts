@@ -41,6 +41,7 @@ const portfolioProducts: DeveloperTool[] = [
     images: [
       {
         "src": "/projects/planora/01-landing-desktop-light-en.webp",
+        "label": { "en": "Welcome", "es": "Bienvenida" },
         "caption": {
           "en": "A calmer way to plan",
           "es": "Presentación pública, propuesta de valor y CTA"
@@ -48,6 +49,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/04-today-desktop-light-es.webp",
+        "label": { "en": "Today", "es": "Hoy" },
         "caption": {
           "en": "Daily planning and weekly progress",
           "es": "Hoy: progreso, horario activo y grupos del día"
@@ -55,6 +57,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/08-week-desktop-light-es.webp",
+        "label": { "en": "Week", "es": "Semana" },
         "caption": {
           "en": "The complete week at a glance",
           "es": "Semana completa con tareas, hábitos y eventos"
@@ -62,6 +65,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/15-tasks-desktop-light-es.webp",
+        "label": { "en": "Tasks", "es": "Tareas" },
         "caption": {
           "en": "Tasks, filters and recurrence",
           "es": "Gestión de tareas, búsqueda, filtros y recurrencias"
@@ -69,6 +73,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/43-focus-home-desktop-light-en.webp",
+        "label": { "en": "Focus presets", "es": "Ajustes de Enfoque" },
         "caption": {
           "en": "Focus presets and four weeks of goals",
           "es": "Enfoque: presets, inicio rápido y resumen semanal"
@@ -76,6 +81,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/47-focus-countdown-desktop-light-es.webp",
+        "label": { "en": "Focus timer", "es": "Temporizador de Enfoque" },
         "caption": {
           "en": "Deep work in progress",
           "es": "Sesión activa de trabajo profundo"
@@ -83,6 +89,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/50-focus-plan-desktop-dark-en.webp",
+        "label": { "en": "Focus plan", "es": "Plan de Enfoque" },
         "caption": {
           "en": "Structured plans: current and next block",
           "es": "Plan estructurado: bloque actual y siguiente"
@@ -90,6 +97,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/52-focus-summary-desktop-light-es.webp",
+        "label": { "en": "Session summary", "es": "Resumen de sesión" },
         "caption": {
           "en": "Planned versus actual session summary",
           "es": "Resumen final y comparación de lo previsto con lo realizado"
@@ -97,6 +105,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/27-statistics-desktop-light-en.webp",
+        "label": { "en": "Statistics", "es": "Estadísticas" },
         "caption": {
           "en": "Progress and patterns",
           "es": "Estadísticas de hábitos y progreso real"
@@ -104,6 +113,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/12-month-desktop-light-es.webp",
+        "label": { "en": "Month", "es": "Mes" },
         "caption": {
           "en": "The month ahead",
           "es": "Calendario mensual con actividad y eventos"
@@ -111,6 +121,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/33-reminders-desktop-light-es.webp",
+        "label": { "en": "Reminders", "es": "Recordatorios" },
         "caption": {
           "en": "Reminders and alarms",
           "es": "Centro de notificaciones, recordatorios y alarmas"
@@ -118,6 +129,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/07-today-mobile-light-es.webp",
+        "label": { "en": "Today on mobile", "es": "Hoy en móvil" },
         "caption": {
           "en": "Daily planning on mobile",
           "es": "Hoy móvil: progreso y tareas de la mañana"
@@ -125,6 +137,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/56-focus-active-mobile-dark-es.webp",
+        "label": { "en": "Focus on mobile", "es": "Enfoque en móvil" },
         "caption": {
           "en": "Mobile concentration mode",
           "es": "Sesión activa de Enfoque en móvil oscuro"
@@ -132,6 +145,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/38-settings-desktop-light-es.webp",
+        "label": { "en": "Settings", "es": "Ajustes" },
         "caption": {
           "en": "Appearance and personalization",
           "es": "Ajustes de apariencia, idioma y personalización"
@@ -193,6 +207,7 @@ const portfolioProducts: DeveloperTool[] = [
     images: [
       {
         src: "/projects/media-batch-converter/batch-review.webp",
+        label: { en: "Batch selection", es: "Selección del lote" },
         caption: {
           en: "Three files included in a batch, with a draft excluded and the total input size shown",
           es: "Lote con tres archivos incluidos, un borrador excluido y el tamaño total de la selección",
@@ -200,6 +215,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         src: "/projects/media-batch-converter/images-tab.webp",
+        label: { en: "Image settings", es: "Ajustes de imagen" },
         caption: {
           en: "AVIF preset for game backgrounds with Save only if smaller enabled",
           es: "Ajuste AVIF para fondos de videojuegos con la opción Guardar solo si ocupa menos activada",
@@ -207,6 +223,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         src: "/projects/media-batch-converter/batch-results.webp",
+        label: { en: "Batch results", es: "Resultados del lote" },
         caption: {
           en: "Sample PNG batch showing the space saved and one skipped file",
           es: "Lote de ejemplo en PNG con el espacio ahorrado y un archivo omitido",
@@ -214,6 +231,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         src: "/projects/media-batch-converter/batch-file-details.webp",
+        label: { en: "File details", es: "Detalle de archivo" },
         caption: {
           en: "Per-file results comparing the original and encoded sizes of a skipped PNG",
           es: "Detalle de un PNG omitido con su tamaño original y el que habría ocupado la salida",
@@ -221,6 +239,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         src: "/projects/media-batch-converter/audio-tab.webp",
+        label: { en: "Audio settings", es: "Ajustes de audio" },
         caption: {
           en: "Opus preset for soundtracks with controls for bitrate and channels",
           es: "Ajuste Opus para bandas sonoras con controles de tasa de bits y canales",
@@ -228,6 +247,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         src: "/projects/media-batch-converter/video-tab.webp",
+        label: { en: "Video settings", es: "Ajustes de vídeo" },
         caption: {
           en: "HEVC video in MP4 with controls for quality, resolution and frame rate",
           es: "Vídeo HEVC en MP4 con controles de calidad, resolución y fotogramas por segundo",
@@ -235,6 +255,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         src: "/projects/media-batch-converter/files-tab.webp",
+        label: { en: "Document settings", es: "Ajustes de documentos" },
         caption: {
           en: "Document conversion with built-in engine and optional LibreOffice",
           es: "Conversión de documentos con motor integrado y LibreOffice opcional",

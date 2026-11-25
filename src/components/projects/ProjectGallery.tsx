@@ -7,22 +7,15 @@ import { useI18n } from "@/i18n/I18nProvider";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
 
-/**
- * Accessible screenshot carousel. Real product images sell the work faster than
- * copy, so each project ships a short curated gallery. Keyboard navigable
- * (arrow keys), honours reduced-motion (instant swap, no slide), and lazy-loads
- * every frame after the first. Captions are bilingual and double as alt text.
- */
+/** Bilingual screenshot picker with keyboard navigation and a link to the selected original. */
 export function ProjectGallery({
   images,
   className,
-  showFullSizeLink = false,
-  indexed = false,
+  singleFrame = false,
 }: {
   images: ProjectImage[];
   className?: string;
-  showFullSizeLink?: boolean;
-  indexed?: boolean;
+  singleFrame?: boolean;
 }) {
   const { t, locale, ready } = useI18n();
   const reduced = useReducedMotion();
@@ -57,7 +50,7 @@ export function ProjectGallery({
       onKeyDown={onKeyDown}
     >
       <div className="relative overflow-hidden rounded-lg border border-border bg-surface-2">
-        {indexed ? (
+        {singleFrame ? (
           <div className="relative aspect-[4/5] max-h-[70svh] w-full sm:aspect-square lg:aspect-[6/5]">
             <Image
               key={current.src}
@@ -96,7 +89,7 @@ export function ProjectGallery({
               onClick={() => go(index - 1)}
               disabled={!ready}
               aria-label={t.a11y.galleryPrev}
-              className={cn(indexed && "min-h-11 min-w-11", "absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60")}
+              className="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60"
             >
               <Chevron dir="left" />
             </button>
@@ -105,7 +98,7 @@ export function ProjectGallery({
               onClick={() => go(index + 1)}
               disabled={!ready}
               aria-label={t.a11y.galleryNext}
-              className={cn(indexed && "min-h-11 min-w-11", "absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60")}
+              className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60"
             >
               <Chevron dir="right" />
             </button>
@@ -116,12 +109,11 @@ export function ProjectGallery({
         ) : null}
       </div>
 
-      {/* Caption + dots */}
       <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
         <p className="min-w-0 flex-[1_1_12rem] font-mono text-[0.72rem] leading-snug text-muted" aria-live="polite">
           {current.caption[locale]}
         </p>
-        {indexed ? (
+        {count > 1 && (
           <select
             aria-label={t.a11y.galleryGoTo}
             value={index}
@@ -133,36 +125,17 @@ export function ProjectGallery({
               <option key={img.src} value={i}>{i + 1} / {count} · {(img.label ?? img.caption)[locale]}</option>
             ))}
           </select>
-        ) : count > 1 ? (
-          <div className="flex max-w-full flex-wrap items-center gap-1.5">
-            {images.map((img, i) => (
-              <button
-                key={img.src}
-                type="button"
-                onClick={() => go(i)}
-                disabled={!ready}
-                aria-label={`${t.a11y.galleryGoTo} ${i + 1}`}
-                aria-current={i === index}
-                className={cn(
-                  "h-1.5 rounded-full transition-all disabled:cursor-wait disabled:opacity-60",
-                  i === index ? "w-4 bg-accent" : "w-1.5 bg-border hover:bg-muted",
-                )}
-              />
-            ))}
-          </div>
-        ) : null}
+        )}
       </div>
-      {showFullSizeLink || indexed ? (
-        <a
-          href={current.src}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-2 inline-flex min-h-8 items-center text-xs font-medium text-muted underline underline-offset-4 hover:text-accent"
-        >
-          {t.a11y.galleryFullSize}
-          <span className="sr-only"> ({t.a11y.opensNewTab})</span>
-        </a>
-      ) : null}
+      <a
+        href={current.src}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 inline-flex min-h-8 items-center text-xs font-medium text-muted underline underline-offset-4 hover:text-accent"
+      >
+        {t.a11y.galleryFullSize}
+        <span className="sr-only"> ({t.a11y.opensNewTab})</span>
+      </a>
     </div>
   );
 }

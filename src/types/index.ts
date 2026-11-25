@@ -14,7 +14,7 @@ export type RepoType = "source" | "showcase";
 export interface ProjectImage {
   src: string;
   caption: Localized;
-  /** Short title for the screenshot picker in larger galleries. */
+  /** Short title for the screenshot picker. */
   label?: Localized;
 }
 
