@@ -1,10 +1,9 @@
 "use client";
 
-import { useCallback, useState, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
 import Image from "next/image";
 import type { ProjectImage } from "@/types";
 import { useI18n } from "@/i18n/I18nProvider";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
 
 /** Bilingual screenshot picker with keyboard navigation and a link to the selected original. */
@@ -18,9 +17,27 @@ export function ProjectGallery({
   singleFrame?: boolean;
 }) {
   const { t, locale, ready } = useI18n();
-  const reduced = useReducedMotion();
   const [index, setIndex] = useState(0);
   const count = images.length;
+  const frame = useRef<HTMLDivElement>(null);
+  const [nearViewport, setNearViewport] = useState(false);
+  const cover = images[0]?.thumbnail;
+
+  useEffect(() => {
+    if (!frame.current || !cover) return;
+    if (!("IntersectionObserver" in window)) {
+      setNearViewport(true);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setNearViewport(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: "320px 0px" });
+    observer.observe(frame.current);
+    return () => observer.disconnect();
+  }, [cover]);
 
   const go = useCallback(
     (next: number) => setIndex(((next % count) + count) % count),
@@ -50,37 +67,20 @@ export function ProjectGallery({
       onKeyDown={onKeyDown}
     >
       <div className="relative overflow-hidden rounded-lg border border-border bg-surface-2">
-        {singleFrame ? (
-          <div className="relative aspect-[4/5] max-h-[70svh] w-full sm:aspect-square lg:aspect-[6/5]">
+        <div ref={frame} className={cn("relative w-full", singleFrame ? "aspect-[4/5] max-h-[70svh] sm:aspect-square lg:aspect-[6/5]" : "aspect-video")}>
+          <picture>
+            {!nearViewport && index === 0 && cover && (
+              <source media="(scripting: enabled)" srcSet={cover} />
+            )}
             <Image
-              key={current.src}
               src={current.src}
               alt={current.caption[locale]}
               fill
-              sizes="(min-width: 768px) 540px, 94vw"
+              sizes={singleFrame ? "(min-width: 768px) 540px, 94vw" : "(max-width: 1024px) 100vw, 760px"}
               className="object-contain"
             />
-          </div>
-        ) : (
-          <div
-            className={cn("flex", !reduced && "transition-transform duration-500 ease-out")}
-            style={{ transform: `translateX(-${index * 100}%)` }}
-          >
-            {images.map((img, i) => (
-              <div key={img.src} className="relative aspect-video w-full shrink-0 basis-full">
-                <Image
-                  src={img.src}
-                  alt={img.caption[locale]}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 760px"
-                  className="object-contain"
-                  loading={i === 0 ? "eager" : "lazy"}
-                  aria-hidden={i !== index}
-                />
-              </div>
-            ))}
-          </div>
-        )}
+          </picture>
+        </div>
 
         {count > 1 ? (
           <>

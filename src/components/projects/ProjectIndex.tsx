@@ -19,7 +19,7 @@ export function ProjectIndex() {
               >
                 {cover && (
                   <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded border border-border bg-surface-2 lg:aspect-[2.7] lg:h-auto lg:w-full lg:rounded-b-none lg:rounded-t-lg lg:border-x-0 lg:border-t-0">
-                    <Image src={cover.src} alt="" fill sizes="(min-width: 1024px) 260px, 64px" className="object-cover object-top" />
+                    <Image src={cover.thumbnail ?? cover.src} alt="" fill sizes="(min-width: 1024px) 260px, 64px" className="object-cover object-top" />
                   </div>
                 )}
                 <div className="flex min-w-0 flex-1 items-center justify-between gap-2 lg:items-start lg:px-3.5 lg:py-3">

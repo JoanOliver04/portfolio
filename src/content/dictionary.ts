@@ -139,7 +139,10 @@ const en = {
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
     githubLabel: "GitHub",
-    availability: "Open to my first full-time software role · Valencia, Spain",
+    cvTitle: "Curriculum vitae",
+    copyEmail: "Copy email address",
+    copied: "Address copied.",
+    manualCopy: "Select the address and use Copy.",
   },
   footer: {
     tagline: "Full-stack developer building data-informed products.",
@@ -287,8 +290,10 @@ const es: Dictionary = {
     emailLabel: "Correo",
     linkedinLabel: "LinkedIn",
     githubLabel: "GitHub",
-    availability:
-      "Disponible para mi primer empleo a tiempo completo · Valencia, España",
+    cvTitle: "Currículum",
+    copyEmail: "Copiar dirección",
+    copied: "Dirección copiada.",
+    manualCopy: "Selecciona la dirección y usa Copiar.",
   },
   footer: {
     tagline: "Desarrollador full-stack que construye productos basados en datos.",

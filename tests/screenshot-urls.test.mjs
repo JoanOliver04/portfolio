@@ -33,3 +33,21 @@ test("previously published screenshot URLs still resolve to image files", async 
     }
   }
 });
+
+test("project index thumbnails resolve alongside their full-size captures", async () => {
+  const sources = await Promise.all(["projects", "developerTools"].map((name) =>
+    readFile(new URL(`../src/content/${name}.ts`, import.meta.url), "utf8")
+  ));
+  const pairs = [...sources.join("\n").matchAll(
+    /"?src"?:\s*"(\/projects\/[^"]+)"\s*,\s*"?thumbnail"?:\s*"(\/project-covers\/[^"]+)"/g,
+  )];
+  assert.ok(pairs.length > 0, "the index has static covers");
+
+  for (const [, original, thumbnail] of pairs) {
+    const asset = (url) => readFile(new URL(`../public${url}`, import.meta.url));
+    const [capture, cover] = await Promise.all([asset(original), asset(thumbnail)]);
+    assert.equal(cover.toString("ascii", 0, 4), "RIFF", thumbnail);
+    assert.equal(cover.toString("ascii", 8, 12), "WEBP", thumbnail);
+    assert.ok(cover.length < capture.length, thumbnail);
+  }
+});

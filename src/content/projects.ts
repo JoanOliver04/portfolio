@@ -29,6 +29,7 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/data-fuel/01-dashboard.png",
+        thumbnail: "/project-covers/data-fuel-b61cde93bf.webp",
         label: { en: "Station rankings", es: "Ranking de gasolineras" },
         caption: { en: "Stations ranked by real total cost", es: "Gasolineras ordenadas por coste total real" },
       },
@@ -118,6 +119,7 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/fitprompt/01-home.png",
+        thumbnail: "/project-covers/fitprompt-f4adb1c043.webp",
         label: { en: "Home", es: "Inicio" },
         caption: { en: "Home dashboard", es: "Panel principal" },
       },
@@ -202,6 +204,7 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/data-detective/01-home.png",
+        thumbnail: "/project-covers/data-detective-15da8a928f.webp",
         label: { en: "Overview", es: "Vista general" },
         caption: { en: "Platform overview", es: "Visión general de la plataforma" },
       },
@@ -286,6 +289,7 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/minigame-hub/01-library.png",
+        thumbnail: "/project-covers/minigame-hub-036f89999d.webp",
         label: { en: "Game library", es: "Biblioteca de juegos" },
         caption: { en: "The library with 37 games, category filters and today’s puzzle", es: "La biblioteca con 37 juegos, filtros por categoría y el puzle diario" },
       },
@@ -444,6 +448,7 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/book-piece/01-home.png",
+        thumbnail: "/project-covers/book-piece-645ce73a28.webp",
         label: { en: "Home", es: "Inicio" },
         caption: { en: "Home, signed in", es: "Pantalla principal con sesión iniciada" },
       },
@@ -518,6 +523,7 @@ export const projects: Project[] = [
     images: [
       {
         src: "/projects/brain-craft/01-home.png",
+        thumbnail: "/project-covers/brain-craft-114df174f8.webp",
         label: { en: "Start screen", es: "Inicio" },
         caption: { en: "Start screen", es: "Pantalla de inicio" },
       },

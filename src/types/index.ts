@@ -13,6 +13,8 @@ export type RepoType = "source" | "showcase";
 /** A single gallery screenshot. `caption` is bilingual and doubles as alt text. */
 export interface ProjectImage {
   src: string;
+  /** Small static cover used by the project index. */
+  thumbnail?: string;
   caption: Localized;
   /** Short title for the screenshot picker. */
   label?: Localized;

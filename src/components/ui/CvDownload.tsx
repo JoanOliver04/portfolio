@@ -1,48 +1,71 @@
-interface CvDownloadProps {
-  label: string;
-  spanishLabel: string;
-  englishLabel: string;
-}
+"use client";
+
+import { useEffect, useRef } from "react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const cvFiles = {
   es: "/cv/joan-vicent-oliver-rosell-cv-es.pdf",
   en: "/cv/joan-vicent-oliver-rosell-cv-en.pdf",
 } as const;
 
-export function CvDownload({
-  label,
-  spanishLabel,
-  englishLabel,
-}: CvDownloadProps) {
+export function CvLinks({ className }: { className: string }) {
+  const { t, locale } = useI18n();
+  const languages = locale === "es" ? (["es", "en"] as const) : (["en", "es"] as const);
+
+  return languages.map((language) => (
+    <a
+      key={language}
+      href={cvFiles[language]}
+      hrefLang={language}
+      type="application/pdf"
+      download={`Joan_Vicent_Oliver_Rosell_CV_${language.toUpperCase()}.pdf`}
+      className={className}
+    >
+      {language === "es" ? t.hero.cvSpanish : t.hero.cvEnglish}
+      <span className="font-mono text-[0.65rem] text-muted">PDF</span>
+    </a>
+  ));
+}
+
+export function CvDownload() {
+  const { t } = useI18n();
+  const details = useRef<HTMLDetailsElement>(null);
+  const summary = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const closeOutside = (event: PointerEvent) => {
+      const menu = details.current;
+      if (menu?.open && event.target instanceof Node && !menu.contains(event.target)) {
+        menu.open = false;
+      }
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    return () => document.removeEventListener("pointerdown", closeOutside);
+  }, []);
+
   return (
-    <details className="group relative max-w-full">
-      <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-md border border-border bg-surface/50 px-5 py-3 text-sm font-medium text-text transition-colors hover:border-accent/60 hover:text-accent [&::-webkit-details-marker]:hidden">
+    <details
+      ref={details}
+      className="group relative max-w-full"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && event.currentTarget.open) {
+          event.currentTarget.open = false;
+          summary.current?.focus();
+        }
+      }}
+      onBlur={(event) => {
+        if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) {
+          event.currentTarget.open = false;
+        }
+      }}
+    >
+      <summary ref={summary} className="inline-flex cursor-pointer list-none items-center gap-2 rounded-md border border-border bg-surface/50 px-5 py-3 text-sm font-medium text-text transition-colors hover:border-accent/60 hover:text-accent [&::-webkit-details-marker]:hidden">
         <DownloadIcon />
-        {label}
+        {t.hero.downloadCv}
         <ChevronIcon className="transition-transform group-open:rotate-180" />
       </summary>
-
-      <div className="absolute left-0 top-full z-20 mt-2 w-full rounded-md border border-border bg-surface p-1.5 shadow-lg">
-        <a
-          href={cvFiles.es}
-          download="Joan_Vicent_Oliver_Rosell_CV_ES.pdf"
-          className="flex items-center justify-between gap-2 rounded px-2 py-2.5 text-sm text-text transition-colors hover:bg-surface-2 hover:text-accent"
-        >
-          <span>{spanishLabel}</span>
-          <span aria-hidden="true" className="font-mono text-[0.65rem] text-muted">
-            PDF
-          </span>
-        </a>
-        <a
-          href={cvFiles.en}
-          download="Joan_Vicent_Oliver_Rosell_CV_EN.pdf"
-          className="flex items-center justify-between gap-2 rounded px-2 py-2.5 text-sm text-text transition-colors hover:bg-surface-2 hover:text-accent"
-        >
-          <span>{englishLabel}</span>
-          <span aria-hidden="true" className="font-mono text-[0.65rem] text-muted">
-            PDF
-          </span>
-        </a>
+      <div className="absolute left-0 top-full z-20 mt-2 min-w-full rounded-md border border-border bg-surface p-1.5 shadow-lg">
+        <CvLinks className="flex min-h-11 items-center justify-between gap-2 whitespace-nowrap rounded px-2 py-2 text-sm text-text hover:bg-surface-2 hover:text-accent" />
       </div>
     </details>
   );

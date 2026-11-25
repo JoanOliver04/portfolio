@@ -13,7 +13,7 @@ export function Hero() {
     <Container className="relative">
       <div className="grid grid-cols-1 items-center gap-12 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:py-24">
         {/* Left — positioning */}
-        <div className="relative z-10 animate-fade-up">
+        <div className="relative z-10">
           <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-label text-accent">
             <span aria-hidden="true" className="h-px w-8 bg-accent/60" />
             {t.hero.eyebrow}
@@ -55,13 +55,7 @@ export function Hero() {
             >
               {t.hero.contact}
             </a>
-            <CvDownload
-              label={t.hero.downloadCv}
-              spanishLabel={t.hero.cvSpanish}
-              englishLabel={t.hero.cvEnglish}
-            />
-
-            <span className="mx-1 hidden h-6 w-px bg-border sm:block" aria-hidden="true" />
+            <CvDownload />
 
             <div className="flex items-center gap-2">
               <a
@@ -87,7 +81,7 @@ export function Hero() {
         </div>
 
         {/* Right — portrait as a standalone visual anchor */}
-        <div className="relative z-0 animate-fade-up [animation-delay:120ms]">
+        <div className="relative z-0">
           <div className="mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0 lg:ml-auto lg:max-w-md">
             <Portrait />
           </div>

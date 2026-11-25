@@ -42,6 +42,7 @@ const portfolioProducts: DeveloperTool[] = [
     images: [
       {
         "src": "/projects/planora/01-landing-desktop-light-en.webp",
+        "thumbnail": "/project-covers/planora-e671898af9.webp",
         "label": { "en": "Welcome", "es": "Bienvenida" },
         "caption": {
           "en": "A calmer way to plan",
@@ -209,6 +210,7 @@ const portfolioProducts: DeveloperTool[] = [
     images: [
       {
         src: "/projects/media-batch-converter/batch-review.webp",
+        thumbnail: "/project-covers/media-batch-converter-e05d871977.webp",
         label: { en: "Batch selection", es: "Selección del lote" },
         caption: {
           en: "Three files included in a batch, with a draft excluded and the total input size shown",
