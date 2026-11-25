@@ -55,7 +55,7 @@ export function DemoLink({ project }: { project: Project }) {
       href={project.liveUrl}
       target="_blank"
       rel="noreferrer"
-      className="group/link inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent/80"
+      className="group/link inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:underline"
     >
       <ExternalIcon className="h-4 w-4" />
       {t.projects.viewDemo}
@@ -86,7 +86,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const { locale, t } = useI18n();
 
   return (
-    <article id={project.id} className="flex h-full scroll-mt-24 flex-col rounded-lg border border-border bg-surface/60 p-6 transition-colors hover:border-accent/40 sm:p-7">
+    <article id={project.id} tabIndex={-1} aria-labelledby={`${project.id}-title`} className="flex h-full scroll-mt-24 flex-col rounded-lg border border-border bg-surface/60 p-6 transition-colors hover:border-accent/40 sm:p-7">
       <header className="flex items-start justify-between gap-4">
         <p className="font-mono text-[0.72rem] uppercase tracking-label text-accent">
           {categoryLabel(project.category, locale)}
@@ -94,7 +94,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <ProjectBadges project={project} />
       </header>
 
-      <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-text">
+      <h3 id={`${project.id}-title`} className="mt-4 font-display text-2xl font-semibold tracking-tight text-text">
         {project.name}
       </h3>
       <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">{project.tagline[locale]}</p>
@@ -103,13 +103,13 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="mt-5 space-y-4 text-sm leading-relaxed">
         <div>
-          <span className="font-mono text-[0.68rem] uppercase tracking-label text-muted/80">
+          <span className="font-mono text-[0.68rem] uppercase tracking-label text-muted">
             {t.projects.problem}
           </span>
           <p className="mt-1.5 text-muted">{project.problem[locale]}</p>
         </div>
         <div>
-          <span className="font-mono text-[0.68rem] uppercase tracking-label text-muted/80">
+          <span className="font-mono text-[0.68rem] uppercase tracking-label text-muted">
             {t.projects.product}
           </span>
           <p className="mt-1.5 text-muted">{project.product[locale]}</p>
@@ -117,7 +117,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="mt-5">
-        <span className="font-mono text-[0.68rem] uppercase tracking-label text-muted/80">
+        <span className="font-mono text-[0.68rem] uppercase tracking-label text-muted">
           {t.projects.engineering}
         </span>
         <ul className="mt-2 space-y-2">
@@ -139,7 +139,7 @@ export function ProjectCard({ project }: { project: Project }) {
       ) : null}
 
       {project.note || project.origin ? (
-        <p className="mt-5 border-l-2 border-border pl-3 text-[0.8rem] leading-relaxed text-muted/80">
+        <p className="mt-5 border-l-2 border-border pl-3 text-[0.8rem] leading-relaxed text-muted">
           {project.note ? project.note[locale] : null}
           {project.note && project.origin ? " " : null}
           {project.origin ? project.origin[locale] : null}

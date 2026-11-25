@@ -14,6 +14,7 @@ const en = {
   },
   a11y: {
     skip: "Skip to content",
+    navigation: "Main navigation",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     theme: "Toggle light / dark theme",
@@ -31,9 +32,9 @@ const en = {
   },
   hero: {
     eyebrow: "Full-Stack Developer",
-    title: "Data-informed products, engineered end to end.",
+    title: "I build software for everyday decisions.",
     subtitle:
-      "I build modern web applications with TypeScript, Python and applied AI — combining full-stack development, data analysis and geospatial tools to solve real problems.",
+      "Data Fuel compares what it really costs to fill up, including the drive. Planora is the app I built to organise my week. My main tools are TypeScript and Python.",
     location: "Based in Valencia, Spain",
     availability: "Open to my first full-time software role",
     viewProjects: "View projects",
@@ -46,8 +47,8 @@ const en = {
     available: "Available",
   },
   proof: {
+    projectsLabel: "Projects in this portfolio",
     items: [
-      { value: "7", label: "Featured projects" },
       { value: "2", label: "Higher vocational degrees" },
       { value: "AI · Big Data", label: "Specialization completed" },
       { value: "800+", label: "Automated tests written" },
@@ -57,7 +58,8 @@ const en = {
     eyebrow: "Selected work",
     title: "Projects",
     subtitle:
-      "A live product, then data and applied AI, plus earlier applications.",
+      "Choose a project to explore its design, screenshots and code.",
+    indexLabel: "Project index",
     liveEyebrow: "In production",
     liveLead:
       "A product I use every day — built from scratch and still being updated.",
@@ -75,15 +77,16 @@ const en = {
     moreSubtitle:
       "Earlier, broader product work from my vocational training — full applications, front to back.",
     costViz: {
-      header: "Lowest price per litre ≠ lowest total cost",
-      context: "Illustrative example · 40 L fill-up",
-      option1: "Lowest €/L",
-      option2: "Best total cost",
+      header: "Which station costs less?",
+      context: "Example for a 40 L fill-up. The round trip costs €0.25 per kilometre.",
+      distance: "One-way distance to station A",
+      stationA: "Station A",
+      stationB: "Station B",
       fuel: "Fuel",
-      travel: "Travel",
+      travel: "Drive",
       total: "Total",
-      best: "best",
-      footer: "Fuel + travel + time + traffic",
+      savings: "{station} saves {amount}.",
+      tie: "Both stations cost the same.",
     },
   },
   productivityApps: {
@@ -158,6 +161,7 @@ const es: Dictionary = {
   },
   a11y: {
     skip: "Saltar al contenido",
+    navigation: "Navegación principal",
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
     theme: "Cambiar tema claro / oscuro",
@@ -175,9 +179,9 @@ const es: Dictionary = {
   },
   hero: {
     eyebrow: "Desarrollador Full-Stack",
-    title: "Productos basados en datos, construidos de principio a fin.",
+    title: "Desarrollo software para decisiones cotidianas.",
     subtitle:
-      "Desarrollo aplicaciones web modernas con TypeScript, Python e IA aplicada, combinando desarrollo full-stack, análisis de datos y herramientas geoespaciales para resolver problemas reales.",
+      "Data Fuel compara cuánto cuesta repostar contando el trayecto. Planora es la aplicación que creé para organizar mi semana. Trabajo principalmente con TypeScript y Python.",
     location: "Con base en Valencia, España",
     availability: "Disponible para mi primer empleo a tiempo completo",
     viewProjects: "Ver proyectos",
@@ -190,8 +194,8 @@ const es: Dictionary = {
     available: "Disponible",
   },
   proof: {
+    projectsLabel: "Proyectos en el portfolio",
     items: [
-      { value: "7", label: "Proyectos destacados" },
       { value: "2", label: "Ciclos de grado superior" },
       { value: "IA · Big Data", label: "Especialización completada" },
       { value: "800+", label: "Tests automatizados escritos" },
@@ -201,7 +205,8 @@ const es: Dictionary = {
     eyebrow: "Trabajo seleccionado",
     title: "Proyectos",
     subtitle:
-      "Un producto en vivo, después datos e IA aplicada, y aplicaciones anteriores.",
+      "Elige un proyecto para explorar su diseño, sus capturas y su código.",
+    indexLabel: "Índice de proyectos",
     liveEyebrow: "En producción",
     liveLead:
       "Un producto que uso cada día: nació de cero y se sigue actualizando.",
@@ -219,15 +224,16 @@ const es: Dictionary = {
     moreSubtitle:
       "Trabajo de producto más amplio de mi formación — aplicaciones completas, de principio a fin.",
     costViz: {
-      header: "Menor precio por litro ≠ menor coste total",
-      context: "Ejemplo ilustrativo · repostaje de 40 L",
-      option1: "Menor €/L",
-      option2: "Mejor coste total",
-      fuel: "Combustible",
+      header: "¿En qué gasolinera sale más barato?",
+      context: "Ejemplo para un repostaje de 40 L. El viaje de ida y vuelta cuesta 0,25 € por kilómetro.",
+      distance: "Distancia de ida a la gasolinera A",
+      stationA: "Gasolinera A",
+      stationB: "Gasolinera B",
+      fuel: "Gasolina",
       travel: "Trayecto",
       total: "Total",
-      best: "mejor",
-      footer: "Combustible + trayecto + tiempo + tráfico",
+      savings: "{station} cuesta {amount} menos.",
+      tie: "Las dos gasolineras cuestan lo mismo.",
     },
   },
   productivityApps: {

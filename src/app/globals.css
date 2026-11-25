@@ -16,9 +16,9 @@
   --text: 26 24 20; /* #1A1814 ink */
   --muted: 92 88 80; /* #5C5850 */
   --border: 228 224 214; /* #E4E0D6 */
-  --accent: 200 78 20; /* #C84E14 warm signal (AA on paper for large text/graphics) */
+  --accent: 169 62 15; /* #A93E0F burnt orange on warm paper */
   --accent-contrast: 255 255 255;
-  --ring: 200 78 20;
+  --ring: 169 62 15;
 }
 
 .dark {
@@ -80,18 +80,11 @@
     }
   }
 
-  /* Scroll-reveal: hidden state, revealed via the `is-visible` class from JS. */
-  .reveal {
-    opacity: 0;
-    transform: translateY(14px);
-    transition:
-      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: none;
+  /* Keep server-rendered content readable while scripts load. */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal.is-visible {
+      animation: reveal-in 360ms ease-out backwards;
+    }
   }
 
   /* One-shot line draw for the hero signature plot. */
@@ -100,6 +93,11 @@
     stroke-dashoffset: 1;
     animation: draw 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
   }
+}
+
+@keyframes reveal-in {
+  from { opacity: 0.88; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
 }
 
 @keyframes draw {

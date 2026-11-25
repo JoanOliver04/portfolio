@@ -21,6 +21,7 @@ export interface ProjectImage {
 export interface Project {
   id: string;
   name: string;
+  indexSummary: Localized;
   category: ProjectCategory;
   /** Flagship projects get the large, feature-block treatment. */
   flagship?: boolean;
@@ -78,6 +79,7 @@ export interface SkillGroup {
 export interface DeveloperTool {
   id: string;
   name: string;
+  indexSummary: Localized;
   icon?: string;
   description: Localized;
   details: Localized;

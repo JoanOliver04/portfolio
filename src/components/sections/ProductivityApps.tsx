@@ -14,7 +14,7 @@ export function ProductivityApps() {
     <div className="grid grid-cols-1 gap-5">
       {productivityApps.map((tool, index) => (
         <Reveal key={tool.id} as="div" delay={index * 80}>
-          <article id={tool.id} className="grid scroll-mt-24 grid-cols-1 overflow-hidden rounded-lg border border-border bg-surface/70 transition-colors hover:border-accent/35 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
+          <article id={tool.id} tabIndex={-1} aria-labelledby={`${tool.id}-title`} className="grid scroll-mt-24 grid-cols-1 overflow-hidden rounded-lg border border-border bg-surface/70 transition-colors hover:border-accent/35 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
             {tool.images ? (
               <div className="flex items-center border-b border-border bg-surface-2/60 p-3 sm:p-4 lg:border-b-0 lg:border-r">
                 <ProjectGallery images={tool.images} className="mx-auto w-full max-w-3xl lg:max-w-none" />
@@ -30,7 +30,7 @@ export function ProductivityApps() {
                 <span className="font-mono text-[0.66rem] text-muted">{tool.metadata[locale]}</span>
               </div>
 
-              <h3 className="mt-3 font-display text-xl font-semibold tracking-tight text-text sm:text-2xl">
+              <h3 id={`${tool.id}-title`} className="mt-3 font-display text-xl font-semibold tracking-tight text-text sm:text-2xl">
                 {tool.name}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{tool.description[locale]}</p>

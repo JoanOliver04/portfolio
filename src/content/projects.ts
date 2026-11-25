@@ -9,6 +9,7 @@ export const projects: Project[] = [
   {
     id: "data-fuel",
     name: "Data Fuel",
+    indexSummary: { en: "Fuel prices and driving costs", es: "Precios y coste del trayecto" },
     category: "ai",
     flagship: true,
     repoType: "source",
@@ -97,6 +98,7 @@ export const projects: Project[] = [
   {
     id: "fitprompt",
     name: "FitPrompt",
+    indexSummary: { en: "Training and nutrition with AI", es: "Entrenamiento y nutrición con IA" },
     category: "ai",
     repoType: "source",
     github: "https://github.com/JoanOliver04/FitPrompt",
@@ -182,6 +184,7 @@ export const projects: Project[] = [
   {
     id: "data-detective",
     name: "Data Detective",
+    indexSummary: { en: "Air quality during city events", es: "Calidad del aire durante eventos" },
     category: "ai",
     repoType: "source",
     github: "https://github.com/JoanOliver04/Data_Detective",
@@ -265,6 +268,7 @@ export const projects: Project[] = [
   {
     id: "minigame-hub",
     name: "Mini-Game Hub",
+    indexSummary: { en: "Arcade games and private rooms", es: "Juegos arcade y salas privadas" },
     category: "ai",
     repoType: "source",
     github: "https://github.com/JoanOliver04/minigame-hub",
@@ -431,6 +435,7 @@ export const projects: Project[] = [
   {
     id: "book-piece",
     name: "Book Piece",
+    indexSummary: { en: "Bookshop and reading journal", es: "Librería y diario de lectura" },
     category: "web",
     repoType: "showcase",
     github: "https://github.com/JoanOliver04/book-piece-showcase",
@@ -504,6 +509,7 @@ export const projects: Project[] = [
   {
     id: "brain-craft",
     name: "Brain Craft",
+    indexSummary: { en: "A turn-based trivia RPG", es: "Un RPG de preguntas por turnos" },
     category: "multiplatform",
     repoType: "showcase",
     github: "https://github.com/JoanOliver04/brain-craft-showcase",

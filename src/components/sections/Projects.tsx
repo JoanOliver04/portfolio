@@ -5,6 +5,7 @@ import { projects } from "@/content/projects";
 import { productivityApps } from "@/content/developerTools";
 import { Container, Section, SectionHeading } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
+import { ProjectIndex } from "@/components/projects/ProjectIndex";
 import { FlagshipCard } from "@/components/projects/FlagshipCard";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { ProductivityApps } from "@/components/sections/ProductivityApps";
@@ -20,6 +21,7 @@ export function Projects() {
     <Section id="projects">
       <Container>
         <SectionHeading eyebrow={t.projects.eyebrow} title={t.projects.title} lead={t.projects.subtitle} />
+        <ProjectIndex />
 
         {productivityApps.length > 0 ? (
           <div id="productivity-apps" className="mt-12">

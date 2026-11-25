@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <span id="top" aria-hidden="true" />
       <Navbar />
-      <main id="main">
+      <main id="main" tabIndex={-1} className="scroll-mt-20">
         <Hero />
         <ProofStrip />
         <Projects />

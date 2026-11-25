@@ -8,6 +8,7 @@ const portfolioProducts: DeveloperTool[] = [
   {
     id: "planora",
     name: "Planora",
+    indexSummary: { en: "Weekly planning and focus", es: "Planificación semanal y enfoque" },
     description: {
       en: "A planner I built from scratch and still update. I use it every day for tasks, habits, schedules, events and Focus sessions.",
       es: "Un planificador que construí desde cero y sigo actualizando. Lo uso cada día para tareas, hábitos, horarios, eventos y sesiones de Enfoque.",
@@ -175,6 +176,7 @@ const portfolioProducts: DeveloperTool[] = [
   {
     id: "media-batch-converter",
     name: "Media Batch Converter",
+    indexSummary: { en: "Batch file conversion", es: "Conversión de archivos por lotes" },
     icon: "/projects/media-batch-converter/app-icon.png",
     description: {
       en: "Open-source desktop tool for converting images, audio, video and documents in batches. It helps shrink game assets such as sprites, soundtracks and cutscenes with presets tailored to each type of file.",

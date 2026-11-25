@@ -27,7 +27,7 @@ export function Reveal({ children, className, delay = 0, as = "div" }: RevealPro
       return;
     }
     const node = ref.current;
-    if (!node) return;
+    if (!node || !("IntersectionObserver" in window)) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -51,7 +51,7 @@ export function Reveal({ children, className, delay = 0, as = "div" }: RevealPro
     <Tag
       ref={ref as React.Ref<never>}
       className={cn("reveal", visible && "is-visible", className)}
-      style={reduced ? undefined : { transitionDelay: `${delay}ms` }}
+      style={reduced ? undefined : { animationDelay: `${delay}ms` }}
     >
       {children}
     </Tag>

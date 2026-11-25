@@ -6,7 +6,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 import { cn } from "@/lib/utils";
 
 const controlClass =
-  "inline-flex h-9 items-center justify-center rounded-md border border-border bg-surface/60 text-text transition-colors hover:border-accent/60 hover:text-accent focus-visible:outline-none";
+  "inline-flex h-11 items-center justify-center rounded-md border border-border bg-surface/60 text-text transition-colors hover:border-accent/60 hover:text-accent";
 
 /** Switches between the two languages, showing the target language code. */
 export function LanguageToggle({ className }: { className?: string }) {
@@ -41,7 +41,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={t.a11y.theme}
-      className={cn(controlClass, "w-9", className)}
+      className={cn(controlClass, "w-11", className)}
     >
       {/* Render a neutral placeholder until we know the resolved theme. */}
       {!mounted ? (

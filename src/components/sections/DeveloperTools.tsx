@@ -28,7 +28,7 @@ export function DeveloperTools() {
         <div className="mt-8 grid grid-cols-1 gap-5">
           {developerTools.map((tool, index) => (
             <Reveal key={tool.id} as="div" delay={index * 80}>
-              <article id={tool.id} className="grid scroll-mt-24 grid-cols-1 overflow-hidden rounded-lg border border-border bg-surface/70 transition-colors hover:border-accent/35 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
+              <article id={tool.id} tabIndex={-1} aria-labelledby={`${tool.id}-title`} className="grid scroll-mt-24 grid-cols-1 overflow-hidden rounded-lg border border-border bg-surface/70 transition-colors hover:border-accent/35 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
                 {tool.images ? (
                   <div className="flex items-center border-b border-border bg-surface-2/60 p-3 sm:p-4 lg:border-b-0 lg:border-r">
                     <ProjectGallery images={tool.images} className="mx-auto w-full max-w-3xl lg:max-w-none" />
@@ -44,7 +44,7 @@ export function DeveloperTools() {
                     <span className="font-mono text-[0.66rem] text-muted">{tool.metadata[locale]}</span>
                   </div>
 
-                  <h3 className="mt-3 flex items-center gap-2 font-display text-xl font-semibold tracking-tight text-text sm:text-2xl">
+                  <h3 id={`${tool.id}-title`} className="mt-3 flex items-center gap-2 font-display text-xl font-semibold tracking-tight text-text sm:text-2xl">
                     {tool.icon ? (
                       <Image src={tool.icon} alt="" width={36} height={36} className="shrink-0" />
                     ) : null}
