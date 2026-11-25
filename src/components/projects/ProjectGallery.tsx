@@ -17,10 +17,12 @@ export function ProjectGallery({
   images,
   className,
   showFullSizeLink = false,
+  indexed = false,
 }: {
   images: ProjectImage[];
   className?: string;
   showFullSizeLink?: boolean;
+  indexed?: boolean;
 }) {
   const { t, locale, ready } = useI18n();
   const reduced = useReducedMotion();
@@ -33,7 +35,7 @@ export function ProjectGallery({
   );
 
   const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (!ready) return;
+    if (!ready || e.target instanceof HTMLSelectElement) return;
     if (e.key === "ArrowLeft") {
       e.preventDefault();
       go(index - 1);
@@ -55,25 +57,37 @@ export function ProjectGallery({
       onKeyDown={onKeyDown}
     >
       <div className="relative overflow-hidden rounded-lg border border-border bg-surface-2">
-        {/* Track */}
-        <div
-          className={cn("flex", !reduced && "transition-transform duration-500 ease-out")}
-          style={{ transform: `translateX(-${index * 100}%)` }}
-        >
-          {images.map((img, i) => (
-            <div key={img.src} className="relative aspect-video w-full shrink-0 basis-full">
-              <Image
-                src={img.src}
-                alt={img.caption[locale]}
-                fill
-                sizes="(max-width: 1024px) 100vw, 760px"
-                className="object-contain"
-                loading={i === 0 ? "eager" : "lazy"}
-                aria-hidden={i !== index}
-              />
-            </div>
-          ))}
-        </div>
+        {indexed ? (
+          <div className="relative aspect-[4/5] max-h-[70svh] w-full sm:aspect-square lg:aspect-[6/5]">
+            <Image
+              key={current.src}
+              src={current.src}
+              alt={current.caption[locale]}
+              fill
+              sizes="(min-width: 768px) 540px, 94vw"
+              className="object-contain"
+            />
+          </div>
+        ) : (
+          <div
+            className={cn("flex", !reduced && "transition-transform duration-500 ease-out")}
+            style={{ transform: `translateX(-${index * 100}%)` }}
+          >
+            {images.map((img, i) => (
+              <div key={img.src} className="relative aspect-video w-full shrink-0 basis-full">
+                <Image
+                  src={img.src}
+                  alt={img.caption[locale]}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 760px"
+                  className="object-contain"
+                  loading={i === 0 ? "eager" : "lazy"}
+                  aria-hidden={i !== index}
+                />
+              </div>
+            ))}
+          </div>
+        )}
 
         {count > 1 ? (
           <>
@@ -82,7 +96,7 @@ export function ProjectGallery({
               onClick={() => go(index - 1)}
               disabled={!ready}
               aria-label={t.a11y.galleryPrev}
-              className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60"
+              className={cn(indexed && "min-h-11 min-w-11", "absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60")}
             >
               <Chevron dir="left" />
             </button>
@@ -91,7 +105,7 @@ export function ProjectGallery({
               onClick={() => go(index + 1)}
               disabled={!ready}
               aria-label={t.a11y.galleryNext}
-              className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60"
+              className={cn(indexed && "min-h-11 min-w-11", "absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-bg/80 text-muted backdrop-blur transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-wait disabled:opacity-60")}
             >
               <Chevron dir="right" />
             </button>
@@ -107,7 +121,19 @@ export function ProjectGallery({
         <p className="min-w-0 flex-[1_1_12rem] font-mono text-[0.72rem] leading-snug text-muted" aria-live="polite">
           {current.caption[locale]}
         </p>
-        {count > 1 ? (
+        {indexed ? (
+          <select
+            aria-label={t.a11y.galleryGoTo}
+            value={index}
+            onChange={(event) => go(Number(event.target.value))}
+            disabled={!ready}
+            className="min-h-11 w-full min-w-0 max-w-full rounded-md border border-border bg-bg px-2 text-base text-text sm:text-sm"
+          >
+            {images.map((img, i) => (
+              <option key={img.src} value={i}>{i + 1} / {count} · {(img.label ?? img.caption)[locale]}</option>
+            ))}
+          </select>
+        ) : count > 1 ? (
           <div className="flex max-w-full flex-wrap items-center gap-1.5">
             {images.map((img, i) => (
               <button
@@ -126,7 +152,7 @@ export function ProjectGallery({
           </div>
         ) : null}
       </div>
-      {showFullSizeLink ? (
+      {showFullSizeLink || indexed ? (
         <a
           href={current.src}
           target="_blank"

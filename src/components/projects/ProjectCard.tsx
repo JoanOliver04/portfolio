@@ -86,7 +86,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const { locale, t } = useI18n();
 
   return (
-    <article className="flex h-full flex-col rounded-lg border border-border bg-surface/60 p-6 transition-colors hover:border-accent/40 sm:p-7">
+    <article id={project.id} className="flex h-full scroll-mt-24 flex-col rounded-lg border border-border bg-surface/60 p-6 transition-colors hover:border-accent/40 sm:p-7">
       <header className="flex items-start justify-between gap-4">
         <p className="font-mono text-[0.72rem] uppercase tracking-label text-accent">
           {categoryLabel(project.category, locale)}
@@ -99,7 +99,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </h3>
       <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">{project.tagline[locale]}</p>
 
-      {project.images ? <ProjectGallery images={project.images} className="mt-5" /> : null}
+      {project.images ? <ProjectGallery images={project.images} indexed={project.images.length > 10} className="mt-5" /> : null}
 
       <div className="mt-5 space-y-4 text-sm leading-relaxed">
         <div>

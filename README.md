@@ -28,7 +28,7 @@ Each entry has a screenshot gallery, a problem statement and engineering highlig
 | Project | What it is | Stack |
 | --- | --- | --- |
 | [Planora](https://github.com/JoanOliver04/planora) | Planner in production for tasks, habits, schedules, events and Focus, with mobile Web Push — built from scratch and still updated | Next.js · Supabase · PWA |
-| [Mini-Game Hub](https://github.com/JoanOliver04/minigame-hub) | 29 browser games with local AI and hints, plus 28 live multiplayer modes | Next.js · TypeScript · Firebase |
+| [Mini-Game Hub](https://github.com/JoanOliver04/minigame-hub) | 37 offline-capable browser games, 36 with private friend rooms, and 8 solo duels with move-by-move replay | Next.js · TypeScript · Firebase |
 | [Data Fuel](https://github.com/JoanOliver04/Data_Fuel) | Find the cheapest fill-up by **total cost** (fuel + the drive), with explainable ML price forecasts — 690 tests, 86% coverage | FastAPI · React · scikit-learn · SHAP |
 | [FitPrompt](https://github.com/JoanOliver04/FitPrompt) | Conversational AI coach that turns a real user profile into training and nutrition plans — team project, 2 developers | Next.js · Prisma · Groq / Llama 3.3 · Stripe |
 | [Data Detective](https://github.com/JoanOliver04/Data_Detective) | Quasi-experimental measurement of how mass events move Valencia's air quality — 123 tests, 90% coverage, CI | Python · pandas · Streamlit |
