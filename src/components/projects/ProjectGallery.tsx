@@ -67,7 +67,11 @@ export function ProjectGallery({
       onKeyDown={onKeyDown}
     >
       <div className="relative overflow-hidden rounded-lg border border-border bg-surface-2">
-        <div ref={frame} className={cn("relative w-full", singleFrame ? "aspect-[4/5] max-h-[70svh] sm:aspect-square lg:aspect-[6/5]" : "aspect-video")}>
+        <div
+          ref={frame}
+          style={{ aspectRatio: current.aspectRatio }}
+          className={cn("relative w-full", singleFrame ? "aspect-[4/5] max-h-[70svh] sm:aspect-square lg:aspect-[6/5]" : "aspect-video")}
+        >
           <picture>
             {!nearViewport && index === 0 && cover && (
               <source media="(scripting: enabled)" srcSet={cover} />

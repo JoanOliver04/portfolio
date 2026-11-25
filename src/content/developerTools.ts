@@ -10,47 +10,50 @@ const portfolioProducts: DeveloperTool[] = [
     name: "Planora",
     indexSummary: { en: "Weekly planning and focus", es: "Planificación semanal y enfoque" },
     description: {
-      en: "A planner I built from scratch and still update. I use it every day for tasks, habits, schedules, events and Focus sessions.",
-      es: "Un planificador que construí desde cero y sigo actualizando. Lo uso cada día para tareas, hábitos, horarios, eventos y sesiones de Enfoque.",
+      en: "A planner I built from scratch to organise my week. I use it every day to plan tasks around appointments, keep up with habits and set aside time to focus.",
+      es: "Un planificador que construí desde cero para organizar mi semana. Lo uso cada día para repartir tareas entre citas, mantener hábitos y reservar tiempo de concentración.",
     },
     details: {
-      en: "In production with Google sign-in, a private workspace and a no-registration bilingual demo. It combines timezone-safe recurrence, Focus sessions and structured plans, offline PWA behavior, multi-tab sync, statistics and atomic versioned backups (schema v5; v4 remains importable). Mobile reminders use opt-in Web Push with server scheduling, alongside hardened session, request and database controls.",
-      es: "En producción con acceso mediante Google, un espacio privado y una demo bilingüe sin registro. Combina recurrencias por zona horaria, sesiones y planes de Enfoque, PWA offline, sincronización entre pestañas, estadísticas y copias versionadas atómicas (schema v5; v4 sigue siendo importable). Los recordatorios móviles usan Web Push opcional programado desde el servidor, junto con controles reforzados de sesión, peticiones y base de datos.",
+      en: "I can add a task or an event to any day in Week and switch to Month without losing my place. On my phone I see one day at a time. On a larger screen I can compare all seven.",
+      es: "Desde Semana puedo añadir una tarea o un evento al día que elija y pasar al mes correspondiente. En el móvil veo un día cada vez y en una pantalla grande puedo comparar los siete.",
     },
     highlights: {
       en: [
-        "Multiple schedules, recurring habits, events, customizable alarms and progress statistics.",
-        "Per-device Web Push for reminders while the app is closed, with a durable outbox, retries and cancellation; delivery depends on connectivity and OS permissions.",
-        "Focus / Enfoque: timestamp-based timer, presets, structured plans, weekly goals, offline continuation and multi-tab takeover.",
-        "Offline mutation queue with conflict handling and visible synchronization state.",
-        "Deep personalization of color, density, typography, motion and day structure.",
-        "Owner-scoped Supabase RLS, nonce-based CSP, private no-store pages, same-origin writes, database quotas and rate-limited atomic backups. Cookie-free analytics excludes workspace content.",
-        "602 unit/component tests and 90 Playwright scenarios passed on 2026-10-30, including authenticated flows against isolated Supabase (6 deliberate browser exclusions); audit, coverage, build, Lighthouse and CodeQL in CI.",
-        "Public no-registration demo with isolated browser data in Spanish and English.",
+        "Quick capture recognises dates and times in English and Spanish. Workspace search finds tasks, events, schedules and categories.",
+        "Focus sessions can follow a plan with work and break blocks. An active timer can continue offline or move to another device.",
+        "Each Google account has a private Supabase workspace with row-level security. A versioned backup restores tasks, history and Focus sessions together.",
+        "Installable PWA with opt-in Web Push reminders. The public demo saves changes in the browser and still works for the visit when storage is unavailable.",
       ],
       es: [
-        "Múltiples horarios, hábitos recurrentes, eventos, alarmas personalizables y estadísticas de progreso.",
-        "Web Push por dispositivo para recordatorios con la app cerrada, con cola persistente, reintentos y cancelación; la entrega depende de la conexión y los permisos del sistema.",
-        "Enfoque: temporizador por timestamps, presets, planes, objetivos semanales, offline y takeover multi-pestaña.",
-        "Cola de cambios offline con gestión de conflictos y estado de sincronización visible.",
-        "Personalización profunda de color, densidad, tipografía, movimiento y estructura diaria.",
-        "RLS de Supabase por propietario, CSP con nonce, páginas privadas sin caché, escrituras del mismo origen, cuotas en base de datos y copias atómicas con límites de peticiones. La analítica sin cookies excluye el contenido del espacio privado.",
-        "602 tests unitarios/de componentes y 90 escenarios Playwright pasados el 30-10-2026, incluidos flujos autenticados contra Supabase aislado (6 exclusiones deliberadas por navegador); audit, cobertura, build, Lighthouse y CodeQL en CI.",
-        "Demo pública sin registro con datos aislados en el navegador, en español e inglés.",
+        "La captura rápida reconoce fechas y horas en español e inglés. El buscador encuentra tareas, eventos, horarios y categorías.",
+        "Las sesiones de Enfoque admiten planes con bloques de trabajo y descanso. Un temporizador activo puede seguir sin conexión o retomarse en otro dispositivo.",
+        "Cada cuenta de Google tiene un espacio privado en Supabase con permisos por fila. Una copia versionada permite restaurar juntos las tareas, el historial y las sesiones de Enfoque.",
+        "La PWA se puede instalar y envía recordatorios Web Push si los activas. La demo pública guarda los cambios en el navegador y también funciona durante la visita si el almacenamiento está bloqueado.",
       ],
     },
     images: [
       {
+        "src": "/projects/planora/08-week-desktop-light-es.webp",
+        "thumbnail": "/project-covers/planora-f038537e71.webp",
+        "aspectRatio": "2400 / 1571",
+        "label": { "en": "Week", "es": "Semana" },
+        "caption": {
+          "en": "Weekly agenda with actions to add a task or event on each day",
+          "es": "Agenda semanal con acciones para añadir tareas y eventos en cada día"
+        }
+      },
+      {
         "src": "/projects/planora/01-landing-desktop-light-en.webp",
-        "thumbnail": "/project-covers/planora-e671898af9.webp",
+        "aspectRatio": "2400 / 1280",
         "label": { "en": "Welcome", "es": "Bienvenida" },
         "caption": {
-          "en": "A calmer way to plan",
-          "es": "Presentación pública, propuesta de valor y CTA"
+          "en": "Planora home page in English",
+          "es": "Página de inicio de Planora en inglés"
         }
       },
       {
         "src": "/projects/planora/04-today-desktop-light-es.webp",
+        "aspectRatio": "2400 / 1730",
         "label": { "en": "Today", "es": "Hoy" },
         "caption": {
           "en": "Daily planning and weekly progress",
@@ -58,15 +61,8 @@ const portfolioProducts: DeveloperTool[] = [
         }
       },
       {
-        "src": "/projects/planora/08-week-desktop-light-es.webp",
-        "label": { "en": "Week", "es": "Semana" },
-        "caption": {
-          "en": "The complete week at a glance",
-          "es": "Semana completa con tareas, hábitos y eventos"
-        }
-      },
-      {
         "src": "/projects/planora/15-tasks-desktop-light-es.webp",
+        "aspectRatio": "2400 / 1858",
         "label": { "en": "Tasks", "es": "Tareas" },
         "caption": {
           "en": "Tasks, filters and recurrence",
@@ -75,6 +71,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/43-focus-home-desktop-light-en.webp",
+        "aspectRatio": "2400 / 1513",
         "label": { "en": "Focus presets", "es": "Ajustes de Enfoque" },
         "caption": {
           "en": "Focus presets and four weeks of goals",
@@ -83,6 +80,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/47-focus-countdown-desktop-light-es.webp",
+        "aspectRatio": "2400 / 1833",
         "label": { "en": "Focus timer", "es": "Temporizador de Enfoque" },
         "caption": {
           "en": "Deep work in progress",
@@ -91,6 +89,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/50-focus-plan-desktop-dark-en.webp",
+        "aspectRatio": "2400 / 2000",
         "label": { "en": "Focus plan", "es": "Plan de Enfoque" },
         "caption": {
           "en": "Structured plans: current and next block",
@@ -99,6 +98,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/52-focus-summary-desktop-light-es.webp",
+        "aspectRatio": "1640 / 1618",
         "label": { "en": "Session summary", "es": "Resumen de sesión" },
         "caption": {
           "en": "Planned versus actual session summary",
@@ -107,6 +107,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/27-statistics-desktop-light-en.webp",
+        "aspectRatio": "2400 / 1893",
         "label": { "en": "Statistics", "es": "Estadísticas" },
         "caption": {
           "en": "Progress and patterns",
@@ -115,6 +116,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/12-month-desktop-light-es.webp",
+        "aspectRatio": "2400 / 2728",
         "label": { "en": "Month", "es": "Mes" },
         "caption": {
           "en": "The month ahead",
@@ -123,6 +125,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/33-reminders-desktop-light-es.webp",
+        "aspectRatio": "2132 / 1042",
         "label": { "en": "Reminders", "es": "Recordatorios" },
         "caption": {
           "en": "Reminders and alarms",
@@ -131,6 +134,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/07-today-mobile-light-es.webp",
+        "aspectRatio": "1170 / 2640",
         "label": { "en": "Today on mobile", "es": "Hoy en móvil" },
         "caption": {
           "en": "Daily planning on mobile",
@@ -139,6 +143,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/56-focus-active-mobile-dark-es.webp",
+        "aspectRatio": "1170 / 2760",
         "label": { "en": "Focus on mobile", "es": "Enfoque en móvil" },
         "caption": {
           "en": "Mobile concentration mode",
@@ -147,6 +152,7 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/38-settings-desktop-light-es.webp",
+        "aspectRatio": "2400 / 1695",
         "label": { "en": "Settings", "es": "Ajustes" },
         "caption": {
           "en": "Appearance and personalization",
@@ -171,7 +177,14 @@ const portfolioProducts: DeveloperTool[] = [
       es: "Proyecto personal · En producción · Uso diario",
     },
     repositoryUrl: "https://github.com/JoanOliver04/planora",
-    liveUrl: "https://planora-lake-one.vercel.app/en",
+    liveUrl: {
+      en: "https://planora-lake-one.vercel.app/en",
+      es: "https://planora-lake-one.vercel.app/es",
+    },
+    demoUrl: {
+      en: "https://planora-lake-one.vercel.app/en/demo",
+      es: "https://planora-lake-one.vercel.app/es/demo",
+    },
     license: "Source available",
   },
   {

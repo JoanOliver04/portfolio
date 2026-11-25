@@ -37,19 +37,19 @@ Each entry has a screenshot gallery, a problem statement and engineering highlig
 
 ---
 
-Planora stays out of the AI block: Google sign-in, a private workspace, a
-no-registration demo, Focus / Enfoque with structured plans, offline PWA
-behaviour, atomic backups and opt-in mobile Web Push while the app is closed.
-Its server outbox supports retries, cancellation and expired-device cleanup;
-reception depends on connectivity and operating-system settings. Owner-scoped
-RLS, nonce-based CSP, private no-store pages and database quotas protect the
-authenticated workspace. As verified on **2026-10-30**, **602** unit/component
-tests and **90** Playwright scenarios pass, with **6** deliberate browser
-exclusions, including authenticated flows against isolated Supabase.
-[CI evidence](https://github.com/JoanOliver04/planora/actions/runs/41136884138)
-also covers npm audit, coverage, production build, Lighthouse and CodeQL. The gallery covers
-today, week, tasks, events, history, schedules, categories, settings, mobile and
-Focus.
+Planora opens the project gallery with its weekly agenda. On desktop it shows all
+seven days. On mobile it shows the selected day. Tasks and events can be added
+directly to a date, and Month opens at the same point in the calendar. The 14
+screenshots also cover Today, tasks, Focus, statistics, reminders and settings.
+The card links to the app and its interactive, account-free demo in the current
+portfolio language. [Try it in English](https://planora-lake-one.vercel.app/en/demo)
+or [in Spanish](https://planora-lake-one.vercel.app/es/demo).
+
+On 25 November 2026, the [published Planora build](https://github.com/JoanOliver04/planora/actions/runs/45652356307)
+passed 731 unit and component tests, 170 browser tests and a separate performance
+test. The browser matrix skipped four cases by design. The same run passed
+Lighthouse and CodeQL. [Current Planora CI](https://github.com/JoanOliver04/planora/actions/workflows/ci.yml)
+tracks subsequent changes.
 
 ## Developer Tools
 

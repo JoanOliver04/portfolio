@@ -95,7 +95,8 @@ const en = {
     subtitle:
       "Digital products designed to simplify processes, improve efficiency and make everyday life easier, both personally and professionally.",
     viewSource: "View source",
-    liveDemo: "Open live product",
+    liveDemo: "Open app",
+    tryDemo: "Try the demo",
     downloadWindows: "Download for Windows",
   },
   developerTools: {
@@ -245,7 +246,8 @@ const es: Dictionary = {
     subtitle:
       "Productos digitales diseñados para simplificar procesos, mejorar la eficiencia y facilitar el día a día, tanto personal como profesional.",
     viewSource: "Ver código",
-    liveDemo: "Abrir producto online",
+    liveDemo: "Abrir aplicación",
+    tryDemo: "Probar la demo",
     downloadWindows: "Descargar para Windows",
   },
   developerTools: {

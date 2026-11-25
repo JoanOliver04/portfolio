@@ -13,6 +13,8 @@ export type RepoType = "source" | "showcase";
 /** A single gallery screenshot. `caption` is bilingual and doubles as alt text. */
 export interface ProjectImage {
   src: string;
+  /** Intrinsic image proportions used to reserve space before loading. */
+  aspectRatio?: `${number} / ${number}`;
   /** Small static cover used by the project index. */
   thumbnail?: string;
   caption: Localized;
@@ -92,7 +94,8 @@ export interface DeveloperTool {
   badge: Localized;
   metadata: Localized;
   repositoryUrl: string;
-  liveUrl?: string;
+  liveUrl?: Localized;
+  demoUrl?: Localized;
   releaseUrl?: string;
   license: string;
 }

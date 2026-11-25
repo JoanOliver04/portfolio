@@ -13,32 +13,21 @@ test("Planora is presented as a bilingual productivity app", async () => {
   assert.match(content, /id: "planora"/);
   assert.match(content, /export const productivityApps/);
   assert.match(content, /item\.id === "planora"/);
-  assert.match(content, /https:\/\/planora-lake-one\.vercel\.app\/en/);
   assert.match(content, /https:\/\/github\.com\/JoanOliver04\/planora/);
   assert.match(content, /A planner I built from scratch/);
   assert.match(content, /Un planificador que construí desde cero/);
-  assert.match(content, /Focus \/ Enfoque/);
-  assert.match(content, /Enfoque: temporizador/);
-  assert.equal(
-    [...content.matchAll(/\/projects\/planora\/\d{2}-[a-z-]+\.webp/g)].length,
-    14,
-  );
+  for (const locale of ["en", "es"]) {
+    const home = `https://planora-lake-one.vercel.app/${locale}`;
+    assert.ok(content.includes(`${locale}: "${home}"`));
+    assert.ok(content.includes(`${locale}: "${home}/demo"`));
+  }
+  const images = [...content.matchAll(/\/projects\/planora\/(\d{2}-[a-z-]+\.webp)/g)].map((match) => match[1]);
+  assert.equal(images.length, 14);
+  assert.equal(new Set(images).size, images.length);
+  assert.equal(images[0], "08-week-desktop-light-es.webp");
+  assert.ok(images.includes("56-focus-active-mobile-dark-es.webp"));
   assert.match(content, /Personal project · In production · Used daily/);
   assert.match(content, /Proyecto personal · En producción · Uso diario/);
-  assert.match(content, /I use it every day/);
-  assert.match(content, /Lo uso cada día/);
-  assert.match(content, /built from scratch/);
-  assert.match(content, /construí desde cero/);
-  assert.match(content, /602 unit\/component tests/);
-  assert.match(content, /602 tests unitarios\/de componentes/);
-  assert.match(content, /90 Playwright scenarios/);
-  assert.match(content, /90 escenarios Playwright/);
-  assert.match(content, /authenticated flows against isolated Supabase/);
-  assert.match(content, /flujos autenticados contra Supabase aislado/);
-  assert.match(content, /schema v5/);
-  assert.match(content, /CodeQL/);
-  assert.match(content, /43-focus-home-desktop-light-en\.webp/);
-  assert.match(content, /56-focus-active-mobile-dark-es\.webp/);
 
   const academicProjects = await readFile(projectsPath, "utf8");
   assert.doesNotMatch(academicProjects, /id: "planora"/);

@@ -89,7 +89,7 @@ export function DeveloperTools() {
 
                     {tool.liveUrl ? (
                       <a
-                        href={tool.liveUrl}
+                        href={tool.liveUrl[locale]}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-accent"
