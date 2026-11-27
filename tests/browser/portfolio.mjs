@@ -58,10 +58,12 @@ for (const [engine, device] of [[chromium, "Pixel 7"], [webkit, "iPhone 13"]]) {
     await dialog.getByRole("button", { name: "Close screenshot" }).tap();
     await dialog.waitFor({ state: "hidden" });
     await opener.tap();
+    await dialog.waitFor();
     await page.keyboard.press("Escape");
     await dialog.waitFor({ state: "hidden" });
+    await page.waitForURL("**/#data-fuel");
     await page.goBack();
-    assert.equal(new URL(page.url()).hash, "#projects");
+    await page.waitForURL("**/#projects");
     await page.goto(base + "/en#gallery-data-fuel");
     await page.locator("dialog[open]").getByRole("button", { name: "Close screenshot" }).tap();
     await page.waitForURL("**/en#data-fuel");
