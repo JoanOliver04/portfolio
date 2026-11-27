@@ -24,7 +24,7 @@ test("Planora is presented as a bilingual productivity app", async () => {
   const images = [...content.matchAll(/\/projects\/planora\/(\d{2}-[a-z-]+\.webp)/g)].map((match) => match[1]);
   assert.equal(images.length, 14);
   assert.equal(new Set(images).size, images.length);
-  assert.equal(images[0], "08-week-desktop-light-es.webp");
+  assert.deepEqual(images.slice(0, 2), ["01-landing-desktop-light-en.webp", "08-week-desktop-light-es.webp"]);
   assert.ok(images.includes("56-focus-active-mobile-dark-es.webp"));
   assert.match(content, /Personal project · In production · Used daily/);
   assert.match(content, /Proyecto personal · En producción · Uso diario/);

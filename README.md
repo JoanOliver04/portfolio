@@ -37,7 +37,8 @@ Each entry has a screenshot gallery, a problem statement and engineering highlig
 
 ---
 
-Planora opens the project gallery with its weekly agenda. On desktop it shows all
+The Planora gallery opens with the welcome screen, followed by the weekly agenda.
+On desktop the agenda shows all
 seven days. On mobile it shows the selected day. Tasks and events can be added
 directly to a date, and Month opens at the same point in the calendar. The 14
 screenshots also cover Today, tasks, Focus, statistics, reminders and settings.

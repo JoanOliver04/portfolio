@@ -33,20 +33,8 @@ const portfolioProducts: DeveloperTool[] = [
     },
     images: [
       {
-        "src": "/projects/planora/08-week-desktop-light-es.webp",
-        "thumbnail": "/project-covers/planora-262ecd4723.webp",
-        "aspectRatio": "2400 / 1614",
-        "label": {
-          "en": "Week",
-          "es": "Semana"
-        },
-        "caption": {
-          "en": "Weekly agenda with actions to add a task or event on each day",
-          "es": "Agenda semanal con acciones para añadir tareas y eventos en cada día"
-        }
-      },
-      {
         "src": "/projects/planora/01-landing-desktop-light-en.webp",
+        "thumbnail": "/project-covers/planora-5d1bfe6947.webp",
         "aspectRatio": "2400 / 1172",
         "label": {
           "en": "Welcome",
@@ -55,6 +43,18 @@ const portfolioProducts: DeveloperTool[] = [
         "caption": {
           "en": "Planora home page in English",
           "es": "Página de inicio de Planora en inglés"
+        }
+      },
+      {
+        "src": "/projects/planora/08-week-desktop-light-es.webp",
+        "aspectRatio": "2400 / 1614",
+        "label": {
+          "en": "Week",
+          "es": "Semana"
+        },
+        "caption": {
+          "en": "Weekly agenda with actions to add a task or event on each day",
+          "es": "Agenda semanal con acciones para añadir tareas y eventos en cada día"
         }
       },
       {
