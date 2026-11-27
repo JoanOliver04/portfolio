@@ -34,9 +34,12 @@ const portfolioProducts: DeveloperTool[] = [
     images: [
       {
         "src": "/projects/planora/08-week-desktop-light-es.webp",
-        "thumbnail": "/project-covers/planora-f038537e71.webp",
-        "aspectRatio": "2400 / 1571",
-        "label": { "en": "Week", "es": "Semana" },
+        "thumbnail": "/project-covers/planora-262ecd4723.webp",
+        "aspectRatio": "2400 / 1614",
+        "label": {
+          "en": "Week",
+          "es": "Semana"
+        },
         "caption": {
           "en": "Weekly agenda with actions to add a task or event on each day",
           "es": "Agenda semanal con acciones para añadir tareas y eventos en cada día"
@@ -44,26 +47,71 @@ const portfolioProducts: DeveloperTool[] = [
       },
       {
         "src": "/projects/planora/01-landing-desktop-light-en.webp",
-        "aspectRatio": "2400 / 1280",
-        "label": { "en": "Welcome", "es": "Bienvenida" },
+        "aspectRatio": "2400 / 1172",
+        "label": {
+          "en": "Welcome",
+          "es": "Bienvenida"
+        },
         "caption": {
           "en": "Planora home page in English",
           "es": "Página de inicio de Planora en inglés"
         }
       },
       {
-        "src": "/projects/planora/04-today-desktop-light-es.webp",
-        "aspectRatio": "2400 / 1730",
-        "label": { "en": "Today", "es": "Hoy" },
+        "src": "/projects/planora/66-demo-today-desktop-light-es.webp",
+        "aspectRatio": "2400 / 1580",
+        "label": {
+          "en": "Demo agenda",
+          "es": "Agenda de la demo"
+        },
         "caption": {
-          "en": "Daily planning and weekly progress",
-          "es": "Hoy: progreso, horario activo y grupos del día"
+          "en": "Today shows the day's tasks and a shortcut to Focus",
+          "es": "Hoy muestra las tareas del día y un acceso directo a Enfoque"
+        }
+      },
+      {
+        "src": "/projects/planora/67-demo-focus-mobile-light-en.webp",
+        "aspectRatio": "1170 / 2415",
+        "label": {
+          "en": "Try Focus",
+          "es": "Probar Enfoque"
+        },
+        "caption": {
+          "en": "The 15-second demo timer linked to a task on mobile",
+          "es": "El temporizador de prueba de 15 segundos vinculado a una tarea en móvil"
+        }
+      },
+      {
+        "src": "/projects/planora/68-demo-statistics-desktop-light-en.webp",
+        "aspectRatio": "2400 / 1347",
+        "label": {
+          "en": "Demo results",
+          "es": "Resultados de la demo"
+        },
+        "caption": {
+          "en": "The completed session appears in the weekly focus report",
+          "es": "La sesión completada aparece en el informe semanal de enfoque"
+        }
+      },
+      {
+        "src": "/projects/planora/69-demo-theme-mobile-dark-es.webp",
+        "aspectRatio": "1170 / 2661",
+        "label": {
+          "en": "Demo theme",
+          "es": "Tema de la demo"
+        },
+        "caption": {
+          "en": "Demo settings on mobile after switching from light to dark",
+          "es": "Ajustes de la demo en móvil después de cambiar del modo claro al oscuro"
         }
       },
       {
         "src": "/projects/planora/15-tasks-desktop-light-es.webp",
         "aspectRatio": "2400 / 1858",
-        "label": { "en": "Tasks", "es": "Tareas" },
+        "label": {
+          "en": "Tasks",
+          "es": "Tareas"
+        },
         "caption": {
           "en": "Tasks, filters and recurrence",
           "es": "Gestión de tareas, búsqueda, filtros y recurrencias"
@@ -72,7 +120,10 @@ const portfolioProducts: DeveloperTool[] = [
       {
         "src": "/projects/planora/43-focus-home-desktop-light-en.webp",
         "aspectRatio": "2400 / 1513",
-        "label": { "en": "Focus presets", "es": "Ajustes de Enfoque" },
+        "label": {
+          "en": "Focus presets",
+          "es": "Ajustes de Enfoque"
+        },
         "caption": {
           "en": "Focus presets and four weeks of goals",
           "es": "Enfoque: presets, inicio rápido y resumen semanal"
@@ -81,7 +132,10 @@ const portfolioProducts: DeveloperTool[] = [
       {
         "src": "/projects/planora/47-focus-countdown-desktop-light-es.webp",
         "aspectRatio": "2400 / 1833",
-        "label": { "en": "Focus timer", "es": "Temporizador de Enfoque" },
+        "label": {
+          "en": "Focus timer",
+          "es": "Temporizador de Enfoque"
+        },
         "caption": {
           "en": "Deep work in progress",
           "es": "Sesión activa de trabajo profundo"
@@ -90,34 +144,22 @@ const portfolioProducts: DeveloperTool[] = [
       {
         "src": "/projects/planora/50-focus-plan-desktop-dark-en.webp",
         "aspectRatio": "2400 / 2000",
-        "label": { "en": "Focus plan", "es": "Plan de Enfoque" },
+        "label": {
+          "en": "Focus plan",
+          "es": "Plan de Enfoque"
+        },
         "caption": {
           "en": "Structured plans: current and next block",
           "es": "Plan estructurado: bloque actual y siguiente"
         }
       },
       {
-        "src": "/projects/planora/52-focus-summary-desktop-light-es.webp",
-        "aspectRatio": "1640 / 1618",
-        "label": { "en": "Session summary", "es": "Resumen de sesión" },
-        "caption": {
-          "en": "Planned versus actual session summary",
-          "es": "Resumen final y comparación de lo previsto con lo realizado"
-        }
-      },
-      {
-        "src": "/projects/planora/27-statistics-desktop-light-en.webp",
-        "aspectRatio": "2400 / 1893",
-        "label": { "en": "Statistics", "es": "Estadísticas" },
-        "caption": {
-          "en": "Progress and patterns",
-          "es": "Estadísticas de hábitos y progreso real"
-        }
-      },
-      {
         "src": "/projects/planora/12-month-desktop-light-es.webp",
         "aspectRatio": "2400 / 2728",
-        "label": { "en": "Month", "es": "Mes" },
+        "label": {
+          "en": "Month",
+          "es": "Mes"
+        },
         "caption": {
           "en": "The month ahead",
           "es": "Calendario mensual con actividad y eventos"
@@ -126,7 +168,10 @@ const portfolioProducts: DeveloperTool[] = [
       {
         "src": "/projects/planora/33-reminders-desktop-light-es.webp",
         "aspectRatio": "2132 / 1042",
-        "label": { "en": "Reminders", "es": "Recordatorios" },
+        "label": {
+          "en": "Reminders",
+          "es": "Recordatorios"
+        },
         "caption": {
           "en": "Reminders and alarms",
           "es": "Centro de notificaciones, recordatorios y alarmas"
@@ -135,7 +180,10 @@ const portfolioProducts: DeveloperTool[] = [
       {
         "src": "/projects/planora/07-today-mobile-light-es.webp",
         "aspectRatio": "1170 / 2640",
-        "label": { "en": "Today on mobile", "es": "Hoy en móvil" },
+        "label": {
+          "en": "Today on mobile",
+          "es": "Hoy en móvil"
+        },
         "caption": {
           "en": "Daily planning on mobile",
           "es": "Hoy móvil: progreso y tareas de la mañana"
@@ -144,19 +192,13 @@ const portfolioProducts: DeveloperTool[] = [
       {
         "src": "/projects/planora/56-focus-active-mobile-dark-es.webp",
         "aspectRatio": "1170 / 2760",
-        "label": { "en": "Focus on mobile", "es": "Enfoque en móvil" },
+        "label": {
+          "en": "Focus on mobile",
+          "es": "Enfoque en móvil"
+        },
         "caption": {
           "en": "Mobile concentration mode",
           "es": "Sesión activa de Enfoque en móvil oscuro"
-        }
-      },
-      {
-        "src": "/projects/planora/38-settings-desktop-light-es.webp",
-        "aspectRatio": "2400 / 1695",
-        "label": { "en": "Settings", "es": "Ajustes" },
-        "caption": {
-          "en": "Appearance and personalization",
-          "es": "Ajustes de apariencia, idioma y personalización"
         }
       }
     ],
