@@ -6,7 +6,7 @@ import type { ProjectImage } from "@/types";
 import { useI18n } from "@/i18n/I18nProvider";
 import { cn } from "@/lib/utils";
 
-/** Bilingual screenshot picker with keyboard navigation and a link to the selected original. */
+/** Bilingual screenshot picker with keyboard navigation and a full-size viewer. */
 export function ProjectGallery({
   images,
   className,
@@ -20,6 +20,9 @@ export function ProjectGallery({
   const [index, setIndex] = useState(0);
   const count = images.length;
   const frame = useRef<HTMLDivElement>(null);
+  const viewer = useRef<HTMLDialogElement>(null);
+  const opener = useRef<HTMLButtonElement>(null);
+  const [viewerOpen, setViewerOpen] = useState(false);
   const [nearViewport, setNearViewport] = useState(false);
   const cover = images[0]?.thumbnail;
 
@@ -45,7 +48,7 @@ export function ProjectGallery({
   );
 
   const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (!ready || e.target instanceof HTMLSelectElement) return;
+    if (!ready || viewer.current?.open || e.target instanceof HTMLSelectElement) return;
     if (e.key === "ArrowLeft") {
       e.preventDefault();
       go(index - 1);
@@ -131,15 +134,44 @@ export function ProjectGallery({
           </select>
         )}
       </div>
-      <a
-        href={current.src}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-2 inline-flex min-h-8 items-center text-xs font-medium text-muted underline underline-offset-4 hover:text-accent"
+      <button
+        ref={opener}
+        type="button"
+        aria-haspopup="dialog"
+        disabled={!ready}
+        onClick={() => {
+          viewer.current?.showModal();
+          setViewerOpen(true);
+        }}
+        className="mt-2 inline-flex min-h-11 items-center text-xs font-medium text-muted underline underline-offset-4 hover:text-accent"
       >
         {t.a11y.galleryFullSize}
-        <span className="sr-only"> ({t.a11y.opensNewTab})</span>
-      </a>
+      </button>
+      <dialog
+        ref={viewer}
+        aria-label={t.a11y.galleryFullSize}
+        onClose={() => {
+          setViewerOpen(false);
+          opener.current?.focus({ preventScroll: true });
+        }}
+        className="capture-viewer fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none bg-black text-white backdrop:bg-black open:flex open:flex-col"
+      >
+        <button
+          type="button"
+          aria-label={t.a11y.galleryClose}
+          onClick={() => viewer.current?.close()}
+          className="mb-2 flex h-12 w-12 shrink-0 items-center justify-center self-end rounded-full bg-red-700 text-white hover:bg-red-800 focus-visible:outline-white"
+        >
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
+        </button>
+        {viewerOpen && (
+          <div className="relative min-h-0 flex-1">
+            <Image src={current.src} alt={current.caption[locale]} fill sizes="100vw" loading="eager" className="object-contain" />
+          </div>
+        )}
+      </dialog>
     </div>
   );
 }

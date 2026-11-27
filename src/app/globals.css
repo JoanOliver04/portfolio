@@ -127,3 +127,11 @@
     stroke-dashoffset: 0 !important;
   }
 }
+.capture-viewer {
+  padding: max(0.75rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right)) max(0.75rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
+  overscroll-behavior: contain;
+}
+
+html:has(.capture-viewer[open]) {
+  overflow: hidden;
+}
