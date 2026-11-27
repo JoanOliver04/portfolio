@@ -5,7 +5,7 @@
 Personal portfolio of a full-stack developer based in Valencia, Spain, focused on
 data-informed products — TypeScript, Python and applied AI.
 
-**Live Demo:** <https://joan-portfolio-alpha.vercel.app>
+**Live portfolio** · [English](https://joan-portfolio-alpha.vercel.app/en) · [Español](https://joan-portfolio-alpha.vercel.app/es)
 
 **Open to my first full-time software role.**
 [LinkedIn](https://www.linkedin.com/in/joanvoliver) ·
@@ -92,7 +92,13 @@ npm run dev
 ```
 
 Open <http://localhost:3000>. `npm run build` produces the production build;
-`npm run lint` runs ESLint.
+`npm run lint` runs ESLint. Development and production builds generate WebP
+previews from the gallery screenshots. The full-size viewer uses the originals.
+
+Run `npm test` for the content checks. For the browser regressions, install the
+engines with `npx playwright-core install chromium webkit`, start a production
+build with `npm start -- -p 4781`, then run `npm run test:browser` in another
+terminal. Set `PORTFOLIO_URL` to test a deployment.
 
 ---
 

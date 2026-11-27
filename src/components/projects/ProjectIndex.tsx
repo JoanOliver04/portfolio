@@ -14,8 +14,9 @@ export function ProjectIndex() {
           return (
             <li key={project.id}>
               <a
+                id={`index-${project.id}`}
                 href={`#${project.id}`}
-                className="group flex h-full items-center gap-3 rounded-lg border border-border bg-surface p-2.5 transition-colors hover:border-accent focus-visible:border-accent lg:flex-col lg:items-stretch lg:gap-0 lg:p-0"
+                className="group flex h-full scroll-mt-28 items-center gap-3 rounded-lg border border-border bg-surface p-2.5 transition-colors hover:border-accent focus-visible:border-accent lg:flex-col lg:items-stretch lg:gap-0 lg:p-0"
               >
                 {cover && (
                   <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded border border-border bg-surface-2 lg:aspect-[2.7] lg:h-auto lg:w-full lg:rounded-b-none lg:rounded-t-lg lg:border-x-0 lg:border-t-0">
@@ -35,5 +36,14 @@ export function ProjectIndex() {
         })}
       </ul>
     </nav>
+  );
+}
+
+export function ProjectIndexReturn({ id }: { id: string }) {
+  const { t } = useI18n();
+  return (
+    <a href={`#index-${id}`} className="col-span-full inline-flex min-h-11 w-fit items-center gap-2 self-start px-4 text-xs font-medium text-muted underline underline-offset-4 hover:text-accent">
+      <span aria-hidden="true">↑</span> {t.projects.backToIndex}
+    </a>
   );
 }

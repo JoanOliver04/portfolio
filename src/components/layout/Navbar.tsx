@@ -14,6 +14,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
+  const header = useRef<HTMLElement>(null);
   const wideNavigation = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -30,7 +31,14 @@ export function Navbar() {
       if (entry.contentRect.width > 0) setOpen(false);
     });
     observer.observe(navigation);
-    return () => observer.disconnect();
+    const closeOutside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !header.current?.contains(event.target)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("pointerdown", closeOutside);
+    };
   }, [open]);
 
   const navLabels: Record<(typeof SECTIONS)[number], string> = {
@@ -49,6 +57,12 @@ export function Navbar() {
         {t.a11y.skip}
       </a>
       <header
+        ref={header}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) {
+            setOpen(false);
+          }
+        }}
         onKeyDown={(event) => {
           if (open && event.key === "Escape") {
             setOpen(false);

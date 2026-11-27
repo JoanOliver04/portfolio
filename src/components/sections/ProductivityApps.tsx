@@ -5,6 +5,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 import { ArrowIcon, GitHubIcon, TechTag } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
+import { ProjectIndexReturn } from "@/components/projects/ProjectIndex";
 import { ProjectHighlights } from "@/components/projects/ProjectHighlights";
 
 export function ProductivityApps() {
@@ -79,7 +80,7 @@ export function ProductivityApps() {
 
             {tool.images && (
               <div className="flex min-w-0 items-center border-y border-border bg-surface-2/60 p-3 sm:p-4 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:border-y-0 lg:border-r">
-                <ProjectGallery images={tool.images} singleFrame className="mx-auto w-full max-w-3xl" />
+                <ProjectGallery images={tool.images} projectId={tool.id} singleFrame className="mx-auto w-full max-w-3xl" />
               </div>
             )}
 
@@ -92,6 +93,7 @@ export function ProductivityApps() {
                 ))}
               </div>
             </div>
+            <ProjectIndexReturn id={tool.id} />
           </article>
         </Reveal>
       ))}

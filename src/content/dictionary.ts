@@ -61,6 +61,7 @@ const en = {
     subtitle:
       "Choose a project to explore its design, screenshots and code.",
     indexLabel: "Project index",
+    backToIndex: "Back to project index",
     liveEyebrow: "In production",
     liveLead:
       "A product I use every day — built from scratch and still being updated.",
@@ -213,6 +214,7 @@ const es: Dictionary = {
     subtitle:
       "Elige un proyecto para explorar su diseño, sus capturas y su código.",
     indexLabel: "Índice de proyectos",
+    backToIndex: "Volver al índice de proyectos",
     liveEyebrow: "En producción",
     liveLead:
       "Un producto que uso cada día: nació de cero y se sigue actualizando.",

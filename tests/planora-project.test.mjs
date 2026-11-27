@@ -4,7 +4,7 @@ import test from "node:test";
 
 const contentPath = new URL("../src/content/developerTools.ts", import.meta.url);
 const componentPath = new URL("../src/components/sections/ProductivityApps.tsx", import.meta.url);
-const pagePath = new URL("../src/app/page.tsx", import.meta.url);
+const pagePath = new URL("../src/components/Portfolio.tsx", import.meta.url);
 const projectsPath = new URL("../src/content/projects.ts", import.meta.url);
 
 test("Planora is presented as a bilingual productivity app", async () => {

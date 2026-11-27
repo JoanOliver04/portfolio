@@ -9,7 +9,7 @@ import { Experience } from "@/components/sections/Experience";
 import { Education } from "@/components/sections/Education";
 import { Contact } from "@/components/sections/Contact";
 
-export default function Home() {
+export default function Portfolio() {
   return (
     <>
       <span id="top" aria-hidden="true" />

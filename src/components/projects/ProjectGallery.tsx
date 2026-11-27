@@ -9,10 +9,12 @@ import { cn } from "@/lib/utils";
 /** Bilingual screenshot picker with keyboard navigation and a full-size viewer. */
 export function ProjectGallery({
   images,
+  projectId,
   className,
   singleFrame = false,
 }: {
   images: ProjectImage[];
+  projectId: string;
   className?: string;
   singleFrame?: boolean;
 }) {
@@ -23,6 +25,9 @@ export function ProjectGallery({
   const viewer = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLButtonElement>(null);
   const [viewerOpen, setViewerOpen] = useState(false);
+  const closing = useRef(false);
+  const returnPoint = useRef({ url: "", top: 0 });
+  const viewerHash = `#gallery-${projectId}`;
   const [nearViewport, setNearViewport] = useState(false);
   const cover = images[0]?.thumbnail;
 
@@ -42,13 +47,63 @@ export function ProjectGallery({
     return () => observer.disconnect();
   }, [cover]);
 
+  useEffect(() => {
+    let restoreFrame = 0;
+    const syncHistory = () => {
+      const dialog = viewer.current;
+      if (!dialog) return;
+      cancelAnimationFrame(restoreFrame);
+      closing.current = false;
+      if (location.hash === viewerHash) {
+        if (!dialog.open) dialog.showModal();
+        setViewerOpen(true);
+      } else if (dialog.open) {
+        dialog.close();
+        setViewerOpen(false);
+        // Restore after the browser has applied its own fragment scrolling.
+        restoreFrame = requestAnimationFrame(() => {
+          if (dialog.open) return;
+          if (!returnPoint.current.url && location.hash === "#" + projectId) {
+            opener.current?.focus();
+            return;
+          }
+          if (location.href !== returnPoint.current.url) return;
+          opener.current?.focus({ preventScroll: true });
+          window.scrollTo({ top: returnPoint.current.top, behavior: "instant" });
+        });
+      }
+    };
+    syncHistory();
+    window.addEventListener("hashchange", syncHistory);
+    window.addEventListener("pageshow", syncHistory);
+    return () => {
+      cancelAnimationFrame(restoreFrame);
+      window.removeEventListener("hashchange", syncHistory);
+      window.removeEventListener("pageshow", syncHistory);
+    };
+  }, [projectId, viewerHash]);
+
+  const openViewer = () => {
+    if (!viewer.current || viewer.current.open) return;
+    returnPoint.current = { url: location.href, top: window.scrollY };
+    location.hash = viewerHash;
+  };
+
+  const closeViewer = () => {
+    if (!closing.current && viewer.current?.open) {
+      closing.current = true;
+      if (returnPoint.current.url) window.history.back();
+      else location.replace("#" + projectId);
+    }
+  };
+
   const go = useCallback(
     (next: number) => setIndex(((next % count) + count) % count),
     [count],
   );
 
   const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (!ready || viewer.current?.open || e.target instanceof HTMLSelectElement) return;
+    if (!ready || e.target instanceof HTMLSelectElement) return;
     if (e.key === "ArrowLeft") {
       e.preventDefault();
       go(index - 1);
@@ -60,6 +115,7 @@ export function ProjectGallery({
 
   if (count === 0) return null;
   const current = images[index];
+  const preview = current.src.replace("/projects/", "/project-previews/");
 
   return (
     <div
@@ -79,8 +135,9 @@ export function ProjectGallery({
             {!nearViewport && index === 0 && cover && (
               <source media="(scripting: enabled)" srcSet={cover} />
             )}
+            <source media="(max-width: 540px)" srcSet={`${preview}.480.webp 1x, ${preview}.960.webp 2x`} />
             <Image
-              src={current.src}
+              src={`${preview}.960.webp`}
               alt={current.caption[locale]}
               fill
               sizes={singleFrame ? "(min-width: 768px) 540px, 94vw" : "(max-width: 1024px) 100vw, 760px"}
@@ -139,10 +196,7 @@ export function ProjectGallery({
         type="button"
         aria-haspopup="dialog"
         disabled={!ready}
-        onClick={() => {
-          viewer.current?.showModal();
-          setViewerOpen(true);
-        }}
+        onClick={openViewer}
         className="mt-2 inline-flex min-h-11 items-center text-xs font-medium text-muted underline underline-offset-4 hover:text-accent"
       >
         {t.a11y.galleryFullSize}
@@ -150,16 +204,16 @@ export function ProjectGallery({
       <dialog
         ref={viewer}
         aria-label={t.a11y.galleryFullSize}
-        onClose={() => {
-          setViewerOpen(false);
-          opener.current?.focus({ preventScroll: true });
+        onCancel={(event) => {
+          event.preventDefault();
+          closeViewer();
         }}
         className="capture-viewer fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none bg-black text-white backdrop:bg-black open:flex open:flex-col"
       >
         <button
           type="button"
           aria-label={t.a11y.galleryClose}
-          onClick={() => viewer.current?.close()}
+          onClick={closeViewer}
           className="mb-2 flex h-12 w-12 shrink-0 items-center justify-center self-end rounded-full bg-red-700 text-white hover:bg-red-800 focus-visible:outline-white"
         >
           <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -169,6 +223,20 @@ export function ProjectGallery({
         {viewerOpen && (
           <div className="relative min-h-0 flex-1">
             <Image src={current.src} alt={current.caption[locale]} fill sizes="100vw" loading="eager" className="object-contain" />
+          </div>
+        )}
+        {count > 1 && (
+          <div className="mt-2 flex shrink-0 items-center justify-center gap-4">
+            <button type="button" onClick={() => go(index - 1)} aria-label={t.a11y.galleryPrev} className="grid h-11 w-11 place-items-center rounded-full bg-white/15 hover:bg-white/25">
+              <Chevron dir="left" />
+            </button>
+            <span role="status" className="min-w-16 text-center font-mono text-sm tabular-nums">
+              {index + 1} / {count}
+              <span className="sr-only"> · {current.caption[locale]}</span>
+            </span>
+            <button type="button" onClick={() => go(index + 1)} aria-label={t.a11y.galleryNext} className="grid h-11 w-11 place-items-center rounded-full bg-white/15 hover:bg-white/25">
+              <Chevron dir="right" />
+            </button>
           </div>
         )}
       </dialog>

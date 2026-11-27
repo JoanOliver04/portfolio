@@ -10,19 +10,40 @@ const controlClass =
 
 /** Switches between the two languages, showing the target language code. */
 export function LanguageToggle({ className }: { className?: string }) {
-  const { locale, toggleLocale, t, ready } = useI18n();
+  const { locale, t } = useI18n();
   const next = locale === "en" ? "ES" : "EN";
+  const path = "/" + next.toLowerCase();
+  const [suffix, setSuffix] = useState("");
+  useEffect(() => {
+    const sync = () => setSuffix(location.search + location.hash);
+    sync();
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
 
   return (
-    <button
-      type="button"
-      onClick={toggleLocale}
-      disabled={!ready}
+    <a
+      href={path + suffix}
+      hrefLang={next.toLowerCase()}
+      onClick={(event) => {
+        // An explicit deep link is stable even during viewport or scroll restoration.
+        if (location.hash) {
+          event.currentTarget.href = path + location.search + location.hash;
+          return;
+        }
+        const top = document.querySelector(".site-header")?.getBoundingClientRect().bottom ?? 0;
+        const project = Array.from(document.querySelectorAll("article[id]")).find(article => {
+          const bounds = article.getBoundingClientRect();
+          return bounds.top < innerHeight / 2 && bounds.bottom > top;
+        });
+        const hash = project ? "#" + project.id : "";
+        event.currentTarget.href = path + location.search + hash;
+      }}
       aria-label={t.a11y.language}
       className={cn(controlClass, "w-12 font-mono text-xs tracking-label disabled:cursor-wait disabled:opacity-60", className)}
     >
       <span aria-hidden="true">{next}</span>
-    </button>
+    </a>
   );
 }
 

@@ -5,6 +5,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 import { cn } from "@/lib/utils";
 import { ArrowIcon, GitHubIcon, TechTag, MetricPill } from "@/components/ui/primitives";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
+import { ProjectIndexReturn } from "@/components/projects/ProjectIndex";
 
 const CATEGORY_LABELS: Record<ProjectCategory, Record<Locale, string>> = {
   ai: { en: "AI & Big Data", es: "IA y Big Data" },
@@ -99,7 +100,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </h3>
       <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">{project.tagline[locale]}</p>
 
-      {project.images ? <ProjectGallery images={project.images} singleFrame={project.images.length > 10} className="mt-5" /> : null}
+      {project.images ? <ProjectGallery images={project.images} projectId={project.id} singleFrame={project.images.length > 10} className="mt-5" /> : null}
 
       <div className="mt-5 space-y-4 text-sm leading-relaxed">
         <div>
@@ -158,6 +159,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <RepoLink project={project} />
         </div>
       </div>
+      <ProjectIndexReturn id={project.id} />
     </article>
   );
 }

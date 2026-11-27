@@ -4,6 +4,9 @@
   "private": true,
   "description": "Personal portfolio of Joan V. Oliver Rosell — Full-Stack Developer.",
   "scripts": {
+    "predev": "node scripts/generate-previews.mjs",
+    "prebuild": "node scripts/generate-previews.mjs",
+    "test:browser": "node --test tests/browser/portfolio.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -24,7 +27,9 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-config-next": "^15.1.0",
+    "playwright-core": "1.62.1",
     "postcss": "^8.4.49",
+    "sharp": "0.34.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
   },

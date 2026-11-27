@@ -5,6 +5,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 import { TechTag, MetricPill } from "@/components/ui/primitives";
 import { DemoLink, ProjectBadges, RepoLink, categoryLabel } from "@/components/projects/ProjectCard";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
+import { ProjectIndexReturn } from "@/components/projects/ProjectIndex";
 import { FuelComparison } from "@/components/projects/FuelComparison";
 import { ProjectHighlights } from "@/components/projects/ProjectHighlights";
 
@@ -96,9 +97,10 @@ export function FlagshipCard({ project }: { project: Project }) {
           <p className="mb-4 font-mono text-[0.68rem] uppercase tracking-label text-muted">
             {t.a11y.gallery}
           </p>
-          <ProjectGallery images={project.images} />
+          <ProjectGallery images={project.images} projectId={project.id} />
         </div>
       ) : null}
+      <ProjectIndexReturn id={project.id} />
     </article>
   );
 }

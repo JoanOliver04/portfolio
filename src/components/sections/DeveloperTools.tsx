@@ -6,6 +6,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 import { ArrowIcon, Container, GitHubIcon, Section, TechTag } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
+import { ProjectIndexReturn } from "@/components/projects/ProjectIndex";
 import { ProjectHighlights } from "@/components/projects/ProjectHighlights";
 
 export function DeveloperTools() {
@@ -31,7 +32,7 @@ export function DeveloperTools() {
               <article id={tool.id} tabIndex={-1} aria-labelledby={`${tool.id}-title`} className="grid scroll-mt-24 grid-cols-1 overflow-hidden rounded-lg border border-border bg-surface/70 transition-colors hover:border-accent/35 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
                 {tool.images ? (
                   <div className="flex items-center border-b border-border bg-surface-2/60 p-3 sm:p-4 lg:border-b-0 lg:border-r">
-                    <ProjectGallery images={tool.images} className="mx-auto w-full max-w-3xl lg:max-w-none" />
+                    <ProjectGallery images={tool.images} projectId={tool.id} className="mx-auto w-full max-w-3xl lg:max-w-none" />
                   </div>
                 ) : null}
 
@@ -101,6 +102,7 @@ export function DeveloperTools() {
                     ) : null}
                   </div>
                 </div>
+                <ProjectIndexReturn id={tool.id} />
               </article>
             </Reveal>
           ))}
